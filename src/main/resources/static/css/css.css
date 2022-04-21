@@ -164,6 +164,21 @@ input, select, textarea, button {
 html:is(.pagFormLogin, .pagFormRegistro) #mainWrap main form:is([action="/usuario/login"], [action="/usuario/registro"]) > button[type="submit"] {
 	margin: var(--espaciado) 0;
 }
+#listaPlantillas {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: calc(var(--espaciado) / 2);
+}
+#listaPlantillas > li > a {
+	display: block;
+	padding: calc(var(--espaciado) / 2);
+	border: var(--ancho-borde) solid var(--color-borde);
+	border-radius: var(--radio-borde);
+}
+#listaPlantillas > li > a img {
+	vertical-align: middle;
+}
 @media screen and (min-width: 768px) {
 	#mainWrap {
 		flex-direction: row;
