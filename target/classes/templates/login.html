@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" 
+      lang="es" class="pagFormLogin">
+    <head>
+        <meta charset="UTF-8" />
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+        <title>Document</title>
+        <mvc:resources mapping="/static/**" location="/static/" />
+        <link rel="stylesheet" href="/css/css.css" />
+    </head>
+    <body>
+        <header aria-label="Cabecera principal">
+            <div class="contenedor">
+                <span class="headerBranding">CV Generator</span>
+            </div>
+        </header>
+        <div class="contenedor" id="mainWrap">
+            <main>
+                <header>
+                    <h1>Iniciar sesión</h1>
+                </header>
+                <form th:action="@{/login}" method="post">
+
+                    <div th:if=${param.error}>
+                        <div class="alert alert-danger">Usuario o contraseña
+                            inválidos</div>
+                    </div>
+
+                    <div th:if=${param.logout}>
+                        <div class="alert alert-info">Ha cerrado sesión exitosamente
+                        </div>
+                    </div>
+                    <div>
+                        <label for="FormLoginCampoEmail">E-mail</label>
+                        <input type="email" name="username" class="controlForm" id="FormLoginCampoEmail" required autofocus="autofocus" placeholder="Digite su email ID">
+                    </div>
+                    <div>
+                        <label for="FormLoginCampoContrasenia">Contraseña</label>
+                        <input type="password" name="password" class="controlForm" id="FormLoginCampoContrasenia" required autofocus="autofocus" placeholder="Digite su password">
+                    </div>
+                    <button type="submit" class="boton boton-primario" value="Iniciar sesión">Iniciar sesión</button>
+                    <a th:href="@{/registro}" class="boton">Crear usuario</a>
+                </form>
+            </main>
+        </div>
+        <footer id="pie">
+            <div class="contenedor">
+                Copyright.
+                <a href="/">Términos</a>
+            </div>
+        </footer>
+    </body>
+</html>
