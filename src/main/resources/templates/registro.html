@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" 
+      lang="es" class="pagFormRegistro">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <mvc:resources mapping="/static/**" location="/static/" />
+        <link rel="stylesheet" href="/css/css.css" type="text/css">
+    </head>
+    <body>
+        <header aria-label="Cabecera principal">
+            <div class="contenedor">
+                <span class="headerBranding">CV Generator</span>
+            </div>
+        </header>
+        <div class="contenedor" id="mainWrap">
+            <main>
+                <header>
+                    <h1>Registro</h1>
+                </header>
+                <div th:if=${param.exito}>
+                    <div class="alert alert-info">Se ha registrado exitosamente a
+                        la aplicación</div>
+                </div>
+                <div th:if=${param.fail}>
+                    <div class="alert alert-info">El mail ya se encuentra registrado</div>
+                </div>
+                <form th:action="@{/registro}" method="post" th:object="${usuario}">
+                    <div>
+                        <label for="FormRegistroCampoEmail">E-mail</label>
+                        <input type="email" name="username" class="controlForm" id="FormRegistroCampoEmail" th:field="*{email}" required autofocus="autofocus">
+                    </div>
+                    <div>
+                        <label for="FormRegistroCampoContrasenia">Contraseña</label>
+                        <input type="password" name="password" class="controlForm" id="FormRegistroCampoContrasenia" required th:field="*{password}">
+                    </div>
+                    <!--
+                    <div>
+                        <label for="FormRegistroCampoContraseniaConfirmar">Confirmar contraseña</label>
+                        <input type="password" name="passwordConfirmar" class="controlForm" id="FormRegistroCampoContraseniaConfirmar"  
+                               required autofocus="autofocus">
+                    </div>   -->
+                    <button type="submit" class="boton boton-primario">Registrar</button>
+                    <a th:href="@{/login}" class="boton">Regresar</a>
+                </form>
+            </main>
+        </div>
+        <footer id="pie">
+            <div class="contenedor">
+                Copyright.
+                <a href="/">Términos</a>
+            </div>
+        </footer>
+    </body>
+</html>
