@@ -4,13 +4,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-            <mvc:resources mapping="/static/**" location="/static/" >
-	<link rel="stylesheet" href="/css/css.css">
+	<link rel="stylesheet" href="css/css.css">
 </head>
 <body>
 	<header aria-label="Cabecera principal">
 		<div class="contenedor">
-			<span class="headerBranding">CV Generator</span>
+			<a href="/" class="headerBranding">CV Generator</a>
+			<nav>
+				<a href="/plantillas">Plantillas</a>
+				<span aria-current="page">Iniciar sesión</span>
+				<a href="/usuario/registro">Registrate</a>
+				<a href="/home/contacto">Contacto</a>
+			</nav>
 		</div>
 	</header>
 	<div class="contenedor" id="mainWrap">
