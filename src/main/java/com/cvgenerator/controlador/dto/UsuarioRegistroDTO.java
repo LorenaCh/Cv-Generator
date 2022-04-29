@@ -1,10 +1,13 @@
 package com.cvgenerator.controlador.dto;
 
+import com.cvgenerator.entidades.Persona;
+
 public class UsuarioRegistroDTO {
 
 	private Long id;
 	private String email;
 	private String password;
+        private Persona persona;
 
 	public Long getId() {
 		return id;
@@ -29,6 +32,14 @@ public class UsuarioRegistroDTO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
 
 
 	public UsuarioRegistroDTO(String email, String password) {

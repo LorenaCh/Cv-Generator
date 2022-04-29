@@ -6,6 +6,7 @@
 package com.cvgenerator.servicio;
 
 import com.cvgenerator.entidades.Persona;
+import com.cvgenerator.entidades.Usuario;
 import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class PersonaServicio {
     private PersonaReposotorio repPersona;
     
     @Transactional(readOnly=false)
-    public void guardar(Integer id, Integer dni, String nombre, String apellido, String foto, Date fNac, String descripcion ){
+    public void guardar(Integer dni, String nombre, String apellido, String foto, Date fNac, String descripcion ){
         Persona per= new Persona();
         per.setDni(dni);
         per.setNombre(nombre);
@@ -34,6 +35,14 @@ public class PersonaServicio {
         per.setDescripcion(descripcion);
         repPersona.save(per);
         
+    }
+    
+    public Persona guardar(Usuario usuario){
+        Persona persona = new Persona();
+        persona.setUsuario(usuario);
+        System.out.println("Entre a servicio persona guardar");
+        System.out.println(persona);
+        return repPersona.save(persona);
     }
     
     public Persona crear(){
@@ -49,10 +58,18 @@ public class PersonaServicio {
         return repPersona.findById(id).orElse(null);
     }
     
+    @Transactional(readOnly = true)
+    public Persona findByDni(Integer dni){
+        return repPersona.findByDni(dni);
+    }
+    
     @Transactional(readOnly=true)
     public List<Persona> findAll(){
         return repPersona.findAll();
     }
     
+    public Persona guardar(Persona persona){
+        return repPersona.save(persona);
+    }
     
 }

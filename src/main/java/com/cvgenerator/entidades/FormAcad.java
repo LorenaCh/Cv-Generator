@@ -5,6 +5,7 @@
  */
 package com.cvgenerator.entidades;
 
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,21 +23,12 @@ public class FormAcad {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_formAcad")
     private Integer idFormAcad;
-    private boolean primaria;
-    private boolean secundaria;
     
-    private boolean universidad;
-    private String univLugar;
-    private String univCarrera;
-    private String univEstado;
-    private Integer univAnio;
-    private String idiomas;
-    
-    private boolean terciario;
-    private String terLugar;
-    private String terCarrera;
-    private String terEstado;
-    private String terAnio;
-    
-    
+    private String titulo;
+    private String establecimiento;
+    private String tipo;
+    private Date f_inicio ;
+    private Date f_fin ;
+    private Boolean enProgreso;
+    private String lugar;
 }
