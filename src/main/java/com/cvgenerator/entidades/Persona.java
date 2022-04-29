@@ -3,6 +3,7 @@ package com.cvgenerator.entidades;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -28,6 +30,15 @@ public class Persona implements Serializable{
     private Date fNac;
     private String descripcion;
 
+    @OneToOne
+    private Usuario usuario;
+    @OneToMany
+    private List <Trabajo> trabajos;
+    @OneToMany
+    private List <FormAcad> formaciones;
+    @OneToMany
+    private List <Aptitudes> aptitud;
+    
     public Persona(Integer idPersona, Integer dni, String nombre, String apellido, String foto, Date fNac, String descripcion) {
         this.idPersona = idPersona;
         this.dni = dni;
