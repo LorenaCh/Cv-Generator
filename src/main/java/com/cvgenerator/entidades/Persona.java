@@ -2,20 +2,13 @@ package com.cvgenerator.entidades;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.MapsId;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
-import org.springframework.lang.Nullable;
 
 @Entity
 @Table(name = "persona")
@@ -32,9 +25,7 @@ public class Persona implements Serializable {
     private Date fNac;
     private String descripcion;
 
-    @OneToOne
-    @JoinColumn(name = "id_usuario  ")
-    @Nullable
+    @OneToOne(mappedBy = "persona")
     private Usuario usuario;
 
     /*

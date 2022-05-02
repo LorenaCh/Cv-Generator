@@ -3,7 +3,6 @@ package com.cvgenerator.entidades;
 import java.util.Collection;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -13,10 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-import org.springframework.lang.Nullable;
 
 @Entity
 @Table(name = "usuarios", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
@@ -38,7 +35,6 @@ public class Usuario {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_persona")
-    @Nullable
     private Persona persona;
 
     public Long getId() {
@@ -81,19 +77,21 @@ public class Usuario {
         this.persona = persona;
     }
 
-    public Usuario(Long id, String email, String password, Collection<Rol> roles) {
+    public Usuario(Long id, String email, String password, Collection<Rol> roles,Persona persona) {
         super();
         this.id = id;
         this.email = email;
         this.password = password;
         this.roles = roles;
+        this.persona = persona;
     }
 
-    public Usuario(String email, String password, Collection<Rol> roles) {
+    public Usuario(String email, String password, Collection<Rol> roles,Persona persona) {
         super();
         this.email = email;
         this.password = password;
         this.roles = roles;
+        this.persona = persona;
     }
 
     public Usuario() {

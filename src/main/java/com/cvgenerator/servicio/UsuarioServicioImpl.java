@@ -15,6 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.cvgenerator.controlador.dto.UsuarioRegistroDTO;
+import com.cvgenerator.entidades.Persona;
 import com.cvgenerator.entidades.Rol;
 import com.cvgenerator.entidades.Usuario;
 import com.cvgenerator.repositorio.UsuarioRepositorio;
@@ -27,6 +28,9 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 
     @Autowired
     private RolServicio rolServicio;
+    
+    @Autowired
+    private PersonaServicio personaServicio;
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
@@ -40,8 +44,11 @@ public class UsuarioServicioImpl implements UsuarioServicio {
     public Usuario guardar(UsuarioRegistroDTO registroDTO) {
 
         Rol rol = rolServicio.buscarPorNombre("ROLE_USER");
+        Persona persona = personaServicio.guardar(new Persona());
         Usuario usuario = new Usuario(registroDTO.getEmail(),
-                passwordEncoder.encode(registroDTO.getPassword()), Arrays.asList(rol));
+                passwordEncoder.encode(registroDTO.getPassword()), 
+                Arrays.asList(rol),
+                persona);
         return usuarioRepositorio.save(usuario);
     }
 
