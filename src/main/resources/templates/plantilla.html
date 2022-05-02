@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <div th:fragment="header">
+            <h1 class="vh">CV Generator</h1>
+            <header aria-label="Cabecera principal">
+                <div class="contenedor">
+                    <span class="headerBranding" aria-current="page">CV Generator</span>
+                    <nav>
+                        <a th:href="@{/}">Inicio</a>
+                        <a th:href="@{/login}">Iniciar sesión</a>
+                        <a th:href="@{/registro}">Registrate</a>
+                        <a href="/home/contacto">Contacto</a>
+                    </nav>
+                </div>
+            </header>
+        </div>
+        
+	<footer th:fragment="footer" id="pie">
+		<div class="contenedor">
+			Copyright.
+			<a href="/">Términos</a>
+		</div>
+	</footer>
+    </body>
+</html>
