@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+:root {
+	--fuente: Arimo, sans-serif;
+	--tamanio-fuente-base: medium;
+	--tamanio-fuente-xx-grande: calc(1rem * 1.2 * 1.2 * 1.2);
+	--tamanio-fuente-x-grande: calc(1rem * 1.2 * 1.2);
+	--tamanio-fuente-grande: calc(1rem * 1.2);
+	--tamanio-fuente: 1rem;
+	--tamanio-fuente-pequenio: calc(1rem / 1.2);
+	--tamanio-fuente-x-pequenio: calc(1rem / 1.2 / 1.2);
+	--interlineado: 1.5;
+	--interlineado-alt: 1.3;
+	--espacio: 1rem;
+	--ancho-main: 70ex;
+	--ancho-contenedor: calc(var(--ancho-main) * 1);
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+html:focus-within {
+	scroll-behavior: smooth;
+}
+body {
+	font: 1rem/var(--interlineado) var(--fuente);
+	text-rendering: optimizeSpeed;
+}
+@media screen {
+	body {
+		margin: 0;
+		min-height: 100vh;
+	}
+}
+h1, h2, h3, h4 {
+	line-height: var(--interlineado-alt);
+	margin: 0 0 calc(var(--espacio) / 2);
+}
+p, figure, blockquote, ul, ol, dl {
+	margin: 0 0 var(--espacio);
+	padding: 0;
+}
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+input, button, textarea, select {
+	font: inherit;
+}
+ul[role='list'], ol[role='list'] {
+	list-style: none;
+}
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+.contenedor {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	max-width: var(--ancho-contenedor);
+}
+
+@media screen {
+	#mainWrap {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	#masthead {
+		color: white;
+		background-color: dodgerblue;
+		padding: 0 var(--espacio);
+		flex: 1 0 100%
+	}
+	#masthead h1 {
+		line-height: 1;
+		margin: var(--espacio) 0;
+	}
+	#personales {
+		display: flex;
+		justify-content: space-between;
+		gap: var(--espacio);
+	}
+	#personales > * {
+		flex: 0 0 50%;
+	}
+	#mainWrap > main {
+		padding-top: var(--espacio);
+		flex: 0 0 var(--ancho-main)
+	}
+}
