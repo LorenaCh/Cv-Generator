@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 :root {
-	--fuente: Arimo, sans-serif;
+	--fuente: Open Sans, sans-serif;
 	--tamanio-fuente-base: medium;
 	--tamanio-fuente-xx-grande: calc(1rem * 1.2 * 1.2 * 1.2);
 	--tamanio-fuente-x-grande: calc(1rem * 1.2 * 1.2);
@@ -24,6 +24,18 @@ html:focus-within {
 body {
 	font: 1rem/var(--interlineado) var(--fuente);
 	text-rendering: optimizeSpeed;
+}
+h1, :is(article, aside, nav, section) h1 {
+	font-size: var(--tamanio-fuente-xx-grande);
+}
+h2, :is(article, aside, nav, section) :is(article, aside, nav, section) h1 {
+	font-size: var(--tamanio-fuente-x-grande);
+}
+h3, :is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) h1 {
+	font-size: var(--tamanio-fuente-grande);
+}
+h4, :is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) h1 {
+	font-size: var(--tamanio-fuente);
 }
 @media screen {
 	body {
@@ -67,6 +79,23 @@ ul[role='list'], ol[role='list'] {
 	max-width: var(--ancho-contenedor);
 }
 
+#personales, .detalleExperiencia {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--espacio);
+}
+#personales > * {
+	flex: 0 1 50%;
+}
+.detalleExperiencia > section {
+	flex: 1 0;
+}
+.detalleExperiencia {
+	flex-wrap: wrap;
+}
+.detalleExperiencia > header {
+	flex: 1 0 100%;
+}
 @media screen {
 	#mainWrap {
 		display: flex;
@@ -74,7 +103,7 @@ ul[role='list'], ol[role='list'] {
 	}
 	#masthead {
 		color: white;
-		background-color: dodgerblue;
+		background-color: indigo;
 		padding: 0 var(--espacio);
 		flex: 1 0 100%
 	}
@@ -83,12 +112,8 @@ ul[role='list'], ol[role='list'] {
 		margin: var(--espacio) 0;
 	}
 	#personales {
-		display: flex;
-		justify-content: space-between;
-		gap: var(--espacio);
-	}
-	#personales > * {
-		flex: 0 0 50%;
+		padding-top: var(--espacio);
+		border-top: .1em solid;
 	}
 	#mainWrap > main {
 		padding-top: var(--espacio);

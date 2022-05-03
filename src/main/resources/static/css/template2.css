@@ -12,7 +12,7 @@
 	--interlineado-alt: 1.3;
 	--espacio: 1rem;
 	--ancho-main: 70ch;
-	--ancho-contenedor: calc(var(--ancho-main) * 1.618);
+	--ancho-contenedor: 19cm;
 }
 
 *, *::before, *::after {
@@ -67,11 +67,11 @@ ul[role='list'], ol[role='list'] {
 	max-width: var(--ancho-contenedor);
 }
 
-#masthead {
-	color: wheat;
-	background-color: brown;
-}
 @media screen {
+	#masthead {
+		color: wheat;
+		background-color: brown;
+	}
 	#masthead > .contenedor {
 		padding: 0 var(--espacio) max(1px, .1em);
 	}
@@ -90,5 +90,5 @@ ul[role='list'], ol[role='list'] {
 	background-color: beige;
 }
 #mainWrap > main {
-    flex: 1 0 var(--ancho-main);
+    flex: 1 0 min(61.8%, var(--ancho-main));
 }
