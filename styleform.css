@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* * {outline: 1px solid red;}*/
+
+header{
+    background-color: #5499C7 ;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+fieldset{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.columnaform{
+    padding: 3px;
+}
+
+.boton{
+    padding-left: 30px;
+    padding-top: 5px;
+}
+legend{
+    background-color: #5D6D7E;
+    color: #fff;
+    padding: 3px;
+}
+body{
+    background-color: #D6EAF8;
+    font-family: "Rubik";
+}
+
