@@ -9,11 +9,30 @@
     <title>formulario</title>
 </head>
 <body>
+      <div id="nav">
+   <!-- <div class="titulonav">
+   Secciones
+   </div> -->
+   
+   <div class="cuerporec">
+   <ul>
+      <li><a href="#">Datos</a></li>
+      <li><a href="#">Formacion</a></li>
+      <li><a href="#">Experiencia</a></li>
+      <li><a href="#">Idiomas</a></li>
+      <li><a href="#">Habilidades</a></li>
+      <li><a href="#">Objetivo</a></li>
+   </ul>
+   <div class="boton"><button type="button" class="btn btn-info">Crear CV</button></div>
+   </div>
+</div>
+
+    <div>
     <header><h1>Genera tu curriculum vitae!</h1>
     <p>Ingresa tus datos en el siguiente formulario y nuestra pagino automaticamente generara tu curriculum vitae para que empieces en tu busqueda laboral!</p></header>
     <form>
         <fieldset>
-            <div class="columnaform">
+            
             <legend>Ingrese sus datos</legend>
             <p>
               <label for="input">Nombre completo</label>
@@ -52,10 +71,10 @@
               
               <br>
               
-            </div>
             
             
-            <div class="columnaform">
+            
+            
               <legend>Experiencia</legend>
               <p>
                 <label for="tel">Años trabajados</label>
@@ -92,13 +111,14 @@
               </p>
               
             
-            <p><label for="textarea">Objetivo</label>
+            <p><legend><label for="textarea">Objetivo</label></legend>
               <textarea id="textarea" rows="3" cols="60"></textarea>
             </p>
-            </div>
+            
           </fieldset>
       </form>
-      <div class="boton"><button type="button" class="btn btn-info">Crear CV</button></div>
+    </div>
+      
       <br>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
