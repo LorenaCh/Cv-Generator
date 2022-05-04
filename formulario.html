@@ -9,76 +9,71 @@
     <title>formulario</title>
 </head>
 <body>
-      <div id="nav">
-   <!-- <div class="titulonav">
-   Secciones
-   </div> -->
+  
    
-   <div class="cuerporec">
-   <ul>
-      <li><a href="#">Datos</a></li>
-      <li><a href="#">Formacion</a></li>
-      <li><a href="#">Experiencia</a></li>
-      <li><a href="#">Idiomas</a></li>
-      <li><a href="#">Habilidades</a></li>
-      <li><a href="#">Objetivo</a></li>
-   </ul>
-   <div class="boton"><button type="button" class="btn btn-info">Crear CV</button></div>
-   </div>
+   
 </div>
 
     <div>
     <header><h1>Genera tu curriculum vitae!</h1>
     <p>Ingresa tus datos en el siguiente formulario y nuestra pagino automaticamente generara tu curriculum vitae para que empieces en tu busqueda laboral!</p></header>
-    <form>
-        <fieldset>
-            
-            <legend>Ingrese sus datos</legend>
-            <p>
-              <label for="input">Nombre completo</label>
-              <input type="text" id="input" placeholder="Nombre completo">
-            </p>
-             <p>
-              <label for="url">Direccion</label>
-              <input type="url" id="url">
-            </p>
-            <p>
-              <label for="tel">Telefono</label>
-              <input type="tel" id="tel">
-            </p>
-            <p>
-              <label for="email">Mail</label>
-              <input type="email" id="email" >
-            </p>
-            <legend>Formacion</legend>
-              <p>
-                <label for="tel">Año de egreso</label>
-                <input type="tel" id="tel">
-              </p>
-              <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                <label class="form-check-label" for="flexSwitchCheckDefault">Incompleto</label>
-              </div>
-              <p>
-                <label for="input">Titulo</label>
-                <input type="text" id="input" placeholder="Titulo">
-              </p>
-              <p>
-                <label for="input">Institucion</label>
-                <input type="text" id="input" placeholder="Institucion">
-              </p>
-              
-              
-              <br>
-              
-            
-            
-            
-            
-              <legend>Experiencia</legend>
+    </div>
+    <div class="cuerpo">
+    <div class="container">
+      
+      <button onclick="window.modal1.showModal();">Datos personales</button>
+      <dialog id="modal1">
+        <legend>Ingrese sus datos</legend>
+        <p>
+          <label for="input">Nombre completo</label>
+          <input type="text" id="input" >
+        </p>
+         <p>
+          <label for="url">Direccion</label>
+          <input type="url" id="url">
+        </p>
+        <p>
+          <label for="tel">Telefono</label>
+          <input type="tel" id="tel">
+        </p>
+        <p>
+          <label for="email">Mail</label>
+          <input type="email" id="email" >
+        </p>
+      <button onclick="window.modal1.close();">Cerrar</button>
+    </dialog>
+      
+      <button onclick="window.modal2.showModal();">Formacion</button>
+      <dialog id="modal2">
+       
+        <legend>Formacion</legend>
+        <p>
+          <label for="tel">Año de egreso</label>
+          <input type="tel" id="tel">
+        </p>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Incompleto</label>
+        </div>
+        <p>
+          <label for="input">Titulo</label>
+          <input type="text" id="input" >
+        </p>
+        <p>
+          <label for="input">Institucion</label>
+          <input type="text" id="input" >
+        </p>
+        <div class="boton"><button type="button" class="btn btn-info">Agregar</button></div>
+
+        <button onclick="window.modal2.close();">Cerrar</button>
+    </dialog>
+
+    <button onclick="window.modal3.showModal();">Experiencia</button>
+      <dialog id="modal3">
+        <legend>Experiencia</legend>
               <p>
                 <label for="tel">Años trabajados</label>
-                <input type="tel" id="tel" placeholder="2010-2015">
+                <input type="tel" id="tel" >
               </p>
               
               <p>
@@ -89,37 +84,65 @@
                 <label for="input">Empresa</label>
                 <input type="text" id="input" >
               </p>
-              <br>
-              
-              <legend>Idiomas</legend>
-              <p>
-                <label for="input">Idioma</label>
-                <input type="text" id="input" placeholder="Idioma 1">
-              
-                <label for="tel">Nivel (0-10)</label>
-                <input type="tel" id="tel" placeholder="0-10">
-              </p>
-              
-              <br>
-              <legend>Habilidades</legend>
+              <div class="boton"><button type="button" class="btn btn-info">Agregar</button></div>
+
+      <button onclick="window.modal3.close();">Cerrar</button>
+    </dialog>
+    <button onclick="window.modal4.showModal();">Idiomas</button>
+      <dialog id="modal4">
+       
+        
+        <legend>Idiomas</legend>
+        <p>
+          <label for="input">Idioma</label>
+          <input type="text" id="input" >
+        </p>
+        <p>
+          <label for="tel">Nivel (0-10)</label>
+          <input type="tel" id="tel" >
+        </p>
+        <div class="boton"><button type="button" class="btn btn-info">Agregar</button></div>
+
+      <button onclick="window.modal4.close();">Cerrar</button>
+    </dialog>
+    <button onclick="window.modal5.showModal();">Habilidades</button>
+      <dialog id="modal5">
+        
+        <legend>Habilidades</legend>
               <p>
                 <label for="input">Habilidad</label>
-                <input type="text" id="input" placeholder="Habilidad 1">
-              
-                <label for="tel">Nivel (0-10)</label>
-                <input type="tel" id="tel" placeholder="0-10">
+                <input type="text" id="input" >
               </p>
-              
-            
-            <p><legend><label for="textarea">Objetivo</label></legend>
-              <textarea id="textarea" rows="3" cols="60"></textarea>
-            </p>
-            
-          </fieldset>
-      </form>
+              <p>
+                <label for="tel">Nivel (0-10)</label>
+                <input type="tel" id="tel" >
+              </p>
+              <div class="boton"><button type="button" class="btn btn-info">Agregar</button></div>
+
+      <button onclick="window.modal5.close();">Cerrar</button>
+    </dialog>
+    <button onclick="window.modal6.showModal();">Objetivo</button>
+      <dialog id="modal6">
+         
+        <p><legend><label for="textarea">Objetivo</label></legend>
+          </p>
+          <p>
+            <textarea id="textarea" rows="3" cols="39"></textarea>
+        </p>
+
+
+
+      <button onclick="window.modal6.close();">Cerrar</button> 
+    </dialog>
     </div>
+    <div class="plantillahtml">
       
-      <br>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
+        <iframe width="760" height="1100" src="plantillascv/p1.html" scrolling="no" frameborder="no" ></iframe>
+        </div>
+
+    </div>
+    <div class="boton"><button type="button" class="btn btn-info">Crear CV</button></div>
+   </div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
 </html>
