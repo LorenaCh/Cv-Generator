@@ -80,8 +80,16 @@ p, ul, ol, dl, legend, hr, figure {
 	margin: 0 0 var(--espaciado);
 	padding: 0;
 }
+fieldset {
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+}
 input, select, textarea, button {
 	font: inherit;
+}
+textarea {
+	resize: vertical;
 }
 @media screen and (prefers-color-scheme: dark) {
 	body {
@@ -208,8 +216,13 @@ html.pagHome [aria-label="Cabecera principal"] {
 #mainWrap > aside {
 	flex: 1 0
 }
-html:is(.pagFormLogin, .pagFormRegistro) #mainWrap main form:is([action="/usuario/login"], [action="/usuario/registro"]) > button[type="submit"] {
+html:is(.pagFormLogin, .pagFormRegistro, .pagFormCrearCVPersonales, .pagFormCrearCVObjetivos) #mainWrap main form:is([action="/usuario/login"], [action="/usuario/registro"], [action="/crearcv"]) > button[type="submit"] {
 	margin: var(--espaciado) 0;
+}
+html:is(.pagFormCrearCVPersonales) #mainWrap main form:is([action="/crearcv"]) > fieldset {
+	display: flex;
+	flex-direction: column;
+	gap: calc(var(--espaciado) / 2);
 }
 #listaPlantillas {
 	list-style: none;
@@ -273,6 +286,13 @@ html:is(.pagFormLogin, .pagFormRegistro) #mainWrap main form:is([action="/usuari
 	}
 	#homeHeroPlantillas > img {
 		max-width: 15%;
+	}
+	html:is(.pagFormCrearCVPersonales) #mainWrap main form:is([action="/crearcv"]) > fieldset {
+		flex-flow: row wrap;
+		justify-content: space-between;
+	}
+	html:is(.pagFormCrearCVPersonales) #mainWrap main form:is([action="/crearcv"]) > fieldset > .form-grupo {
+		flex: 0 1 49%;
 	}
 }
 @media print {

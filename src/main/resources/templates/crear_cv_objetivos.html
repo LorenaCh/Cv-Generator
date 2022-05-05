@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" class="pagFormCrearCVObjetivos">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/css/css.css">
+</head>
+<body>
+	<header aria-label="Cabecera principal">
+		<div class="contenedor">
+			<a href="/" class="headerBranding">CV Generator</a>
+			<nav>
+				<a href="/plantillas">Plantillas</a>
+				<a href="/usuario/login">Iniciar sesión</a>
+				<a href="/usuario/registro">Registrate</a>
+				<a href="/home/contacto">Contacto</a>
+			</nav>
+		</div>
+	</header>
+	<div class="contenedor" id="mainWrap">
+		<main>
+			<header>
+				<h1>Objetivos</h1>
+			</header>
+			<form action="/crearcv" method="post">
+				<div class="form-grupo">
+					<label for="FormCrearCVCampoObjetivos">Objetivos</label>
+					<textarea name="objetivos" id="FormCrearCVCampoObjetivos" cols="30" rows="10" class="controlForm"></textarea>
+				</div>
+				<button type="submit" class="boton boton-primario">Continuar</button>
+			</form>
+		</main>
+	</div>
+	<footer id="pie">
+		<div class="contenedor">
+			Copyright.
+			<a href="/">Términos</a>
+		</div>
+	</footer>
+</body>
+</html>
