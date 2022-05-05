@@ -83,7 +83,7 @@ p, ul, ol, dl, legend, hr, figure {
 input, select, textarea, button {
 	font: inherit;
 }
-@media (prefers-color-scheme: dark) {
+@media screen and (prefers-color-scheme: dark) {
 	body {
 		color: var(--color-fuente-dark);
 		background-color: var(--color-fondo-dark);
@@ -147,9 +147,11 @@ input, select, textarea, button {
 	outline: medium dotted;
 	outline-offset: -.5em;
 }
-.boton.boton-primario {
-	--boton-color: #fff;
-	--boton-color-fondo: #0d47a1;
+@media screen {
+	.boton.boton-primario {
+		--boton-color: #fff;
+		--boton-color-fondo: #0d47a1;
+	}
 }
 
 /*contenedor*/
@@ -224,13 +226,6 @@ html:is(.pagFormLogin, .pagFormRegistro) #mainWrap main form:is([action="/usuari
 #listaPlantillas > li > a img {
 	vertical-align: middle;
 }
-#homeHero {
-	color: #fff;
-	background-color: #4f5160;
-	margin-bottom: var(--espaciado);
-	padding: var(--espaciado);
-	display: flow-root;
-}
 #homeHero > .contenedor {
 	max-width: var(--ancho-main);
 }
@@ -244,6 +239,24 @@ html:is(.pagFormLogin, .pagFormRegistro) #mainWrap main form:is([action="/usuari
 #homeHeroPlantillas > img {
 	max-width: 30%;
 	height: auto;
+}
+@media screen {
+	#homeHero {
+		color: #fff;
+		text-shadow: .1em .1em .1em black, -.1em .1em .1em black, -.1em -.1em .1em black, .1em -.1em .1em black;
+		background-color: #4f5160;
+		background-image: url(/images/fondo_home.jpg);
+		background-position: center top;
+		background-size: 100%;
+		margin-bottom: var(--espaciado);
+		padding: var(--espaciado);
+	}
+	#homeHero > .contenedor {
+		min-height: 100vh;
+	}
+	#homeHero .boton {
+		text-shadow: none;
+	}
 }
 @media screen and (min-width: 768px) {
 	[aria-label="Cabecera principal"] > .contenedor {
@@ -260,5 +273,10 @@ html:is(.pagFormLogin, .pagFormRegistro) #mainWrap main form:is([action="/usuari
 	}
 	#homeHeroPlantillas > img {
 		max-width: 15%;
+	}
+}
+@media print {
+	[aria-label="Cabecera principal"], #pie {
+		display: none;
 	}
 }
