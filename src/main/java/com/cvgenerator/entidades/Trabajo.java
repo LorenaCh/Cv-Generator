@@ -28,8 +28,4 @@ public class Trabajo {
     private Date desde;
     private Date hasta;
     
-   
-    
-    
-    
 }

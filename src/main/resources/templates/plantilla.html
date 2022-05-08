@@ -17,21 +17,29 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <header aria-label="Cabecera principal">
                 <div class="contenedor">
                     <span class="headerBranding" aria-current="page">CV Generator</span>
-                    <nav>
-                        <a th:href="@{/}">Inicio</a>
-                        <a th:href="@{/login}">Iniciar sesión</a>
-                        <a th:href="@{/registro}">Registrate</a>
-                        <a href="/home/contacto">Contacto</a>
+                    <nav class="nav">
+                        <ul>
+                            <li><a th:href="@{/}">Inicio</a></li>
+                            <li sec:authorize="isAuthenticated() == false"><a th:href="@{/login}">Iniciar sesión</a></li>
+                            <li sec:authorize="isAuthenticated()"><a href="#"  sec:authentication="name"></a>
+                                <ul>
+                                    <li><a th:href="@{/registro/cambiarPassword}">Cambiar contraseña</a></li>
+                                </ul>
+                            </li>
+                            <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Cerrar sesión</a></li>
+                            <li sec:authorize="isAuthenticated() == false"><a th:href="@{/registro}">Registrate</a></li>
+                            <li><a href="/home/contacto">Contacto</a></li>
+                        </ul>
                     </nav>
                 </div>
             </header>
         </div>
-        
-	<footer th:fragment="footer" id="pie">
-		<div class="contenedor">
-			Copyright.
-			<a href="/">Términos</a>
-		</div>
-	</footer>
+
+        <footer th:fragment="footer" id="pie">
+            <div class="contenedor">
+                Copyright.
+                <a href="/">Términos</a>
+            </div>
+        </footer>
     </body>
 </html>

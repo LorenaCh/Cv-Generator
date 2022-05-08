@@ -182,6 +182,37 @@ html.pagHome [aria-label="Cabecera principal"] {
 	line-height: 1rem;
 	padding: calc(var(--espaciado) / 2) 0;
 }
+.nav ul,ol{
+    margin:auto;
+    list-style: none;
+}
+
+.nav li a{
+    padding:10px 15px;
+    text-decoration: none;
+    display: block;
+    background-color:#68829d;
+}
+
+.nav li a:hover{
+    background-color: #0000007f;
+}
+
+.nav li{
+    float:left;
+}
+
+.nav li ul{
+    background-color:#68829d;
+    display: none;
+    position:absolute;
+    min-width: 140px;
+}
+
+.nav li:hover > ul{
+    display: block;
+}
+
 [aria-label="Cabecera principal"] nav {
 	display: flex;
 	flex-flow: row wrap;

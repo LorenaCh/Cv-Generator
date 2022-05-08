@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.cvgenerator.servicio.UsuarioServicio;
+import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class RegistroControlador {
@@ -23,4 +25,6 @@ public class RegistroControlador {
 		modelo.addAttribute("usuarios", servicio.listarUsuarios());
 		return "index";
 	}
+        
+        
 }

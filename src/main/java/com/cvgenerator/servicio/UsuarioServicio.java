@@ -20,4 +20,6 @@ public interface UsuarioServicio extends UserDetailsService{
         public Optional<Usuario> findById(Long id);
         
         public Usuario guardar(Usuario usuario);
+        
+        public Usuario findByEmail(String email);
 }
