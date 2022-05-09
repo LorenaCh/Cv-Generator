@@ -8,9 +8,10 @@
         <title>Document</title>
         <mvc:resources mapping="/static/**" location="/static/" />
         <link rel="stylesheet" href="/css/css.css" />
+    <link rel="stylesheet" href="/css/plantilla.css" />
     </head>
     <body>
-        <div th:replace="/plantilla :: header">
+        <div class="nav" th:replace="/plantilla :: header">
         </div>
         <div class="contenedor" id="mainWrap">
             <main>
