@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
-  /* * {outline: 1px solid red;}*/
+/* * {outline: 1px solid red;}*/
 body{
     font-family: "dm sans";
     margin: 0;
@@ -38,7 +38,7 @@ header h1{
 .listadehabilidades{
     padding: 0;
     list-style: none;
-    width: 50%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -91,7 +91,19 @@ h2{
     background-color: #f0d2cb;
     padding: 5px;
 }
-
-footer{
-    padding: 5px;
+.obj{
+    text-align: center;
+}
+li{
+    text-align: center;
+}
+.habb{
+    width: 45%;
+}
+.listadehabilidades2{
+    padding: 0;
+    list-style: none;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;  
 }
