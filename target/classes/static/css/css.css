@@ -197,9 +197,9 @@ html.pagHome [aria-label="Cabecera principal"] {
     /*background-color:#68829d;*/
 }
 
-.nav li a:hover{
+/* .nav li a:hover{
     background-color: #0000007f;
-}
+} */
 
 .nav li{
     float:left;
