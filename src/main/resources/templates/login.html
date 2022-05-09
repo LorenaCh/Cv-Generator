@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="/css/plantilla.css" />
     </head>
     <body>
-        <section>
+        <section id="cuadrados">
         </section>
             <div class="nav" th:replace="/plantilla :: header">
             </div>
@@ -67,7 +67,7 @@
          
          
          function createSquare() {
-         const section = document.querySelector('section');
+         const section = document.querySelector('section#cuadrados');
          const square = document.createElement('span');
          
          var size = Math.random() * 50;

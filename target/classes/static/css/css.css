@@ -232,6 +232,8 @@ html.pagHome [aria-label="Cabecera principal"] {
 	background-color: #000;
 }
 #mainWrap {
+        position:relative;
+        z-index: 9999;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -279,6 +281,10 @@ html:is(.pagFormLogin, .pagFormRegistro) #mainWrap main form:is([action="/login"
 	max-width: 30%;
 	height: auto;
 }
+#pie{
+    position: relative;
+    z-index: 998;
+}
 @media screen and (min-width: 768px) {
 	[aria-label="Cabecera principal"] > .contenedor {
 		flex-direction: row;
@@ -295,4 +301,14 @@ html:is(.pagFormLogin, .pagFormRegistro) #mainWrap main form:is([action="/login"
 	#homeHeroPlantillas > img {
 		max-width: 15%;
 	}
+}
+
+#cuadrados{
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+    top:0;
+    left:0;
+    overflow: hidden;
+    z-index: 1;
 }

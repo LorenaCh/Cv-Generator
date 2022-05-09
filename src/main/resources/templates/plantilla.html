@@ -103,8 +103,9 @@
       
 
     function createSquare(){
-      const section = document.querySelector('section');
-      const square = document.createElement('span');
+      const section = document.querySelector('section#cuadrados');
+      
+        const square = document.createElement('span');
 
       var size = Math.random() *50;
 
@@ -114,6 +115,7 @@
       square.style.top = Math.random() * innerHeight + 'px';
       square.style.left = Math.random() * innerWidth + 'px';
 
+      
       const bg = colors[Math.floor(Math.random() * colors.length)];
       square.style.background = bg;
 
