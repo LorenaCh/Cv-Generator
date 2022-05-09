@@ -1,6 +1,7 @@
 package com.cvgenerator.entidades;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,6 +25,7 @@ public class Persona implements Serializable {
     private String foto;
     private Date fNac;
     private String descripcion;
+    private ArrayList habilidades;
 
     @OneToOne(mappedBy = "persona")
     private Usuario usuario;
@@ -36,7 +38,7 @@ public class Persona implements Serializable {
     @OneToMany
     private List <Aptitudes> aptitud;*/
 
-    public Persona(Integer idPersona, Integer dni, String nombre, String apellido, String foto, Date fNac, String descripcion) {
+    public Persona(Integer idPersona, Integer dni, String nombre, String apellido, String foto, Date fNac, String descripcion, ArrayList habilidades) {
         this.idPersona = idPersona;
         this.dni = dni;
         this.nombre = nombre;
@@ -44,6 +46,7 @@ public class Persona implements Serializable {
         this.foto = foto;
         this.fNac = fNac;
         this.descripcion = descripcion;
+        this.habilidades = habilidades;
     }
 
     public Persona() {
@@ -112,10 +115,19 @@ public class Persona implements Serializable {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+    
+    public ArrayList getHabilidades() {
+        return habilidades;
+    }
+    
+
+    public void setHabilidades(ArrayList habilidades) {
+        this.habilidades = habilidades;
+    }
 
     @Override
     public String toString() {
-        return "Persona{" + "idPersona=" + idPersona + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", foto=" + foto + ", fNac=" + fNac + ", descripcion=" + descripcion + ", usuario=" + usuario + '}';
+        return "Persona{" + "idPersona=" + idPersona + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", foto=" + foto + ", fNac=" + fNac + ", descripcion=" + descripcion + ", usuario=" + usuario + ", habilidades=" + habilidades + '}';
     }
 
 }

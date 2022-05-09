@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.cvgenerator.repositorio.PersonaReposotorio;
+import java.util.ArrayList;
 
 /**
  *
@@ -25,7 +26,7 @@ public class PersonaServicio {
     private PersonaReposotorio repPersona;
     
     @Transactional(readOnly=false)
-    public void guardar(Integer dni, String nombre, String apellido, String foto, Date fNac, String descripcion ){
+    public void guardar(Integer dni, String nombre, String apellido, String foto, Date fNac, String descripcion, ArrayList habilidades){
         Persona per= new Persona();
         per.setDni(dni);
         per.setNombre(nombre);
@@ -33,6 +34,7 @@ public class PersonaServicio {
         per.setFoto(foto);
         per.setfNac(fNac);
         per.setDescripcion(descripcion);
+        per.setHabilidades(habilidades);
         repPersona.save(per);
         
     }
@@ -67,6 +69,8 @@ public class PersonaServicio {
     public List<Persona> findAll(){
         return repPersona.findAll();
     }
+    
+    
     
     public Persona guardar(Persona persona){
         return repPersona.save(persona);
