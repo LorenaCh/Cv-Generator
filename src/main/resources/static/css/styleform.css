@@ -65,7 +65,7 @@ label{
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    width: 38%;
+    width: 20%;
   }
   
   button {
