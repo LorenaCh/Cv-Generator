@@ -1,14 +1,17 @@
-*{
+/**{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
+}*/
+/*Innecesario*/
 
 body{
-    height: 100vh;
+    /*height: 100vh;*/
     width: 100%;
-    overflow: hidden;
-    background-color: black;
+    /*overflow: hidden;*/
+/*    Así no es posible desplazarse!*/
+    color: white;/*Override del modo claro*/
+    background-color: black;/*Override del modo claro*/
 }
 
 .nav{
@@ -184,6 +187,7 @@ body{
     text-align: center;
     transition: 0.5s;
     color: black;
+    top:-9px;
 }
 .contenedor-menu ul li.active a .icon{
     transform: translateY(-32px)
@@ -191,7 +195,7 @@ body{
 
 .contenedor-menu ul li a .text{
     position: absolute;
-    color: black;
+    color: white;
     font-weight: 400;
     font-size: 0.75em;
     letter-spacing: 0.05em;

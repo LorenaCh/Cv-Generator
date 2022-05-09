@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+/* * {outline: 1px solid red;}*/
+body{
+    font-family: "dm sans";
+    margin: 0;
+    ;
+    
+    }
+#contenedor{
+    width: 190mm;
+    min-height: 277mm;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fcfdf6;
+}   
+header h1{
+    text-align: center;
+    margin: 0;
+    padding: 0.4em;
+}
+
+.detalles {
+    margin-top: 1em;
+    text-align: center;
+    padding: 5px;
+}
+.lisma,.lisma2{
+    margin-bottom: 0.5em;
+}
+.lisma+p,.lisma2+p{
+    margin-top: 0;
+}
+
+#contenedor footer{
+    margin-top: auto;
+}
+.listadehabilidades{
+    padding: 0;
+    list-style: none;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.listadehabilidades li{
+    display: flex;
+    flex-wrap: wrap;
+}
+.listadehabilidades li progress{
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #b8baba;
+    margin-left: auto;
+}
+.listadehabilidades li progress::-webkit-progress-bar{
+    background-color: #b8baba;
+
+}
+.listadehabilidades li progress::-webkit-progress-value{
+    background-color: #5b504c;
+
+}
+.listadehabilidades li progress::-moz-progress-bar{
+    background-color: #5b504c;
+
+}
+.info{
+    text-align: right;
+    margin: 0em;
+}
+h4{
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+.formacion{
+    margin-top: 0em;
+}
+.habilidades{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px ;
+    background-color: #3f5e78;
+    color: #f0d2cb;
+}
+h2{
+    background-color: #f0d2cb;
+    padding: 5px;
+}
+.obj{
+    text-align: center;
+}
+li{
+    text-align: center;
+}
+.habb{
+    width: 45%;
+}
+.listadehabilidades2{
+    padding: 0;
+    list-style: none;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;  
+}

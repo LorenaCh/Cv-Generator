@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+:root {
+	--fuente: Lato, sans-serif;
+	--tamanio-fuente-base: medium;
+	--tamanio-fuente-xx-grande: calc(1rem * 1.2 * 1.2 * 1.2);
+	--tamanio-fuente-x-grande: calc(1rem * 1.2 * 1.2);
+	--tamanio-fuente-grande: calc(1rem * 1.2);
+	--tamanio-fuente: 1rem;
+	--tamanio-fuente-pequenio: calc(1rem / 1.2);
+	--tamanio-fuente-x-pequenio: calc(1rem / 1.2 / 1.2);
+	--interlineado: 1.5;
+	--interlineado-alt: 1.3;
+	--espacio: 1rem;
+	--ancho-contenedor: 70ch;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+html:focus-within {
+	scroll-behavior: smooth;
+}
+body {
+	font: 1rem/var(--interlineado) var(--fuente);
+	text-rendering: optimizeSpeed;
+}
+@media screen {
+	body {
+		margin: 0;
+		min-height: 100vh;
+	}
+}
+h1, h2, h3, h4 {
+	line-height: var(--interlineado-alt);
+	margin: 0 0 calc(var(--espacio) / 2);
+}
+p, figure, blockquote, ul, ol, dl {
+	margin: 0 0 var(--espacio);
+	padding: 0;
+}
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+input, button, textarea, select {
+	font: inherit;
+}
+ul[role='list'], ol[role='list'] {
+	list-style: none;
+}
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+.contenedor {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	max-width: var(--ancho-contenedor);
+}
+
+#masthead {
+	background-color: gold;
+	margin-bottom: var(--espacio);
+	padding: calc(var(--espacio) / 1.5) 0;
+}
+#masthead h1 {
+	margin-bottom: 0;
+}
+.detalle {
+	margin-bottom: var(--espacio);
+}
+.detalle header h2 {
+	font-size: var(--tamanio-fuente-pequenio);
+	font-weight: 900;
+	line-height: 1;
+	text-transform: uppercase;
+	letter-spacing: .125em;
+	color: white;
+	background-color: black;
+	margin-bottom: var(--espacio);
+	padding: calc(var(--espacio) / 2);
+	display: inline-block;
+}
+.detalle.detalleExperiencia {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--espacio);
+}
+.detalle.detalleExperiencia header {
+	flex: 1 0 100%;
+}
+.detalle.detalleExperiencia header h2 {
+	margin-bottom: 0;
+}
+.detalle.detalleExperiencia section {
+	flex: 1 0;
+}
+.personal {
+	display: flex;
+	gap: var(--espacio);
+}
+.detalle.perfil, .detalle.datos {
+	flex: 1 0 50%;
+}
+.detalle.perfil p {
+	text-align: justify;
+}
