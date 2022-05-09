@@ -43,7 +43,6 @@ html {
 	font-size: var(--tamanio-fuente-base);
 	-webkit-text-size-adjust: 100%;
 	text-size-adjust: 100%;
-	overflow-x: hidden;
 	scroll-behavior: smooth;
 }
 @media screen and (prefers-reduced-motion: reduce) {
@@ -65,6 +64,7 @@ body {
 	text-rendering: optimizeSpeed;
 	margin: 0;
 	min-height: 100vh;
+	overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6 {
 	line-height: var(--interlineado-alt);
@@ -160,6 +160,9 @@ input, select, textarea, button {
 }
 
 /*layout*/
+body {
+    padding-top: 105px;
+}
 [aria-label="Cabecera principal"] {
 	color: #fff;
 	background-color: #68829d;
@@ -191,7 +194,7 @@ html.pagHome [aria-label="Cabecera principal"] {
     padding:10px 15px;
     text-decoration: none;
     display: block;
-    background-color:#68829d;
+    /*background-color:#68829d;*/
 }
 
 .nav li a:hover{
@@ -237,7 +240,7 @@ html.pagHome [aria-label="Cabecera principal"] {
 #mainWrap > aside {
 	flex: 1 0
 }
-html:is(.pagFormLogin, .pagFormRegistro) #mainWrap main form:is([action="/usuario/login"], [action="/usuario/registro"]) > button[type="submit"] {
+html:is(.pagFormLogin, .pagFormRegistro) #mainWrap main form:is([action="/login"], [action="/registro"]) > button[type="submit"] {
 	margin: var(--espaciado) 0;
 }
 #listaPlantillas {
