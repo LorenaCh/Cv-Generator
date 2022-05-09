@@ -187,6 +187,7 @@ body{
     text-align: center;
     transition: 0.5s;
     color: black;
+    top:-9px;
 }
 .contenedor-menu ul li.active a .icon{
     transform: translateY(-32px)
