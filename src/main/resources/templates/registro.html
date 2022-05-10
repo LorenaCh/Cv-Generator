@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="/css/plantilla.css" type="text/css">
     </head>
     <body>
+        <section id="cuadrados">
+        </section>
         <div th:replace="/plantilla :: header" />
         <div class="contenedor" id="mainWrap">
             <main>
@@ -51,4 +53,43 @@
             </div>
         </footer>
     </body>
+    <script>
+
+        const list = document.querySelectorAll(".list");
+        function activeLink() {
+            list.forEach((item) => item.classList.remove("active"));
+            this.classList.add("active");
+        }
+        list.forEach((item) => item.addEventListener("click", activeLink));
+
+        //Javascript del fondo de pantalla -> el tag section
+        
+         const colors = ['#06f5bdb3',
+         '#f8d951'];
+         
+         
+         function createSquare() {
+         const section = document.querySelector('section#cuadrados');
+         const square = document.createElement('span');
+         
+         var size = Math.random() * 50;
+         
+         square.style.width = 20 + size + 'px';
+         square.style.height = 20 + size + 'px';
+         
+         square.style.top = Math.random() * innerHeight + 'px';
+         square.style.left = Math.random() * innerWidth + 'px';
+         
+         const bg = colors[Math.floor(Math.random() * colors.length)];
+         square.style.background = bg;
+         
+         section.appendChild(square);
+         
+         setTimeout(() => {
+         square.remove();
+         }, 5000);
+         }
+         
+         setInterval(createSquare, 150);
+    </script>
 </html>

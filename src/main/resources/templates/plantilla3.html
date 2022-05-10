@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" 
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <mvc:resources mapping="/static/**" location="/static/" />
+        <link rel="stylesheet" href="/css/plantilla.css" />
+
+    </head>
+    <body onload="navegadorActivo()">
+        <div class="nav" th:fragment="header">
+            <div class="contenedor-logo">
+                <div class="contenedor-img">
+                    <img
+                        src="/img/logo-img.jpeg"
+                        alt="imagen-logo"
+                        />
+                </div>
+                <div class="contenedor-nombre">
+                    <span class="yellow">¡</span>
+                    <span class="yellow">E</span>
+                    <span class="yellow">G</span>
+                    <span class="yellow">G</span>
+                    <span class="blue">E</span>
+                    <span class="blue">N</span>
+                    <span class="blue">E</span>
+                    <span class="blue">R</span>
+                    <span class="blue">A</span>
+                    <span class="blue">T</span>
+                    <span class="blue">O</span>
+                    <span class="blue">R</span>
+                    <span class="blue">!</span>
+                </div>
+            </div>
+            <div class="nav-main">
+                <div class="barra"></div>
+                <div class="contenedor-menu">
+                    <ul>
+                        <li class="list " id="home">
+                            <a th:href="@{/home}">
+                                <span class="icon">
+                                    <img
+                                        src="/img/home-outline.svg"
+                                        alt=""
+                                        />
+                                </span>
+                                <span class="text">Inicio</span>
+                            </a>
+                        </li>
+                        <li class="list">
+                            <a href="#">
+                                <span class="icon">
+                                    <img
+                                        src="/img/document-outline.svg"
+                                        alt=""
+                                        />
+                                </span>
+                                <span class="text">Plantillas</span>
+                            </a>
+                        </li>
+                        <li class="list" sec:authorize="isAuthenticated() == false" id="iniciarSesion">
+                            <a th:href="@{/login}">
+                                <span class="icon">
+                                    <img
+                                        src="/img/log-in-outline.svg"
+                                        alt=""
+                                        />
+                                </span>
+                                <span class="text">Iniciar sesion</span>
+                            </a>
+                        </li>
+                        <li class="list" sec:authorize="isAuthenticated()" id="user">
+                            <a href="#">
+                                <span class="icon">
+                                    <img
+                                        src="/img/person-outline.svg"
+                                        alt=""
+                                        />
+                                </span>
+                                <span class="text" sec:authentication="name">Usuario</span>
+                            </a>
+                            <ul>
+                                <li><a th:href="@{/registro/cambiarPassword}">Cambiar contraseña</a></li>
+                            </ul>
+                        </li>
+                        <li class="list" sec:authorize="isAuthenticated() == false">
+                            <a th:href="@{/registro}">
+                                <span class="icon">
+                                    <img
+                                        src="/img/id-card-outline.svg"
+                                        alt=""
+                                        />
+                                </span>
+                                <span class="text" >Registrate</span>
+                            </a>
+                        </li>
+                        <li sec:authorize="isAuthenticated()">
+                            <a th:href="@{/logout}">
+                                <span class="icon">
+                                    <img
+                                        src="/img/log-out-outline.svg"
+                                        alt=""
+                                        />
+                                </span>
+                                <span class="text" >Cerrar sesion</span>                                
+                            </a>
+                        </li>
+                        <div class="indicator"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <section></section> 
+        <footer th:fragment="footer" id="pie">
+            <div class="contenedor">
+                Copyright.
+                <a href="/">Términos</a>
+            </div>
+        </footer>
+    </body>
+    <script>
+        
+        
+        const list = document.querySelectorAll(".list");
+        function activeLink() {
+            list.forEach((item) => item.classList.remove("active"));
+            this.classList.add("active");
+        }
+        list.forEach((item) => item.addEventListener("click", activeLink));
+
+        function navegadorActivo(){
+            var active = document.getElementById('iniciarSesion');
+            active.classList().add("active");
+            console.log("agrego active");
+        }
+        const colors = ['#06f5bdb3',
+            '#f8d951']
+
+
+        function createSquare() {
+            const section = document.querySelector('section#cuadrados');
+
+            const square = document.createElement('span');
+
+            var size = Math.random() * 50;
+
+            square.style.width = 20 + size + 'px';
+            square.style.height = 20 + size + 'px';
+
+            square.style.top = Math.random() * innerHeight + 'px';
+            square.style.left = Math.random() * innerWidth + 'px';
+
+
+            const bg = colors[Math.floor(Math.random() * colors.length)];
+            square.style.background = bg;
+
+            section.appendChild(square);
+
+            setTimeout(() => {
+                square.remove()
+            }, 5000);
+        }
+
+        setInterval(createSquare, 150);
+    </script>
+</html>

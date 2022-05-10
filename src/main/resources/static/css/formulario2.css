@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    display: block;
+}
+
+.contenedor-main-nav{
+    position: relative;
+    top: 70px;
+    width: 100%;
+    height: 100%;
+    background: #161616;
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-lateral{
+    position: absolute;
+    height: 100%;   
+    left: 0px;
+    width: 70px;
+    background: #161616;
+    box-shadow: 10px 0 0 #06f5bdb3;
+    overflow-x: hidden;
+    border-left: 10px solid #161616;
+    transition: 0.5s;
+    z-index: 3;
+}
+
+.nav-lateral:hover{
+    width: 250px;
+    z-index: 3;
+}
+
+.nav-lateral ul{
+    position: relative;
+    left: 0px;
+    top: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 20px;
+    list-style: none;
+    overflow: hidden;
+}
+
+.nav-lateral ul li{
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.nav-lateral ul li.active{
+    background-color: #06f5bdb3;
+}
+
+.nav-lateral ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-lateral ul li a .icon{
+    position: relative;
+    display: flex;
+    width: 60px;
+    height:60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-lateral ul li a .icon img{
+    height: 32px;
+    width: 32px;
+    position:relative;
+    font-size: 1.5em;
+    z-index: 1;
+    margin-left:10px; 
+}
+
+.nav-lateral ul li a .title{
+    position:relative;
+    display: block;
+    padding-left: 30px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.form{
+    position: relative;
+    height: 100%;
+    width: 40%;
+    left: 80px;
+    background: transparent;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.item-form{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background: transparent;
+    display:none;
+}
+
+.activo{
+    display: block;
+    background: transparent;
+    z-index: 2;
+}
+
+.vista-previa{
+    height: 100%;
+    width: 50%;
+    background: #4fc3f7;
+}

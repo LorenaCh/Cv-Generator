@@ -281,6 +281,26 @@ html:is(.pagFormLogin, .pagFormRegistro) #mainWrap main form:is([action="/login"
 	max-width: 30%;
 	height: auto;
 }
+
+@media screen {
+	#homeHero {
+		color: #fff;
+		text-shadow: .1em .1em .1em black, -.1em .1em .1em black, -.1em -.1em .1em black, .1em -.1em .1em black;
+		background-color: #4f5160;
+		background-image: url(/img/proyecto_pagina_imprimir2.jpg);
+		background-position: center top;
+		background-size: 100%;
+		margin-bottom: var(--espaciado);
+		padding: var(--espaciado);
+	}
+	#homeHero > .contenedor {
+		min-height: 100vh;
+	}
+	#homeHero .boton {
+		text-shadow: none;
+	}
+}
+
 #pie{
     position: relative;
     z-index: 998;

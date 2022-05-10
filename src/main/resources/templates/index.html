@@ -6,9 +6,11 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Document</title>
-	<link rel="stylesheet" href="css/css.css" />
+        <link rel="stylesheet" href="/css/css.css" />
+        <link rel="stylesheet" href="/css/plantilla.css" />
+        <mvc:resources mapping="/static/**" location="/static/" />
 </head>
-<body>
+<body >
     <div th:replace="/plantilla :: header">
     </div>
 	<div id="homeHero">
@@ -33,8 +35,38 @@
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit amet aliquid minima soluta, molestiae deleniti nemo blanditiis qui magnam tempore optio animi vero aut? Adipisci libero laborum maxime quis labore.</p>
 		</main>
 	</div>
-    <footer th:replace="/plantilla :: footer" id="pie">
-        
-    </footer>
+    <footer th:replace="/plantilla :: footer" id="pie"></footer>
 </body>
+    <script>
+
+        //Javascript del fondo de pantalla -> el tag section
+        
+         const colors = ['#06f5bdb3',
+         '#f8d951'];
+         
+         
+         function createSquare() {
+         const section = document.querySelector('section#cuadrados');
+         const square = document.createElement('span');
+         
+         var size = Math.random() * 50;
+         
+         square.style.width = 20 + size + 'px';
+         square.style.height = 20 + size + 'px';
+         
+         square.style.top = Math.random() * innerHeight + 'px';
+         square.style.left = Math.random() * innerWidth + 'px';
+         
+         const bg = colors[Math.floor(Math.random() * colors.length)];
+         square.style.background = bg;
+         
+         section.appendChild(square);
+         
+         setTimeout(() => {
+         square.remove();
+         }, 5000);
+         }
+         
+         setInterval(createSquare, 150);
+    </script>
 </html>

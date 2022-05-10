@@ -1,23 +1,20 @@
-/**{
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}*/
-/*Innecesario*/
+}
 
 body{
-    /*height: 100vh;*/
+    height: 100vh;
     width: 100%;
-    /*overflow: hidden;*/
-/*    Así no es posible desplazarse!*/
-    color: white;/*Override del modo claro*/
-    background-color: black;/*Override del modo claro*/
+    overflow: hidden;
+    background-color: black;
 }
 
 .nav{
     top: 0;
     width: 100%;
-    height: 105px;
+    height: 70px;
     background-color: black;
     display: flex;
     position: absolute;
@@ -26,15 +23,9 @@ body{
     z-index: 7;
 }
 
-.barra{
-    width: 100%;
-    height: 35px;
-    background-color: black;
-}
-
 .nav-main{
     width: 100%;
-    height: 105px;
+    height: 70px;
     display: flex;
     flex-direction: column;
     background: linear-gradient(270deg,rgba(6, 245, 189, 0.7),black);
@@ -143,13 +134,127 @@ body{
     }
 }
 
+.contenedor-main{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .contenedor-menu{
-    height: 70px;
     position: relative;
     display: flex;
+    margin-bottom: auto;
+    margin-top: auto;
     margin-left: auto;
 }
 
+.contenedor-menu > ul{
+    position: relative;
+    font-size: 1em;
+    list-style: none;
+    display: flex;
+}
+
+.contenedor-menu ul > li{
+    padding: 5px 10px;
+    height: 40px;
+    position:relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-menu ul li > a{
+    top:0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255,0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255,0.1);
+    border-radius: 30px;
+    color: #fff;
+    z-index: 1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5s;
+    position: relative;
+    backdrop-filter: blur(20px);
+}
+
+.contenedor-menu ul li:hover > a{
+    letter-spacing: 3px;
+}
+
+.contenedor-menu ul li > a::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 50%;
+    height: 100%;
+    background:linear-gradient(to left,rgba(255,255,255,0.15),transparent);
+    transform: skewX(45deg) translateX(0);
+    transition: 0.5s;
+}
+
+.contenedor-menu ul li:hover > a::before{
+    transform: skewX(45deg) translateX(110%);
+}
+
+.contenedor-menu ul > li::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+    width: 40px;
+    height: 10px;
+    background: #f8d951;
+    border-radius: 30px;
+    transition: 0.5s;
+    transition-delay: 0s;
+} 
+
+.contenedor-menu ul > li:hover::before{
+    bottom: 0;
+    height: 50%;
+    width: 50%;
+    border-radius: 30px;
+    transition-delay:0.1s ;
+}
+/* 
+.contenedor-menu ul > li::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0px;
+    width: 40px;
+    height: 20px;
+    background: #f8d951;
+    border-radius: 30px;
+    transition: 0.5s;
+    transition-delay: 0s;
+} 
+
+.contenedor-menu ul > li:hover::after{
+    bottom: 0;
+    height: 50%;
+    width: 50%;
+    border-radius: 30px;
+    transition-delay:0.1s ;
+} */
+
+/* 
 .contenedor-menu ul li a span > img{
     height: 32px;
 }
@@ -187,7 +292,6 @@ body{
     text-align: center;
     transition: 0.5s;
     color: black;
-    top:-9px;
 }
 .contenedor-menu ul li.active a .icon{
     transform: translateY(-32px)
@@ -195,7 +299,7 @@ body{
 
 .contenedor-menu ul li a .text{
     position: absolute;
-    color: white;
+    color: black;
     font-weight: 400;
     font-size: 0.75em;
     letter-spacing: 0.05em;
@@ -260,7 +364,9 @@ body{
 
 .contenedor-menu ul li:nth-child(4).active ~ .indicator{
     transform: translateX(calc(100px * 3));
-}
+} */
+
+
 
 section{
     height: 100vh;

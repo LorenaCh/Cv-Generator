@@ -10,9 +10,7 @@
         <link rel="stylesheet" href="/css/css.css" />
         <link rel="stylesheet" href="/css/plantilla.css" />
     </head>
-    <body>
-        <section id="cuadrados">
-        </section>
+    <body onload="navegadorActivo()">
             <div class="nav" th:replace="/plantilla :: header">
             </div>
             <div class="contenedor" id="mainWrap">
@@ -44,15 +42,19 @@
                     </form>
                 </main>
             </div>
-            <footer id="pie">
-                <div class="contenedor">
-                    Copyright.
-                    <a href="/">Términos</a>
-                </div>
+        <section id="cuadrados">
+        </section>
+            <footer th:replace="/plantilla :: footer" id="pie">
             </footer>
     </body>
     <script>
 
+        function navegadorActivo(){
+            var active = document.getElementById('iniciarSesion');
+            active.classList.add("active");
+            console.log("agrego active");
+        }
+        
         const list = document.querySelectorAll(".list");
         function activeLink() {
             list.forEach((item) => item.classList.remove("active"));

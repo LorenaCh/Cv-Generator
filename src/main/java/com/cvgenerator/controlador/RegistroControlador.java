@@ -19,6 +19,11 @@ public class RegistroControlador {
 	public String iniciarSesion() {
 		return "login";
 	}
+        
+        @GetMapping("/home")
+        public String index(){
+            return "index";
+        }
 	
 	@GetMapping("/")
 	public String verPaginaDeInicio(Model modelo) {
@@ -26,5 +31,20 @@ public class RegistroControlador {
 		return "bienvenida";
 	}
         
+        
+        @GetMapping("/cvpersonal")
+        public String cv_personal(){
+            return "/plantillascv/formulario";
+        }
+        
+        @GetMapping("/plantillacv")
+        public String plantilla(){
+            return "/plantillascv/p1";
+        }
+        
+        @GetMapping("/formulario")
+        public String formulario(){
+            return "formulario";
+        }
         
 }

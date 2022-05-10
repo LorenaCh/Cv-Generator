@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"  lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Plantilla 1</title>
-    <link rel="Stylesheet" href="/Documents/Html/Cv-Generator/src/main/resources/static/css/p1.css">
+        <mvc:resources mapping="/static/**" location="/static/" />
+    <link rel="Stylesheet" href="/css/p1.css">
 </head>
 <body>
-    <div id="contenedor">
+    <div th:fragment="p1" id="contenedor">
         
         <header>
             <h1>Nombre Completo</h1>

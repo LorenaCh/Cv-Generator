@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/plantilla.css" />
+        <link rel="stylesheet" href="/css/formulario2.css" />
+    </head>
+    <body>
+        <div th:replace="/plantilla :: header" class="nav">
+            
+        </div>
+        <div class="contenedor-main-nav">
+            <div class="nav-lateral">
+                <ul>
+                    <li class="list perfil active">
+                        <a href="#">
+                            <span class="icon"><img src="/img/formulario/usuario.png"></span>
+                            <span class="title">Perfil</span>
+                        </a></li>
+                    <li class="list resumen">
+                        <a href="#">
+                            <span class="icon"><img src="/img/formulario/editar.png"></span>
+                            <span class="title">Resumen</span>
+                        </a>
+                    </li>
+                    <li class="list laboral">
+                        <a href="#">
+                            <span class="icon"><img src="/img/formulario/laboral.png"></span>
+                            <span class="title">Experiencia Laboral</span>
+                        </a>
+                    </li>
+                    <li class="list academico">
+                        <a href="#">
+                            <span class="icon"><img src="/img/formulario/academico.png"></span>
+                            <span class="title">Formacion Academica</span>
+                        </a>
+                    </li>
+                    <li class="list aptitud">
+                        <a href="#">
+                            <span class="icon"><img src="/img/formulario/aptitud.png"></span>
+                            <span class="title">Aptitud</span>
+                        </a>
+                    </li>
+                    <li class="list conocimiento">
+                        <a href="#">
+                            <span class="icon"><img src="/img/formulario/conocimiento.png"></span>
+                            <span class="title">Conocimiento</span>
+                        </a>
+                    </li>
+                    <li class="list idioma">
+                        <a href="#">
+                            <span class="icon"><img src="/img/formulario/idioma.png"></span>
+                            <span class="title">Idioma</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="form">
+                <div id="perfil" class="item-form activo">
+                    estoy en perfil
+                </div>
+                <div id="resumen" class="item-form">
+                    resumen
+                </div>
+                <div id="laboral" class="item-form">
+                    laboral
+                </div>
+                <div id="academico" class="item-form">
+                    academico
+                </div>
+                <div id="aptitud" class="item-form">
+                    aptitud
+                </div>
+                <div id="conocimiento" class="item-form">
+                    conocimiento
+                </div>
+                <div id="idioma" class="item-form">
+                    idioma
+                </div>
+            </div>
+            <div class="vista-previa">
+
+            </div>
+        </div>
+    </body>
+    <script>
+        const list = document.querySelectorAll('.list');
+        const forms = document.querySelectorAll('.item-form');
+        function activeLink() {
+            list.forEach((item) => {
+                item.classList.remove('active');;
+            });
+            forms.forEach((form)=>{
+                form.classList.remove('activo');
+                form.style.display="none";
+            });
+            this.classList.add('active');
+            
+            var activo = document.getElementById(this.classList[1]);
+            activo.classList.add('activo');
+            activo.style.display = "block";
+        }
+        list.forEach((item) => item.addEventListener('click', activeLink));
+    </script>
+</html>
