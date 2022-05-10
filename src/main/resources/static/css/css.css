@@ -242,7 +242,7 @@ html.pagHome [aria-label="Cabecera principal"] {
 #mainWrap > aside {
 	flex: 1 0
 }
-html:is(.pagFormLogin, .pagFormRegistro) #mainWrap main form:is([action="/login"], [action="/registro"]) > button[type="submit"] {
+html:is(.pagFormLogin, .pagFormRegistro, .pagFormCambiarContrasenia) #mainWrap main form:is([action="/login"], [action="/registro"], [action="/registro/changePassword"]) > button[type="submit"] {
 	margin: var(--espaciado) 0;
 }
 #listaPlantillas {
