@@ -136,6 +136,7 @@ body{
 
 .plantilla_1 .expForm .contenedor{
     margin: 5px 0px;
+    word-wrap: break-word;
 }
 
 .plantilla_1 .expForm .contenedor .linea{
@@ -165,4 +166,10 @@ body{
     font-size: 4.9pt;
     margin: 6px 0px;
     margin-left: 12px;
+}
+
+.plantilla_1 #p-resumen{
+    font-size: 7pt;
+    color: #372b23;
+    width: 95%;
 }
