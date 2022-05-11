@@ -19,11 +19,15 @@ public class Persona implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_persona")
     private Integer idPersona;
-    private Integer dni;
     private String nombre;
     private String apellido;
+    private String profesion;
+    private Integer telefono;
     private String foto;
-    private Date fNac;
+    private String correo;
+    private Integer edad;
+    private String nacionalidad;
+    private String direccion;
     private String descripcion;
     private ArrayList habilidades;
 
@@ -38,17 +42,7 @@ public class Persona implements Serializable {
     @OneToMany
     private List <Aptitudes> aptitud;*/
 
-    public Persona(Integer idPersona, Integer dni, String nombre, String apellido, String foto, Date fNac, String descripcion, ArrayList habilidades) {
-        this.idPersona = idPersona;
-        this.dni = dni;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.foto = foto;
-        this.fNac = fNac;
-        this.descripcion = descripcion;
-        this.habilidades = habilidades;
-    }
-
+    
     public Persona() {
     }
 
@@ -60,16 +54,16 @@ public class Persona implements Serializable {
         this.idPersona = idPersona;
     }
 
-    public Integer getDni() {
-        return dni;
-    }
-
-    public void setDni(Integer dni) {
-        this.dni = dni;
-    }
-
     public String getNombre() {
         return nombre;
+    }
+
+    public Integer getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(Integer telefono) {
+        this.telefono = telefono;
     }
 
     public void setNombre(String nombre) {
@@ -92,16 +86,48 @@ public class Persona implements Serializable {
         this.foto = foto;
     }
 
-    public Date getfNac() {
-        return fNac;
+    public Integer getEdad() {
+        return edad;
     }
 
-    public void setfNac(Date fNac) {
-        this.fNac = fNac;
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public void setEdad(Integer edad) {
+        this.edad = edad;
+    }
+
+    public String getNacionalidad() {
+        return nacionalidad;
+    }
+
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad = nacionalidad;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public String getDescripcion() {
         return descripcion;
+    }
+
+    public String getProfesion() {
+        return profesion;
+    }
+
+    public void setProfesion(String profesion) {
+        this.profesion = profesion;
     }
 
     public void setDescripcion(String descripcion) {
@@ -127,7 +153,6 @@ public class Persona implements Serializable {
 
     @Override
     public String toString() {
-        return "Persona{" + "idPersona=" + idPersona + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", foto=" + foto + ", fNac=" + fNac + ", descripcion=" + descripcion + ", usuario=" + usuario + ", habilidades=" + habilidades + '}';
+        return "Persona{" + "idPersona=" + idPersona + ", nombre=" + nombre + ", apellido=" + apellido + ", foto=" + foto + ", edad=" + edad + ", nacionalidad=" + nacionalidad + ", direccion=" + direccion + ", descripcion=" + descripcion + ", habilidades=" + habilidades + ", usuario=" + usuario + '}';
     }
-
 }

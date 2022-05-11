@@ -14,4 +14,8 @@ public class RolServicio {
     public Rol buscarPorNombre(String nombre){
         return rolRepositorio.findByNombre(nombre);
     }
+    
+    public Rol guardar(Rol rol){
+        return rolRepositorio.save(rol);
+    }
 }

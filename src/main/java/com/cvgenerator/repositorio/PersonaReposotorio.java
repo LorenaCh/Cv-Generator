@@ -16,5 +16,4 @@ import org.springframework.stereotype.Repository;
 
   @Repository
 public interface PersonaReposotorio extends JpaRepository<Persona, Integer>{      
-      public Persona findByDni(Integer dni);
 }

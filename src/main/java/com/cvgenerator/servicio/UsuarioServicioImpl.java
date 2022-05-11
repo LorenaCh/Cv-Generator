@@ -44,6 +44,10 @@ public class UsuarioServicioImpl implements UsuarioServicio {
     public Usuario guardar(UsuarioRegistroDTO registroDTO) {
 
         Rol rol = rolServicio.buscarPorNombre("ROLE_USER");
+        if(rol == null){
+            rol = new Rol("ROLE_USER");
+            rol = rolServicio.guardar(rol);
+        }
         Persona persona = personaServicio.guardar(new Persona());
         Usuario usuario = new Usuario(registroDTO.getEmail(),
                 passwordEncoder.encode(registroDTO.getPassword()), 

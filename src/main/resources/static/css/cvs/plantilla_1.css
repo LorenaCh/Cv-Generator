@@ -1,0 +1,168 @@
+@import url('https://fonts.google.com/specimen/Abril+Fatface?query=abril+fa#standard-styles');
+@import url('https://fonts.google.com/specimen/Open+Sans?query=open+sans');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    background: #161616;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plantilla_1{
+    width: 105mm;
+    height: 148.5mm;
+    background: white;
+    position: relative;
+}
+
+.plantilla_1 .perfil{
+    position: absolute;
+    top: 0;
+    left: 15.5px;
+    width: 148px;
+    height: 100%;
+    background: rgb(175, 156, 145);
+    
+}
+
+.plantilla_1 .titulo{
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    width: 100%;
+    height: 81px;
+    background: rgb(116, 101, 90);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.plantilla_1 .titulo .contenedor{
+    background-color: transparent;
+    width: 233px;
+    margin-left: auto;
+    color:white;
+}
+
+ .plantilla_1 .titulo .contenedor .NomAp{
+    padding: 2px 8px;
+    font-size: 19.95pt;
+    font-family: 'Abril Fatface';
+    font-weight: 1000;
+}
+
+.plantilla_1 .titulo .contenedor .profesion{
+    padding: 2px 8px;
+    font-size: 9.8pt;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.plantilla_1 #foto{
+    width: 109.5px;
+    height: 81px;
+    background: #fff;
+    margin: 20px 19px;
+}
+
+.plantilla_1 .datos{
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-left: 18px;
+    height: 440px;
+}
+
+.plantilla_1 .datos > .contenedor{
+    background: transparent;
+    color: white;
+    margin:5px 0px;
+}
+
+.plantilla_1 .title{
+    font-size: 8.3pt;
+    font-weight: 750;
+    font-family: 'Open Sans', sans-serif;
+    padding: 3px 0px;
+}
+
+.plantilla_1 .perfil .datos .contenedor .linea{
+    background: white;
+    height: 1px;
+    width: 100%;
+    margin: 3px 0px;
+}
+
+.plantilla_1 .perfil .datos .contenedor .item{
+    margin: 5px 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 7pt;
+}
+
+.plantilla_1 .simple{
+    margin: 12px 0px;
+    list-style: none;
+}
+
+.plantilla_1 .simple > li{
+    margin: 5px 0px;
+}
+
+.plantilla_1 .lista{
+    margin: 12px 0px;
+    margin-left: 13px;
+}
+
+.plantilla_1 .lista > li{
+    margin: 5px 0px;
+}
+
+.plantilla_1 .expForm{
+    position: absolute;
+    height: 441px;
+    width: 216px;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.plantilla_1 .expForm .contenedor{
+    margin: 5px 0px;
+}
+
+.plantilla_1 .expForm .contenedor .linea{
+    height: 1px;
+    width: 100%;
+    background: #372b23;
+    margin: 3px 0px;
+}
+
+.plantilla_1 .expForm .contenedor .items .subtitle{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 9pt;
+    font-family: 'Open Sans', sans-serif;
+    color: #372b23;
+    font-weight: 700;
+}
+
+.plantilla_1 .expForm .contenedor .items .tiempo{
+    font-size: 7pt;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(123, 115, 110);
+}
+
+.plantilla_1 .expForm .contenedor .items .tareas .lista{
+    color: #372b23;
+    font-size: 4.9pt;
+    margin: 6px 0px;
+    margin-left: 12px;
+}

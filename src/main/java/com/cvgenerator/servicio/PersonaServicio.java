@@ -25,20 +25,6 @@ public class PersonaServicio {
       @Autowired
     private PersonaReposotorio repPersona;
     
-    @Transactional(readOnly=false)
-    public void guardar(Integer dni, String nombre, String apellido, String foto, Date fNac, String descripcion, ArrayList habilidades){
-        Persona per= new Persona();
-        per.setDni(dni);
-        per.setNombre(nombre);
-        per.setApellido(apellido);
-        per.setFoto(foto);
-        per.setfNac(fNac);
-        per.setDescripcion(descripcion);
-        per.setHabilidades(habilidades);
-        repPersona.save(per);
-        
-    }
-    
     public Persona guardar(Usuario usuario){
         Persona persona = new Persona();
         persona.setUsuario(usuario);
@@ -58,11 +44,6 @@ public class PersonaServicio {
     @Transactional(readOnly=true)
     public Persona findById(Integer id){
         return repPersona.findById(id).orElse(null);
-    }
-    
-    @Transactional(readOnly = true)
-    public Persona findByDni(Integer dni){
-        return repPersona.findByDni(dni);
     }
     
     @Transactional(readOnly=true)

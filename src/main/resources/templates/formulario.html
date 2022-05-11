@@ -7,7 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/css/plantilla.css" />
         <link rel="stylesheet" href="/css/formulario2.css" />
-        <link rel="icon" href="/img/logo-imgvector.svg">
+        <link rel="stylesheet" href="/css/cvs/plantilla_1.css" />
+        <link rel="icon" href="/img/logo-imgvector.svg" />
 
     </head>
     <body>
@@ -25,48 +26,48 @@
                 <ul>
                     <li class="list perfil active">
                         <a href="#">
-                            <span class="icon"><img src="/img/formulario/usuario.png"></span>
+                            <span class="icon"><img src="/img/formulario/usuario.png" /></span>
                             <span class="title">Perfil</span>
                         </a></li>
                     <li class="list resumen">
                         <a href="#">
-                            <span class="icon"><img src="/img/formulario/editar.png"></span>
+                            <span class="icon"><img src="/img/formulario/editar.png" /></span>
                             <span class="title">Resumen</span>
                         </a>
                     </li>
                     <li class="list laboral">
                         <a href="#">
-                            <span class="icon"><img src="/img/formulario/laboral.png"></span>
+                            <span class="icon"><img src="/img/formulario/laboral.png" /></span>
                             <span class="title">Experiencia Laboral</span>
                         </a>
                     </li>
                     <li class="list academico">
                         <a href="#">
-                            <span class="icon"><img src="/img/formulario/academico.png"></span>
+                            <span class="icon"><img src="/img/formulario/academico.png" /></span>
                             <span class="title">Formacion Academica</span>
                         </a>
                     </li>
                     <li class="list aptitud">
                         <a href="#">
-                            <span class="icon"><img src="/img/formulario/aptitud.png"></span>
+                            <span class="icon"><img src="/img/formulario/aptitud.png" /></span>
                             <span class="title">Aptitud</span>
                         </a>
                     </li>
                     <li class="list conocimiento">
                         <a href="#">
-                            <span class="icon"><img src="/img/formulario/conocimiento.png"></span>
+                            <span class="icon"><img src="/img/formulario/conocimiento.png" /></span>
                             <span class="title">Conocimiento</span>
                         </a>
                     </li>
                     <li class="list idioma">
                         <a href="#">
-                            <span class="icon"><img src="/img/formulario/idioma.png"></span>
+                            <span class="icon"><img src="/img/formulario/idioma.png" /></span>
                             <span class="title">Idioma</span>
                         </a>
                     </li>
                     <li class="list plantilla">
                         <a href="#">
-                            <span class="icon"><img src="/img/formulario/plantilla.png"></span>
+                            <span class="icon"><img src="/img/formulario/plantilla.png" /></span>
                             <span class="title">Plantilla</span>
                         </a>
                     </li>
@@ -80,7 +81,32 @@
                 <div class="square" style="--i:3;"></div>
                 <div class="square" style="--i:4;"></div>
                 <div id="perfil" class="item-form activo">
-                    estoy en perfil
+                    <form>
+                        <label>Nombre:</label>
+                        <input type="text" name="nombre" id="nombre" />
+                        <br/>
+                        <label>Apellido:</label>
+                        <input type="text" name="apellido" id="apellido"/>
+                        <br/>
+                        <label>Profesion:</label>
+                        <input type="text" name="profesion" id="profesion"/>
+                        <br/>
+                        <label>Correo:</label>
+                        <input type="text" name="correo" />
+                        <br/>
+                        <label>Telefono:</label>
+                        <input type="number" name="telefono" />
+                        <br/>
+                        <label>Nacionalidad:</label>
+                        <input type="text" name="nacionalidad" />
+                        <br/>
+                        <label>Direccion:</label>
+                        <input type="text" name="direccion" />
+                        <br/>
+                        <label>Edad:</label>
+                        <input type="number" name="edad" />
+                        <br/>
+                    </form>
                 </div>
                 <div id="resumen" class="item-form">
                     resumen
@@ -105,7 +131,9 @@
                 </div>
             </div>
             <div class="vista-previa">
+                <div th:replace="/cvs/plantilla_1 :: plantilla_1" class="plantilla">
 
+                </div>
             </div>
         </div>
     </body>
@@ -128,5 +156,19 @@
             activo.style.display = "block";
         }
         list.forEach((item) => item.addEventListener('click', activeLink));
+        var nombre = document.getElementById("nombre");
+        var apellido = document.getElementById("apellido");
+        var profesion = document.getElementById("profesion");
+        nombre.oninput = function(){
+            console.log(this.value+" "+apellido.value);
+            document.getElementById("p-nombre").innerHTML = this.value+" "+apellido.value;
+        };
+        apellido.oninput = function(){
+            console.log(nombre.value+" "+this.value);
+            document.getElementById("p-nombre").innerHTML = nombre.value+" "+this.value;
+        };
+        profesion.oninput = function(){
+            document.getElementById("p-profesion").innerHTML = this.value;
+        };
     </script>
 </html>

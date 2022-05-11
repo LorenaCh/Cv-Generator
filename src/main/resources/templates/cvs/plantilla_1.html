@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/plantilla_1.css" />
+  </head>
+  <body>
+    <div th:fragment="plantilla_1" class="plantilla_1">
+      <div class="titulo">
+        <div class="contenedor">
+            <div class="NomAp" id="p-nombre"></div>
+          <div class="profesion"id="p-profesion"></div>
+        </div>
+      </div>
+      <div class="perfil">
+        <div id="foto"></div>
+        <div class="datos">
+          <div class="contenedor">
+            <span class="title">SOBRE Mí</span>
+            <div class="linea"></div>
+            <div class="item">
+              <ul class="simple">
+                <li>EDAD: 25</li>
+                <li>PAIS: Argentina</li>
+                <li>PROVINCIA: Buenos Aires</li>
+                <li>CIUDAD: La Plata</li>
+              </ul>
+            </div>
+          </div>
+          <div class="contenedor">
+            <span class="title">CONTACTO</span>
+            <div class="linea"></div>
+            <div class="item">
+              <ul class="simple">
+                <li id="p-telefono"></li>
+                <li id="p-correo"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="contenedor">
+            <span class="title">CONOCIMIENTOS</span>
+            <div class="linea"></div>
+            <div class="item">
+              <ul class="lista">
+                <li>Diseño de renders</li>
+                <li>Modelado en 3D</li>
+                <li>Diseño de planos</li>
+                <li>Presupuestacion</li>
+              </ul>
+            </div>
+          </div>
+          <div class="contenedor">
+            <span class="title">IDIOMAS</span>
+            <div class="linea"></div>
+            <div class="item">
+              <ul class="lista">
+                <li>Ingles</li>
+                <li>Italiano</li>
+                <li>frances</li>
+              </ul>
+            </div>
+          </div>
+          <div class="contenedor">
+            <span class="title">Aptitudes</span>
+            <div class="linea"></div>
+            <div class="item"></div>
+          </div>
+        </div>
+      </div>
+      <div class="expForm">
+        <div class="contenedor">
+          <div class="title">EXPERIENCIA LABORAL</div>
+          <div class="linea"></div>
+          <div class="items">
+            <ul class="simple">
+              <li>
+                <div class="subtitle">Arquitecta</div>
+                <div class="tiempo">Algun lugar</div>
+                <div class="tareas">
+                  <ul class="lista">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>2</li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="contenedor">
+          <div class="title">FORMACION</div>
+          <div class="linea"></div>
+          <div class="items">
+            <ul class="simple">
+              <li>
+                <div class="subtitle">Arquitecta</div>
+                <div class="tiempo">Algun lugar</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

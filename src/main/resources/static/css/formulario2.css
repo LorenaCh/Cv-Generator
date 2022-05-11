@@ -12,9 +12,9 @@ body{
 
 .contenedor-main-princ{
     position: relative;
-    top: 70px;
+    top: 38px;
     width: 100%;
-    height: 100%;
+    height: 90%;
     background: #161616;
     display: flex;
     flex-direction: row;
@@ -245,4 +245,15 @@ body{
     height: 100%;
     width: 50%;
     background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.vista-previa > .plantilla{
+    width: 105mm;
+    height: 148.5mm;
+    background: #dff1ff;
+    z-index: 3;
 }
