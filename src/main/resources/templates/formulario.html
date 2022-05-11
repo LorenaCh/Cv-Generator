@@ -10,9 +10,15 @@
     </head>
     <body>
         <div th:replace="/plantilla :: header" class="nav">
-            
+
         </div>
-        <div class="contenedor-main-nav">
+        <div class="contenedor-main-princ">
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
             <div class="nav-lateral">
                 <ul>
                     <li class="list perfil active">
@@ -56,10 +62,21 @@
                             <span class="title">Idioma</span>
                         </a>
                     </li>
+                    <li class="list plantilla">
+                        <a href="#">
+                            <span class="icon"><img src="/img/formulario/plantilla.png"></span>
+                            <span class="title">Plantilla</span>
+                        </a>
+                    </li>
                 </ul>
 
             </div>
             <div class="form">
+                <div class="square" style="--i:0;"></div>
+                <div class="square" style="--i:1;"></div>
+                <div class="square" style="--i:2;"></div>
+                <div class="square" style="--i:3;"></div>
+                <div class="square" style="--i:4;"></div>
                 <div id="perfil" class="item-form activo">
                     estoy en perfil
                 </div>
@@ -79,6 +96,9 @@
                     conocimiento
                 </div>
                 <div id="idioma" class="item-form">
+                    idioma  
+                </div>
+                <div id="plantilla" class="item-form">
                     idioma
                 </div>
             </div>
@@ -92,14 +112,15 @@
         const forms = document.querySelectorAll('.item-form');
         function activeLink() {
             list.forEach((item) => {
-                item.classList.remove('active');;
+                item.classList.remove('active');
+                ;
             });
-            forms.forEach((form)=>{
+            forms.forEach((form) => {
                 form.classList.remove('activo');
-                form.style.display="none";
+                form.style.display = "none";
             });
             this.classList.add('active');
-            
+
             var activo = document.getElementById(this.classList[1]);
             activo.classList.add('activo');
             activo.style.display = "block";

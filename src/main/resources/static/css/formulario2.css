@@ -10,7 +10,7 @@ body{
     display: block;
 }
 
-.contenedor-main-nav{
+.contenedor-main-princ{
     position: relative;
     top: 70px;
     width: 100%;
@@ -18,6 +18,67 @@ body{
     background: #161616;
     display: flex;
     flex-direction: row;
+    background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
+}
+
+.contenedor-main-princ .color{
+    position: absolute;
+    filter:blur(150px);
+}
+
+
+.contenedor-main-princ .color:nth-child(1){
+    position: absolute;
+    top: -300px;
+    width: 600px;
+    height: 600px;
+    background: #ff359b;
+}
+
+.contenedor-main-princ .color:nth-child(2){
+    position: absolute;
+    top: 100px;
+    left: 300px;
+    width: 500px;
+    height: 500px;
+    background: #fffd87;
+}
+
+.contenedor-main-princ .color:nth-child(3){
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    width: 300px;
+    height: 500px;
+    background: #00d2ff;
+}
+
+
+.contenedor-main-princ .color:nth-child(4){
+    position: absolute;
+    top: 300px;
+    left:800px;
+    width: 500px;
+    height: 500px;
+    background: #ff359b;
+}
+
+.contenedor-main-princ .color:nth-child(5){
+    position: absolute;
+    top: 0px;
+    left: 900px;
+    width: 500px;
+    height: 500px;
+    background: #fffd87;
+}
+
+.contenedor-main-princ .color:nth-child(6){
+    position: absolute;
+    top: -200px;
+    left: 800px;
+    width: 300px;
+    height: 400px;
+    background: #00d2ff;
 }
 
 .nav-lateral{
@@ -107,7 +168,62 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fff;
+    background: transparent;
+}
+
+.form .square{
+    position: absolute;
+    backdrop-filter:blur(5px);
+    box-shadow: 0 25px  45px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1)   ;
+    border-radius: 10px;
+    animation: animacion-form 10s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+}
+
+@keyframes animacion-form{
+    0%,100%{
+        transform: translateY(-40px);
+    }
+    50%{
+        transform: translateY(40px);
+    }
+}
+
+.form .square:nth-child(1){
+    top: 50px;
+    right: 60px;
+    width: 100px;
+    height: 100px;  
+}
+.form .square:nth-child(2){
+    top: 150px;
+    left: 0px;
+    width: 120px;
+    height: 130px;
+    z-index: 2;
+}
+.form .square:nth-child(3){
+    bottom: 120px;
+    right: 0px;
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+}
+.form .square:nth-child(4){
+    bottom: 150px;
+    left: 150px;
+    width: 50px;
+    height: 50px;  
+}
+.form .square:nth-child(5){
+    top: 0px;
+    left: 140px;
+    width: 60px;
+    height: 60px;  
 }
 
 .item-form{
@@ -128,5 +244,5 @@ body{
 .vista-previa{
     height: 100%;
     width: 50%;
-    background: #4fc3f7;
+    background: transparent;
 }
