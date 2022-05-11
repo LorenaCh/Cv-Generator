@@ -160,7 +160,7 @@ input, select, textarea, button {
 }
 
 /*layout*/
-body {
+body:not(.pagFormCrearCV) {
     padding-top: 105px;
 }
 [aria-label="Cabecera principal"] {
