@@ -81,53 +81,170 @@
                 <div class="square" style="--i:3;"></div>
                 <div class="square" style="--i:4;"></div>
                 <div id="perfil" class="item-form activo">
-                    <form>
-                        <label>Nombre:</label>
-                        <input type="text" name="nombre" id="nombre" />
-                        <br/>
-                        <label>Apellido:</label>
-                        <input type="text" name="apellido" id="apellido"/>
-                        <br/>
-                        <label>Profesion:</label>
-                        <input type="text" name="profesion" id="profesion"/>
-                        <br/>
-                        <label>Correo:</label>
-                        <input type="text" name="correo" />
-                        <br/>
-                        <label>Telefono:</label>
-                        <input type="number" name="telefono" />
-                        <br/>
-                        <label>Nacionalidad:</label>
-                        <input type="text" name="nacionalidad" />
-                        <br/>
-                        <label>Direccion:</label>
-                        <input type="text" name="direccion" />
-                        <br/>
-                        <label>Edad:</label>
-                        <input type="number" name="edad" />
-                        <br/>
-                    </form>
+					<div class="form-grupo">
+						<label for="FormCrearCVCampoNombre">
+							Nombre
+							<span class="vh">(requerido)</span>
+							<span aria-hidden="true">*</span>
+						</label>
+						<input type="text" name="nombre" class="controlForm" id="FormCrearCVCampoNombre" required>
+					</div>
+					<div class="form-grupo">
+						<label for="FormCrearCVCampoApellido">
+							Apellidos
+							<span class="vh">(requerido)</span>
+							<span aria-hidden="true">*</span>
+						</label>
+						<input type="text" name="Apellido" class="controlForm" id="FormCrearCVCampoApellido" required>
+					</div>
+					<div class="form-grupo">
+						<label for="FormCrearCVCampoDireccion">
+							Dirección
+							<span class="vh">(requerido)</span>
+							<span aria-hidden="true">*</span>
+						</label>
+						<input type="text" name="Direccion" class="controlForm" id="FormCrearCVCampoDireccion" required>
+					</div>
+					<div class="form-grupo">
+						<label for="FormCrearCVCampoCiudad">
+							Ciudad
+							<span class="vh">(requerido)</span>
+							<span aria-hidden="true">*</span>
+						</label>
+						<input type="text" name="Ciudad" class="controlForm" id="FormCrearCVCampoCiudad" required>
+					</div>
+					<div class="form-grupo">
+						<label for="FormCrearCVCampoTelefono">Teléfono</label>
+						<input type="text" name="Telefono" class="controlForm" id="FormCrearCVCampoTelefono">
+					</div>
+					<div class="form-grupo">
+						<label for="FormCrearCVCampoEmail">
+							E-mail
+							<span class="vh">(requerido)</span>
+							<span aria-hidden="true">*</span>
+						</label>
+						<input type="email" name="email" class="controlForm" id="FormCrearCVCampoEmail" required>
+					</div>
+					<div class="form-grupo">
+						<label for="FormCrearCVCampoFechaNacimiento">Fecha de nacimiento</label>
+						<input type="date" name="FechaNacimiento" class="controlForm" id="FormCrearCVCampoFechaNacimiento">
+					</div>
+					<div class="form-grupo">
+						<label for="FormCrearCVCampoNacionalidad">Nacionalidad</label>
+						<input type="text" name="Nacionalidad" class="controlForm" id="FormCrearCVCampoNacionalidad">
+					</div>
+>>>>>>> 0655d8c51c8a1b72945201605fffecdc4eb94e74
                 </div>
                 <div id="resumen" class="item-form">
-                    resumen
+				<div class="form-grupo">
+					<label for="FormCrearCVCampoResumen">Resumen</label>
+					<textarea name="resumen" id="FormCrearCVCampoResumen" cols="30" rows="10" class="controlForm"></textarea>
+				</div>
                 </div>
                 <div id="laboral" class="item-form">
-                    laboral
+                    <div class="form-grupo">
+                        <label for="FormCrearCVCampoCantidadTrabajos">Cantidad de trabajos</label>
+                        <input type="number" name="cantidadTrabajos" class="controlForm" id="FormCrearCVCampoCantidadTrabajos">
+                    </div>
+                    <div id="parteLaboral">
+                        <div class="form-grupo">
+                            <label for="FormCrearCVCampoTrabajoNombre">Nombre</label>
+                            <input type="texto" name="trabajoNombre" class="controlForm" id="FormCrearCVCampoTrabajoNombre">
+                        </div>
+                        <div class="form-grupo">
+                            <label for="FormCrearCVCampoTrabajoDesde">Desde</label>
+                            <input type="number" name="trabajoDesde" class="controlForm" id="FormCrearCVCampoTrabajoDesde">
+                        </div>
+                        <div class="form-grupo">
+                            <label for="FormCrearCVCampoTrabajoHasta">Hasta</label>
+                            <input type="number" name="trabajoHasta" class="controlForm" id="FormCrearCVCampoTrabajoHasta">
+                        </div>
+                    </div>
                 </div>
                 <div id="academico" class="item-form">
-                    academico
+                    <div class="form-grupo">
+                        <label for="FormCrearCVCampoCantidadAcademicos">Cantidad de instituciones</label>
+                        <input type="number" name="cantidadAcademicos" class="controlForm" id="FormCrearCVCampoCantidadAcademicos">
+                    </div>
+                    <div id="parteAcademico">
+                        <div class="form-grupo">
+                            <label for="FormCrearCVCampoAcademicoNombre">Nombre</label>
+                            <input type="texto" name="AcademicoNombre" class="controlForm" id="FormCrearCVCampoAcademicoNombre">
+                        </div>
+                        <div class="form-grupo">
+                            <label for="FormCrearCVCampoAcademicoDesde">Desde</label>
+                            <input type="number" name="AcademicoDesde" class="controlForm" id="FormCrearCVCampoAcademicoDesde">
+                        </div>
+                        <div class="form-grupo">
+                            <label for="FormCrearCVCampoAcademicoHasta">Hasta</label>
+                            <input type="number" name="AcademicoHasta" class="controlForm" id="FormCrearCVCampoAcademicoHasta">
+                        </div>
+                    </div>
                 </div>
                 <div id="aptitud" class="item-form">
-                    aptitud
+                    <div class="form-grupo">
+                        <label for="FormCrearCVCampoCantidadAptitudes">Cantidad de aptitudes</label>
+                        <input type="number" name="cantidadAptitudes" class="controlForm" id="FormCrearCVCampoCantidadAptitudes">
+                    </div>
+                    <div id="parteAptitud">
+                        <div class="form-grupo">
+                            <label for="FormCrearCVCampoAptitudNombre">Nombre</label>
+                            <input type="texto" name="AptitudNombre" class="controlForm" id="FormCrearCVCampoAptitudNombre">
+                        </div>
+                        <div class="form-grupo">
+                            <label for="FormCrearCVCampoAptitudDesde">Desde</label>
+                            <input type="number" name="AptitudDesde" class="controlForm" id="FormCrearCVCampoAptitudDesde">
+                        </div>
+                        <div class="form-grupo">
+                            <label for="FormCrearCVCampoAptitudHasta">Hasta</label>
+                            <input type="number" name="AptitudHasta" class="controlForm" id="FormCrearCVCampoAptitudHasta">
+                        </div>
+                    </div>
                 </div>
                 <div id="conocimiento" class="item-form">
-                    conocimiento
+					<div class="form-grupo">
+						<label for="FormCrearCVCampoCantidadConocimiento">Cantidad de conocimientos</label>
+						<input type="number" name="cantidadConocimiento" class="controlForm" id="FormCrearCVCampoCantidadConocimiento">
+					</div>
+                    <div id="parteConocimientos">
+					<div class="form-grupo">
+						<label for="FormCrearCVCampoConocimiento">Conocimiento</label>
+						<input type="text" name="conocimiento" class="controlForm" id="FormCrearCVCampoConocimiento">
+					</div>
+					<div class="form-grupo">
+						<label for="FormCrearCVCampoNivelConocimiento">Nacionalidad</label>
+                                                <select name="nivelConocimiento" class="controlForm" id="FormCrearCVCampoNivelConocimiento">
+                                                    <option disabled>(seleccione)</option>
+                                                    <option value="basico">básico</option>
+                                                    <option value="intermedio">intermedio</option>
+                                                    <option value="avanzado">avanzado</option>
+                                                </select>
+					</div>
+                    </div>
                 </div>
                 <div id="idioma" class="item-form">
-                    idioma  
+					<div class="form-grupo">
+						<label for="FormCrearCVCampoCantidadIdiomas">Cantidad de idiomas</label>
+						<input type="number" name="cantidadIdiomas" class="controlForm" id="FormCrearCVCampoCantidadIdiomas">
+					</div>
+                    <div id="parteIdiomas">
+					<div class="form-grupo">
+						<label for="FormCrearCVCampoIdioma">Idioma</label>
+						<input type="text" name="idioma" class="controlForm" id="FormCrearCVCampoIdioma">
+					</div>
+					<div class="form-grupo">
+						<label for="FormCrearCVCampoNivelIdioma">Nacionalidad</label>
+                                                <select name="nivelIdioma" class="controlForm" id="FormCrearCVCampoNivelIdioma">
+                                                    <option disabled>(seleccione)</option>
+                                                    <option value="basico">básico</option>
+                                                    <option value="intermedio">intermedio</option>
+                                                    <option value="avanzado">avanzado</option>
+                                                </select>
+					</div>
+                    </div>
                 </div>
                 <div id="plantilla" class="item-form">
-                    idioma
+                    plantilla
                 </div>
             </div>
             <div class="vista-previa">
