@@ -160,8 +160,11 @@ input, select, textarea, button {
 }
 
 /*layout*/
-body:not(.pagFormCrearCV) {
+body {
     padding-top: 105px;
+}
+body.pagFormCrearCV {
+    padding-top: 0;
 }
 [aria-label="Cabecera principal"] {
 	color: #fff;
