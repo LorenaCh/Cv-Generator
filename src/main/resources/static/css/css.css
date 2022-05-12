@@ -161,7 +161,7 @@ input, select, textarea, button {
 
 /*layout*/
 body {
-    padding-top: 105px;
+    padding-top: 70px;
 }
 body.pagFormCrearCV {
     padding-top: 0;
@@ -188,7 +188,7 @@ html.pagHome [aria-label="Cabecera principal"] {
 	line-height: 1rem;
 	padding: calc(var(--espaciado) / 2) 0;
 }
-.nav ul,ol{
+.nav ul,.nav ol{
     margin:auto;
     list-style: none;
 }
