@@ -84,6 +84,7 @@ body{
     background: transparent;
     color: white;
     margin:5px 0px;
+    display: none;
 }
 
 .plantilla_1 .title{

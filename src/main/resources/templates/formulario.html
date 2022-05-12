@@ -285,36 +285,84 @@
         var edad = document.getElementById("edad");
         var correo = document.getElementById("correo");
         var descripcion = document.getElementById("descripcion");
+
         nombre.oninput = function () {
-            console.log(this.value + " " + apellido.value);
             document.getElementById("p-nombre").innerHTML = this.value + " " + apellido.value;
+
         };
         apellido.oninput = function () {
-            console.log(nombre.value + " " + this.value);
             document.getElementById("p-nombre").innerHTML = nombre.value + " " + this.value;
         };
         profesion.oninput = function () {
             document.getElementById("p-profesion").innerHTML = this.value;
         };
         direccion.oninput = function () {
-            document.getElementById("p-direccion").innerHTML = this.value;
+            if (this.value.trim() == "" && nacionalidad.value.trim() == "" && ciudad.value.trim() == "" && edad.value.trim() == "") {
+                document.getElementById("p-aboutMe").style.display = "none";
+            } else {
+                if (this.value.trim() == "")
+                    document.getElementById("p-direccion").innerHTML = "";
+                else
+                    document.getElementById("p-direccion").innerHTML = this.value;
+                document.getElementById("p-aboutMe").style.display = "block";
+            }
         };
         ciudad.oninput = function () {
-            document.getElementById("p-ciudad").innerHTML = "CIUDAD: "+this.value;
+            if (this.value.trim() == "" && nacionalidad.value.trim() == "" && direccion.value.trim() == "" && edad.value.trim() == "") {
+                document.getElementById("p-aboutMe").style.display = "none";
+            } else {
+                if (this.value.trim() == "")
+                    document.getElementById("p-ciudad").innerHTML = "CIUDAD: " + this.value;
+                else
+                    document.getElementById("p-ciudad").innerHTML = "CIUDAD: " + this.value;
+                document.getElementById("p-aboutMe").style.display = "block";
+            }
         };
         nacionalidad.oninput = function () {
-            document.getElementById("p-pais").innerHTML = "PAIS: "+this.value;
+            if (this.value.trim() == "" && ciudad.value.trim() == "" && direccion.value.trim() == "" && edad.value.trim() == "") {
+                document.getElementById("p-aboutMe").style.display = "none";
+            } else {
+                if (this.value.trim() == "")
+                    document.getElementById("p-pais").innerHTML = "";
+                else
+                    document.getElementById("p-pais").innerHTML = "PAIS: " + this.value;
+                document.getElementById("p-aboutMe").style.display = "block";
+            }
         };
         edad.oninput = function () {
-            document.getElementById("p-edad").innerHTML = "EDAD: "+this.value;
+            if (this.value.trim() == "" && ciudad.value.trim() == "" && direccion.value.trim() == "" && nacionalidad.value.trim() == "") {
+                document.getElementById("p-aboutMe").style.display = "none";
+            } else {
+                if (this.value.trim() == "")
+                    document.getElementById("p-edad").innerHTML = "";
+                else
+                    document.getElementById("p-edad").innerHTML = "EDAD: " + this.value;
+                document.getElementById("p-aboutMe").style.display = "block";
+            }
         };
         telefono.oninput = function () {
-            document.getElementById("p-telefono").innerHTML = this.value;
+            if (this.value.trim() == "" && correo.value.trim() == "") {
+                document.getElementById("p-contacto").style.display = "none";
+            } else {
+                if (this.value.trim() == "")
+                    document.getElementById("p-telefono").innerHTML = "";
+                else
+                    document.getElementById("p-telefono").innerHTML = this.value;
+                document.getElementById("p-contacto").style.display = "block";
+            }
         };
         correo.oninput = function () {
-            document.getElementById("p-correo").innerHTML = this.value;
+            if (this.value.trim() == "" && telefono.value.trim() == "") {
+                document.getElementById("p-contacto").style.display = "none";
+            } else {
+                if (this.value.trim() == "")
+                    document.getElementById("p-correo").innerHTML = "";
+                else
+                    document.getElementById("p-correo").innerHTML = this.value;
+                document.getElementById("p-contacto").style.display = "block";
+            }
         };
-        descripcion.oninput = function(){
+        descripcion.oninput = function () {
             document.getElementById("p-resumen").innerHTML = this.value;
         };
     </script>
