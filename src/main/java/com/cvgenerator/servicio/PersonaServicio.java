@@ -28,8 +28,6 @@ public class PersonaServicio {
     public Persona guardar(Usuario usuario){
         Persona persona = new Persona();
         persona.setUsuario(usuario);
-        System.out.println("Entre a servicio persona guardar");
-        System.out.println(persona);
         return repPersona.save(persona);
     }
     
