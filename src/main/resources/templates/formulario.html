@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      lang="es" class="pagFormCrearCV">
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/css.css" />
         <link rel="stylesheet" href="/css/plantilla.css" />
         <link rel="stylesheet" href="/css/formulario2.css" />
         <link rel="stylesheet" href="/css/cvs/plantilla_1.css" />
@@ -144,10 +146,6 @@
                     </div>
                 </div>
                 <div id="laboral" class="item-form">
-                    <div class="form-grupo">
-                        <label for="FormCrearCVCampoCantidadTrabajos">Cantidad de trabajos</label>
-                        <input type="number" name="cantidadTrabajos" class="controlForm" id="FormCrearCVCampoCantidadTrabajos">
-                    </div>
                     <div id="parteLaboral">
                         <div class="form-grupo">
                             <label for="FormCrearCVCampoTrabajoNombre">Nombre</label>
@@ -162,12 +160,9 @@
                             <input type="number" name="trabajoHasta" class="controlForm" id="FormCrearCVCampoTrabajoHasta">
                         </div>
                     </div>
+                    <button type="submit" class="boton boton-primario" name="agregarOtroTrabajo" value="true">Agregar otro trabajo</button>
                 </div>
                 <div id="academico" class="item-form">
-                    <div class="form-grupo">
-                        <label for="FormCrearCVCampoCantidadAcademicos">Cantidad de instituciones</label>
-                        <input type="number" name="cantidadAcademicos" class="controlForm" id="FormCrearCVCampoCantidadAcademicos">
-                    </div>
                     <div id="parteAcademico">
                         <div class="form-grupo">
                             <label for="FormCrearCVCampoAcademicoNombre">Nombre</label>
@@ -182,12 +177,9 @@
                             <input type="number" name="AcademicoHasta" class="controlForm" id="FormCrearCVCampoAcademicoHasta">
                         </div>
                     </div>
+                    <button type="submit" class="boton boton-primario" name="agregarOtroAcademico" value="true">Agregar otro</button>
                 </div>
                 <div id="aptitud" class="item-form">
-                    <div class="form-grupo">
-                        <label for="FormCrearCVCampoCantidadAptitudes">Cantidad de aptitudes</label>
-                        <input type="number" name="cantidadAptitudes" class="controlForm" id="FormCrearCVCampoCantidadAptitudes">
-                    </div>
                     <div id="parteAptitud">
                         <div class="form-grupo">
                             <label for="FormCrearCVCampoAptitudNombre">Nombre</label>
@@ -202,19 +194,16 @@
                             <input type="number" name="AptitudHasta" class="controlForm" id="FormCrearCVCampoAptitudHasta">
                         </div>
                     </div>
+                    <button type="submit" class="boton boton-primario" name="agregarOtraAptitud" value="true">Agregar otra aptitud</button>
                 </div>
                 <div id="conocimiento" class="item-form">
-                    <div class="form-grupo">
-                        <label for="FormCrearCVCampoCantidadConocimiento">Cantidad de conocimientos</label>
-                        <input type="number" name="cantidadConocimiento" class="controlForm" id="FormCrearCVCampoCantidadConocimiento">
-                    </div>
                     <div id="parteConocimientos">
                         <div class="form-grupo">
                             <label for="FormCrearCVCampoConocimiento">Conocimiento</label>
                             <input type="text" name="conocimiento" class="controlForm" id="FormCrearCVCampoConocimiento">
                         </div>
                         <div class="form-grupo">
-                            <label for="FormCrearCVCampoNivelConocimiento">Nacionalidad</label>
+                            <label for="FormCrearCVCampoNivelConocimiento">Nivel</label>
                             <select name="nivelConocimiento" class="controlForm" id="FormCrearCVCampoNivelConocimiento">
                                 <option disabled>(seleccione)</option>
                                 <option value="basico">básico</option>
@@ -223,19 +212,16 @@
                             </select>
                         </div>
                     </div>
+                    <button type="submit" class="boton boton-primario" name="agregarOtroConocimiento" value="true">Agregar otro conocimiento</button>
                 </div>
                 <div id="idioma" class="item-form">
-                    <div class="form-grupo">
-                        <label for="FormCrearCVCampoCantidadIdiomas">Cantidad de idiomas</label>
-                        <input type="number" name="cantidadIdiomas" class="controlForm" id="FormCrearCVCampoCantidadIdiomas">
-                    </div>
                     <div id="parteIdiomas">
                         <div class="form-grupo">
                             <label for="FormCrearCVCampoIdioma">Idioma</label>
                             <input type="text" name="idioma" class="controlForm" id="FormCrearCVCampoIdioma">
                         </div>
                         <div class="form-grupo">
-                            <label for="FormCrearCVCampoNivelIdioma">Nacionalidad</label>
+                            <label for="FormCrearCVCampoNivelIdioma">Nivel</label>
                             <select name="nivelIdioma" class="controlForm" id="FormCrearCVCampoNivelIdioma">
                                 <option disabled>(seleccione)</option>
                                 <option value="basico">básico</option>
@@ -244,6 +230,7 @@
                             </select>
                         </div>
                     </div>
+                    <button type="submit" class="boton boton-primario" name="agregarOtroIdioma" value="true">Agregar otro idioma</button>
                 </div>
                 <div id="plantilla" class="item-form">
                     plantilla

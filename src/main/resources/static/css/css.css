@@ -163,6 +163,9 @@ input, select, textarea, button {
 body {
     padding-top: 105px;
 }
+body.pagFormCrearCV {
+    padding-top: 0;
+}
 [aria-label="Cabecera principal"] {
 	color: #fff;
 	background-color: #68829d;
