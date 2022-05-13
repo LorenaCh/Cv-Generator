@@ -15,8 +15,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.cvgenerator.controlador.dto.UsuarioRegistroDTO;
+import com.cvgenerator.entidades.Aptitud;
+import com.cvgenerator.entidades.Conocimiento;
+import com.cvgenerator.entidades.Idioma;
 import com.cvgenerator.entidades.Persona;
 import com.cvgenerator.entidades.Rol;
+import com.cvgenerator.entidades.Trabajo;
 import com.cvgenerator.entidades.Usuario;
 import com.cvgenerator.repositorio.UsuarioRepositorio;
 import java.util.Optional;
@@ -34,6 +38,18 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
+    
+    @Autowired
+    private ConocimientoServicio conoServicio;
+    
+    @Autowired
+    private IdiomaServicio idiomaServicio;
+    
+    @Autowired
+    private AptitudServicio aptitudServicio;
+    
+    @Autowired
+    private TrabajoServicio trabajoServicio;
 
     public UsuarioServicioImpl(UsuarioRepositorio usuarioRepositorio) {
         super();
@@ -45,10 +61,13 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 
         Rol rol = rolServicio.buscarPorNombre("ROLE_USER");
         if(rol == null){
+            Rol rolAdmin = new Rol("ROLE_ADMIN");
+            rolServicio.guardar(rolAdmin);
             rol = new Rol("ROLE_USER");
             rol = rolServicio.guardar(rol);
         }
         Persona persona = personaServicio.guardar(new Persona());
+        
         Usuario usuario = new Usuario(registroDTO.getEmail(),
                 passwordEncoder.encode(registroDTO.getPassword()), 
                 Arrays.asList(rol),
