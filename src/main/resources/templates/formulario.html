@@ -6,23 +6,22 @@
         <title>TODO supply a title</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/css/css.css" />
         <link rel="stylesheet" href="/css/plantilla.css" />
         <link rel="stylesheet" href="/css/formulario2.css" />
         <link rel="stylesheet" href="/css/cvs/plantilla_1.css" />
         <link rel="icon" href="/img/logo-imgvector.svg" />
     </head>
     <body>
-        <div th:replace="/plantilla :: header" class="nav">
-
-        </div>
+        <header th:replace="/plantilla :: header" class="nav"></header>
         <div class="contenedor-main-princ">
-            <div class="color"></div>
-            <div class="color"></div>
-            <div class="color"></div>
-            <div class="color"></div>
-            <div class="color"></div>
-            <div class="color"></div>
+            <div class="contenedor-decoracion">
+                <div class="color"></div>
+                <div class="color"></div>
+                <div class="color"></div>
+                <div class="color"></div>
+                <div class="color"></div>
+                <div class="color"></div>
+            </div>
             <div class="nav-lateral">
                 <ul>
                     <li class="list perfil active">
@@ -75,172 +74,176 @@
                 </ul>
 
             </div>
-            <div class="form">
-                <div class="square" style="--i:0;"></div>
-                <div class="square" style="--i:1;"></div>
-                <div class="square" style="--i:2;"></div>
-                <div class="square" style="--i:3;"></div>
-                <div class="square" style="--i:4;"></div>
-                <div id="perfil" class="item-form activo">
-                    <div class="form-grupo">
-                        <label for="nombre">
-                            Nombre
-                            <span class="vh">(requerido)</span>
-                            <span aria-hidden="true">*</span>
-                        </label>
-                        <input type="text" name="nombre" class="controlForm" id="nombre" required>
+            <section class="cv">
+                <div class="form">
+                    <div class="form-decoracion">
+                        <div class="square" style="--i:0;"></div>
+                        <div class="square" style="--i:1;"></div>
+                        <div class="square" style="--i:2;"></div>
+                        <div class="square" style="--i:3;"></div>
+                        <div class="square" style="--i:4;"></div>
                     </div>
-                    <div class="form-grupo">
-                        <label for="apellido">
-                            Apellidos
-                            <span class="vh">(requerido)</span>
-                            <span aria-hidden="true">*</span>
-                        </label>
-                        <input type="text" name="apellido" class="controlForm" id="apellido" required>
+                    <div id="perfil" class="item-form activo">
+                        <div class="form-grupo">
+                            <label for="nombre">
+                                Nombre
+                                <span class="vh">(requerido)</span>
+                                <span aria-hidden="true">*</span>
+                            </label>
+                            <input type="text" name="nombre" class="controlForm" id="nombre" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="apellido">
+                                Apellidos
+                                <span class="vh">(requerido)</span>
+                                <span aria-hidden="true">*</span>
+                            </label>
+                            <input type="text" name="apellido" class="controlForm" id="apellido" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="direccion">
+                                Dirección
+                                <span class="vh">(requerido)</span>
+                                <span aria-hidden="true">*</span>
+                            </label>
+                            <input type="text" name="direccion" class="controlForm" id="direccion" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="ciudad">
+                                Ciudad
+                                <span class="vh">(requerido)</span>
+                                <span aria-hidden="true">*</span>
+                            </label>
+                            <input type="text" name="ciudad" class="controlForm" id="ciudad" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" name="telefono" class="controlForm" id="telefono">
+                        </div>
+                        <div class="form-grupo">
+                            <label for="correo">
+                                E-mail
+                                <span class="vh">(requerido)</span>
+                                <span aria-hidden="true">*</span>
+                            </label>
+                            <input type="email" name="correo" class="controlForm" id="correo" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="edad">Edad</label>
+                            <input type="number" name="edad" class="controlForm" id="edad">
+                        </div>
+                        <div class="form-grupo">
+                            <label for="nacionalidad">Nacionalidad</label>
+                            <input type="text" name="nacionalidad" class="controlForm" id="nacionalidad">
+                        </div>
+                        <div class="form-grupo">
+                            <label for="profesion">Profesion</label>
+                            <input type="text" name="profesion" class="controlForm" id="profesion">
+                        </div>
                     </div>
-                    <div class="form-grupo">
-                        <label for="direccion">
-                            Dirección
-                            <span class="vh">(requerido)</span>
-                            <span aria-hidden="true">*</span>
-                        </label>
-                        <input type="text" name="direccion" class="controlForm" id="direccion" required>
+                    <div id="resumen" class="item-form">
+                        <div class="form-grupo">
+                            <label for="descripcion">Resumen</label>
+                            <textarea name="descripcion" id="descripcion" cols="30" rows="10" class="controlForm"></textarea>
+                        </div>
                     </div>
-                    <div class="form-grupo">
-                        <label for="ciudad">
-                            Ciudad
-                            <span class="vh">(requerido)</span>
-                            <span aria-hidden="true">*</span>
-                        </label>
-                        <input type="text" name="ciudad" class="controlForm" id="ciudad" required>
+                    <div id="laboral" class="item-form">
+                        <div id="parteLaboral">
+                            <div class="form-grupo">
+                                <label for="FormCrearCVCampoTrabajoNombre">Nombre</label>
+                                <input type="texto" name="trabajoNombre" class="controlForm" id="FormCrearCVCampoTrabajoNombre">
+                            </div>
+                            <div class="form-grupo">
+                                <label for="FormCrearCVCampoTrabajoDesde">Desde</label>
+                                <input type="number" name="trabajoDesde" class="controlForm" id="FormCrearCVCampoTrabajoDesde">
+                            </div>
+                            <div class="form-grupo">
+                                <label for="FormCrearCVCampoTrabajoHasta">Hasta</label>
+                                <input type="number" name="trabajoHasta" class="controlForm" id="FormCrearCVCampoTrabajoHasta">
+                            </div>
+                        </div>
+                        <button type="submit" class="boton boton-primario" name="agregarOtroTrabajo" value="true">Agregar otro trabajo</button>
                     </div>
-                    <div class="form-grupo">
-                        <label for="telefono">Teléfono</label>
-                        <input type="text" name="telefono" class="controlForm" id="telefono">
+                    <div id="academico" class="item-form">
+                        <div id="parteAcademico">
+                            <div class="form-grupo">
+                                <label for="FormCrearCVCampoAcademicoNombre">Nombre</label>
+                                <input type="texto" name="AcademicoNombre" class="controlForm" id="FormCrearCVCampoAcademicoNombre">
+                            </div>
+                            <div class="form-grupo">
+                                <label for="FormCrearCVCampoAcademicoDesde">Desde</label>
+                                <input type="number" name="AcademicoDesde" class="controlForm" id="FormCrearCVCampoAcademicoDesde">
+                            </div>
+                            <div class="form-grupo">
+                                <label for="FormCrearCVCampoAcademicoHasta">Hasta</label>
+                                <input type="number" name="AcademicoHasta" class="controlForm" id="FormCrearCVCampoAcademicoHasta">
+                            </div>
+                        </div>
+                        <button type="submit" class="boton boton-primario" name="agregarOtroAcademico" value="true">Agregar otro</button>
                     </div>
-                    <div class="form-grupo">
-                        <label for="correo">
-                            E-mail
-                            <span class="vh">(requerido)</span>
-                            <span aria-hidden="true">*</span>
-                        </label>
-                        <input type="email" name="correo" class="controlForm" id="correo" required>
+                    <div id="aptitud" class="item-form">
+                        <div id="parteAptitud">
+                            <div class="form-grupo">
+                                <label for="FormCrearCVCampoAptitudNombre">Nombre</label>
+                                <input type="texto" name="AptitudNombre" class="controlForm" id="FormCrearCVCampoAptitudNombre">
+                            </div>
+                            <div class="form-grupo">
+                                <label for="FormCrearCVCampoAptitudDesde">Desde</label>
+                                <input type="number" name="AptitudDesde" class="controlForm" id="FormCrearCVCampoAptitudDesde">
+                            </div>
+                            <div class="form-grupo">
+                                <label for="FormCrearCVCampoAptitudHasta">Hasta</label>
+                                <input type="number" name="AptitudHasta" class="controlForm" id="FormCrearCVCampoAptitudHasta">
+                            </div>
+                        </div>
+                        <button type="submit" class="boton boton-primario" name="agregarOtraAptitud" value="true">Agregar otra aptitud</button>
                     </div>
-                    <div class="form-grupo">
-                        <label for="edad">Edad</label>
-                        <input type="number" name="edad" class="controlForm" id="edad">
+                    <div id="conocimiento" class="item-form">
+                        <div id="parteConocimientos">
+                            <div class="form-grupo">
+                                <label for="FormCrearCVCampoConocimiento">Conocimiento</label>
+                                <input type="text" name="conocimiento" class="controlForm" id="FormCrearCVCampoConocimiento">
+                            </div>
+                            <div class="form-grupo">
+                                <label for="FormCrearCVCampoNivelConocimiento">Nivel</label>
+                                <select name="nivelConocimiento" class="controlForm" id="FormCrearCVCampoNivelConocimiento">
+                                    <option disabled>(seleccione)</option>
+                                    <option value="basico">básico</option>
+                                    <option value="intermedio">intermedio</option>
+                                    <option value="avanzado">avanzado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="boton boton-primario" name="agregarOtroConocimiento" value="true">Agregar otro conocimiento</button>
                     </div>
-                    <div class="form-grupo">
-                        <label for="nacionalidad">Nacionalidad</label>
-                        <input type="text" name="nacionalidad" class="controlForm" id="nacionalidad">
+                    <div id="idioma" class="item-form">
+                        <div id="parteIdiomas">
+                            <div class="form-grupo">
+                                <label for="FormCrearCVCampoIdioma">Idioma</label>
+                                <input type="text" name="idioma" class="controlForm" id="FormCrearCVCampoIdioma">
+                            </div>
+                            <div class="form-grupo">
+                                <label for="FormCrearCVCampoNivelIdioma">Nivel</label>
+                                <select name="nivelIdioma" class="controlForm" id="FormCrearCVCampoNivelIdioma">
+                                    <option disabled>(seleccione)</option>
+                                    <option value="basico">básico</option>
+                                    <option value="intermedio">intermedio</option>
+                                    <option value="avanzado">avanzado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="boton boton-primario" name="agregarOtroIdioma" value="true">Agregar otro idioma</button>
                     </div>
-                    <div class="form-grupo">
-                        <label for="profesion">Profesion</label>
-                        <input type="text" name="profesion" class="controlForm" id="profesion">
+                    <div id="plantilla" class="item-form">
+                        plantilla
                     </div>
                 </div>
-                <div id="resumen" class="item-form">
-                    <div class="form-grupo">
-                        <label for="descripcion">Resumen</label>
-                        <textarea name="descripcion" id="descripcion" cols="30" rows="10" class="controlForm"></textarea>
-                    </div>
-                </div>
-                <div id="laboral" class="item-form">
-                    <div id="parteLaboral">
-                        <div class="form-grupo">
-                            <label for="FormCrearCVCampoTrabajoNombre">Nombre</label>
-                            <input type="texto" name="trabajoNombre" class="controlForm" id="FormCrearCVCampoTrabajoNombre">
-                        </div>
-                        <div class="form-grupo">
-                            <label for="FormCrearCVCampoTrabajoDesde">Desde</label>
-                            <input type="number" name="trabajoDesde" class="controlForm" id="FormCrearCVCampoTrabajoDesde">
-                        </div>
-                        <div class="form-grupo">
-                            <label for="FormCrearCVCampoTrabajoHasta">Hasta</label>
-                            <input type="number" name="trabajoHasta" class="controlForm" id="FormCrearCVCampoTrabajoHasta">
-                        </div>
-                    </div>
-                    <button type="submit" class="boton boton-primario" name="agregarOtroTrabajo" value="true">Agregar otro trabajo</button>
-                </div>
-                <div id="academico" class="item-form">
-                    <div id="parteAcademico">
-                        <div class="form-grupo">
-                            <label for="FormCrearCVCampoAcademicoNombre">Nombre</label>
-                            <input type="texto" name="AcademicoNombre" class="controlForm" id="FormCrearCVCampoAcademicoNombre">
-                        </div>
-                        <div class="form-grupo">
-                            <label for="FormCrearCVCampoAcademicoDesde">Desde</label>
-                            <input type="number" name="AcademicoDesde" class="controlForm" id="FormCrearCVCampoAcademicoDesde">
-                        </div>
-                        <div class="form-grupo">
-                            <label for="FormCrearCVCampoAcademicoHasta">Hasta</label>
-                            <input type="number" name="AcademicoHasta" class="controlForm" id="FormCrearCVCampoAcademicoHasta">
-                        </div>
-                    </div>
-                    <button type="submit" class="boton boton-primario" name="agregarOtroAcademico" value="true">Agregar otro</button>
-                </div>
-                <div id="aptitud" class="item-form">
-                    <div id="parteAptitud">
-                        <div class="form-grupo">
-                            <label for="FormCrearCVCampoAptitudNombre">Nombre</label>
-                            <input type="texto" name="AptitudNombre" class="controlForm" id="FormCrearCVCampoAptitudNombre">
-                        </div>
-                        <div class="form-grupo">
-                            <label for="FormCrearCVCampoAptitudDesde">Desde</label>
-                            <input type="number" name="AptitudDesde" class="controlForm" id="FormCrearCVCampoAptitudDesde">
-                        </div>
-                        <div class="form-grupo">
-                            <label for="FormCrearCVCampoAptitudHasta">Hasta</label>
-                            <input type="number" name="AptitudHasta" class="controlForm" id="FormCrearCVCampoAptitudHasta">
-                        </div>
-                    </div>
-                    <button type="submit" class="boton boton-primario" name="agregarOtraAptitud" value="true">Agregar otra aptitud</button>
-                </div>
-                <div id="conocimiento" class="item-form">
-                    <div id="parteConocimientos">
-                        <div class="form-grupo">
-                            <label for="FormCrearCVCampoConocimiento">Conocimiento</label>
-                            <input type="text" name="conocimiento" class="controlForm" id="FormCrearCVCampoConocimiento">
-                        </div>
-                        <div class="form-grupo">
-                            <label for="FormCrearCVCampoNivelConocimiento">Nivel</label>
-                            <select name="nivelConocimiento" class="controlForm" id="FormCrearCVCampoNivelConocimiento">
-                                <option disabled>(seleccione)</option>
-                                <option value="basico">básico</option>
-                                <option value="intermedio">intermedio</option>
-                                <option value="avanzado">avanzado</option>
-                            </select>
-                        </div>
-                    </div>
-                    <button type="submit" class="boton boton-primario" name="agregarOtroConocimiento" value="true">Agregar otro conocimiento</button>
-                </div>
-                <div id="idioma" class="item-form">
-                    <div id="parteIdiomas">
-                        <div class="form-grupo">
-                            <label for="FormCrearCVCampoIdioma">Idioma</label>
-                            <input type="text" name="idioma" class="controlForm" id="FormCrearCVCampoIdioma">
-                        </div>
-                        <div class="form-grupo">
-                            <label for="FormCrearCVCampoNivelIdioma">Nivel</label>
-                            <select name="nivelIdioma" class="controlForm" id="FormCrearCVCampoNivelIdioma">
-                                <option disabled>(seleccione)</option>
-                                <option value="basico">básico</option>
-                                <option value="intermedio">intermedio</option>
-                                <option value="avanzado">avanzado</option>
-                            </select>
-                        </div>
-                    </div>
-                    <button type="submit" class="boton boton-primario" name="agregarOtroIdioma" value="true">Agregar otro idioma</button>
-                </div>
-                <div id="plantilla" class="item-form">
-                    plantilla
-                </div>
-            </div>
-            <div class="vista-previa">
-                <div th:replace="/cvs/plantilla_1 :: plantilla_1" class="plantilla">
+                <div class="vista-previa">
+                    <div th:replace="/cvs/plantilla_1 :: plantilla_1" class="plantilla">
 
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
     </body>
     <script>
@@ -287,13 +290,13 @@
             document.getElementById("p-direccion").innerHTML = this.value;
         };
         ciudad.oninput = function () {
-            document.getElementById("p-ciudad").innerHTML = "CIUDAD: "+this.value;
+            document.getElementById("p-ciudad").innerHTML = "CIUDAD: " + this.value;
         };
         nacionalidad.oninput = function () {
-            document.getElementById("p-pais").innerHTML = "PAIS: "+this.value;
+            document.getElementById("p-pais").innerHTML = "PAIS: " + this.value;
         };
         edad.oninput = function () {
-            document.getElementById("p-edad").innerHTML = "EDAD: "+this.value;
+            document.getElementById("p-edad").innerHTML = "EDAD: " + this.value;
         };
         telefono.oninput = function () {
             document.getElementById("p-telefono").innerHTML = this.value;
@@ -301,7 +304,7 @@
         correo.oninput = function () {
             document.getElementById("p-correo").innerHTML = this.value;
         };
-        descripcion.oninput = function(){
+        descripcion.oninput = function () {
             document.getElementById("p-resumen").innerHTML = this.value;
         };
     </script>

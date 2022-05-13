@@ -27,7 +27,6 @@ public class Persona implements Serializable {
     private String apellido;
     private String profesion;
     private Integer telefono;
-    private String foto;
     private String correo;
     private Integer edad;
     private String nacionalidad;
@@ -88,14 +87,6 @@ public class Persona implements Serializable {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
-    }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
     }
 
     public Integer getEdad() {
@@ -196,7 +187,7 @@ public class Persona implements Serializable {
 
     @Override
     public String toString() {
-        return "Persona{" + "idPersona=" + idPersona + ", nombre=" + nombre + ", apellido=" + apellido + ", profesion=" + profesion + ", telefono=" + telefono + ", foto=" + foto + ", correo=" + correo + ", edad=" + edad + ", nacionalidad=" + nacionalidad + ", direccion=" + direccion + ", descripcion=" + descripcion + ", usuario=" + usuario + ", trabajos=" + trabajos + ", formaciones=" + formaciones + ", aptitud=" + aptitud + ", conocimientos=" + conocimientos + ", idiomas=" + idiomas + '}';
+        return "Persona{" + "idPersona=" + idPersona + ", nombre=" + nombre + ", apellido=" + apellido + ", profesion=" + profesion + ", telefono=" + telefono + ", correo=" + correo + ", edad=" + edad + ", nacionalidad=" + nacionalidad + ", direccion=" + direccion + ", descripcion=" + descripcion + ", usuario=" + usuario + ", trabajos=" + trabajos + ", formaciones=" + formaciones + ", aptitud=" + aptitud + ", conocimientos=" + conocimientos + ", idiomas=" + idiomas + '}';
     }
 
 }

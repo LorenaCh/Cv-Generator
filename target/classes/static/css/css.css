@@ -39,6 +39,11 @@
 *, *::before, *::after {
 	box-sizing: border-box;
 }
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
 html {
 	font-size: var(--tamanio-fuente-base);
 	-webkit-text-size-adjust: 100%;
@@ -65,6 +70,7 @@ body {
 	margin: 0;
 	min-height: 100vh;
 	overflow-x: hidden;
+        padding: 0px;
 }
 h1, h2, h3, h4, h5, h6 {
 	line-height: var(--interlineado-alt);
@@ -160,9 +166,7 @@ input, select, textarea, button {
 }
 
 /*layout*/
-body {
-    padding-top: 70px;
-}
+
 body.pagFormCrearCV {
     padding-top: 0;
 }
