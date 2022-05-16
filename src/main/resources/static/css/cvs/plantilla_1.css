@@ -83,6 +83,7 @@ body{
     background: transparent;
     color: white;
     margin:5px 0px;
+    display: none;
 }
 
 .plantilla_1 .title{
@@ -171,4 +172,8 @@ body{
     font-size: 7pt;
     color: #372b23;
     width: 95%;
+}
+
+.plantilla_1 #p-laboral{
+    display:none;
 }

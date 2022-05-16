@@ -173,18 +173,22 @@
                         <div class="form-contenedor">
                             <h2>Experiencia laboral</h2>
                             <div class="linea"></div>
-                            <div class="check-form-active">
-                                <div class="checkbox-contenedor">
-                                    <input type="checkbox" name="activo" id="i-puesto-activo" class="checkbox" value=""/>
-                                    <span class="span"></span>
-                                    <i class="indicator"></i>
+                                <div class="row row5050">
+                                    <div class="col">
+                                        <div class="inputCheckBox">
+                                            <div class="checkbox-contenedor">
+                                                <input type="checkbox" id="i-laboral-activo" class="checkbox" value=""/>
+                                                <span class="span"></span>
+                                                <i class="indicator"></i>
+                                            </div>
+                                            <span class="text">Tiene experiencia laboral</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <span>Tengo experiencia laboral</span>
-                            </div>
-                            <div class="lista-trabajos" >
+                            <div class="lista-trabajos" id="i-lista-trabajos">
                                 <ul id="lista-trabajos"></ul>
                             </div>
-                            <form>
+                            <form id="form-laboral">
                                 <div class="row row100">
                                     <div class="col">
                                         <div class="inputBox">
@@ -217,13 +221,13 @@
                                 </div>
                                 <div class="row row5050">
                                     <div class="col">
-                                        <div class="inputBox">
-                                            <span class="text">Activo</span>
+                                        <div class="inputCheckBox">
                                             <div class="checkbox-contenedor">
                                                 <input type="checkbox" name="activo" id="i-puesto-activo" class="checkbox" value=""/>
                                                 <span class="span"></span>
                                                 <i class="indicator"></i>
                                             </div>
+                                            <span class="text">Activo</span>
                                         </div>
                                     </div>
                                 </div>
@@ -282,13 +286,13 @@
                                     </div>
                                 <div class="row row5050">
                                     <div class="col">
-                                        <div class="inputBox">
-                                            <span class="text">Activo</span>
+                                        <div class="inputCheckBox">
                                             <div class="checkbox-contenedor">
                                                 <input type="checkbox" name="activo" id="i-titulo-activo" class="checkbox" value=""/>
                                                 <span class="span"></span>
                                                 <i class="indicator"></i>
                                             </div>
+                                            <span class="text">Activo</span>
                                         </div>
                                     </div>
                                 </div>
@@ -424,31 +428,79 @@
 
         nombre.oninput = function () {
             document.getElementById("p-nombre").innerHTML = this.value + " " + apellido.value;
+
         };
         apellido.oninput = function () {
-            console.log(nombre.value + " " + this.value);
             document.getElementById("p-nombre").innerHTML = nombre.value + " " + this.value;
         };
         profesion.oninput = function () {
             document.getElementById("p-profesion").innerHTML = this.value;
         };
         direccion.oninput = function () {
-            document.getElementById("p-direccion").innerHTML = this.value;
+            if (this.value.trim() == "" && nacionalidad.value.trim() == "" && ciudad.value.trim() == "" && edad.value.trim() == "") {
+                document.getElementById("p-aboutMe").style.display = "none";
+            } else {
+                if (this.value.trim() == "")
+                    document.getElementById("p-direccion").innerHTML = "";
+                else
+                    document.getElementById("p-direccion").innerHTML = this.value;
+                document.getElementById("p-aboutMe").style.display = "block";
+            }
         };
         ciudad.oninput = function () {
-            document.getElementById("p-ciudad").innerHTML = "CIUDAD: " + this.value;
+            if (this.value.trim() == "" && nacionalidad.value.trim() == "" && direccion.value.trim() == "" && edad.value.trim() == "") {
+                document.getElementById("p-aboutMe").style.display = "none";
+            } else {
+                if (this.value.trim() == "")
+                    document.getElementById("p-ciudad").innerHTML = "CIUDAD: " + this.value;
+                else
+                    document.getElementById("p-ciudad").innerHTML = "CIUDAD: " + this.value;
+                document.getElementById("p-aboutMe").style.display = "block";
+            }
         };
         nacionalidad.oninput = function () {
-            document.getElementById("p-pais").innerHTML = "PAIS: " + this.value;
+            if (this.value.trim() == "" && ciudad.value.trim() == "" && direccion.value.trim() == "" && edad.value.trim() == "") {
+                document.getElementById("p-aboutMe").style.display = "none";
+            } else {
+                if (this.value.trim() == "")
+                    document.getElementById("p-pais").innerHTML = "";
+                else
+                    document.getElementById("p-pais").innerHTML = "PAIS: " + this.value;
+                document.getElementById("p-aboutMe").style.display = "block";
+            }
         };
         edad.oninput = function () {
-            document.getElementById("p-edad").innerHTML = "EDAD: " + this.value;
+            if (this.value.trim() == "" && ciudad.value.trim() == "" && direccion.value.trim() == "" && nacionalidad.value.trim() == "") {
+                document.getElementById("p-aboutMe").style.display = "none";
+            } else {
+                if (this.value.trim() == "")
+                    document.getElementById("p-edad").innerHTML = "";
+                else
+                    document.getElementById("p-edad").innerHTML = "EDAD: " + this.value;
+                document.getElementById("p-aboutMe").style.display = "block";
+            }
         };
         telefono.oninput = function () {
-            document.getElementById("p-telefono").innerHTML = this.value;
+            if (this.value.trim() == "" && correo.value.trim() == "") {
+                document.getElementById("p-contacto").style.display = "none";
+            } else {
+                if (this.value.trim() == "")
+                    document.getElementById("p-telefono").innerHTML = "";
+                else
+                    document.getElementById("p-telefono").innerHTML = this.value;
+                document.getElementById("p-contacto").style.display = "block";
+            }
         };
         correo.oninput = function () {
-            document.getElementById("p-correo").innerHTML = this.value;
+            if (this.value.trim() == "" && telefono.value.trim() == "") {
+                document.getElementById("p-contacto").style.display = "none";
+            } else {
+                if (this.value.trim() == "")
+                    document.getElementById("p-correo").innerHTML = "";
+                else
+                    document.getElementById("p-correo").innerHTML = this.value;
+                document.getElementById("p-contacto").style.display = "block";
+            }
         };
         descripcion.oninput = function () {
             document.getElementById("p-resumen").innerHTML = this.value;
@@ -517,6 +569,37 @@
             puesto_fin.value = "";
             puesto_activo.checked = false;
         };
+
+        var formLaboral = document.getElementById("i-laboral-activo");
+
+        formLaboral.onclick = function () {
+            if (this.checked){
+                document.getElementById("form-laboral").style.display = "block";
+                
+                document.getElementById("p-laboral").style.display="block";
+            }
+            else {
+                document.getElementById("form-laboral").style.display = "none";
+
+                puesto.value = "";
+                puesto_lugar.value = "";
+                puesto_inicio.value = "";
+                puesto_fin.value = "";
+                puesto_activo.checked = false;
+                
+                document.getElementById("i-lista-trabajos").innerHTML = "";
+                cantTrabajos = 0;
+                
+                document.getElementById("p-laboral").style.display="none";
+            }
+        }
+        
+        document.getElementById("i-puesto-activo").onclick = function(){
+            if(this.checked)
+                document.getElementById("i-puesto-fin").disabled = true;
+            else
+                document.getElementById("i-puesto-fin").disabled = false;
+        }
 
     </script>
 </html>
