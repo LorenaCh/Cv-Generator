@@ -65,7 +65,7 @@ body{
 .plantilla_1 #foto{
     width: 109.5px;
     height: 81px;
-    background: #fff;
+    background: rgb(175, 156, 145);
     margin: 20px 19px;
 }
 
@@ -74,6 +74,7 @@ body{
     display: flex;
     flex-direction: column;
     color: white;
+    margin-top: 42px;
     margin-left: 18px;
     height: 440px;
 }

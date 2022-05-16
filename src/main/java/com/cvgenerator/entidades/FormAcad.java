@@ -31,7 +31,7 @@ public class FormAcad implements Serializable {
     private String titulo;
     private String establecimiento;
     private String tipo;
-    private Date f_inicio ;
+    private Date f_inicio;
     private Date f_fin ;
     private Boolean enProgreso;
     private String lugar;

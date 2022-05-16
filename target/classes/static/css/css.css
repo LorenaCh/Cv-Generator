@@ -89,6 +89,9 @@ p, ul, ol, dl, legend, hr, figure {
 input, select, textarea, button {
 	font: inherit;
 }
+[role="list"] {
+    list-style: none;
+}
 @media (prefers-color-scheme: dark) {
 	body {
 		color: var(--color-fuente-dark);
@@ -124,6 +127,10 @@ input, select, textarea, button {
 	-webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
 	clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
 	white-space: nowrap;
+}
+
+.form-grupo {
+    margin-bottom: var(--espaciado);
 }
 
 .controlForm {
