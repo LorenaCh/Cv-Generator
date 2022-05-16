@@ -1,55 +1,96 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org" 
-      lang="es" class="pagFormLogin">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="/css/consejo.css" />
+      lang="es" class="pagHome">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Eggenerator</title>
+        <link rel="stylesheet" href="/css/css.css" />
+        <link rel="stylesheet" href="/css/plantilla.css" />
         <link rel="shortcut icon" href="/img/logo-favicon.png" >
-        <mvc:resources mapping="/static/**" location="/static/" />  
-    </head>
-    <body>
-            
-            <div class="contenedor">
-                <div class="cabecera">
-                <h2>¿Para qué sirve el curriculum vitae?</h2><br>
-                <p>El curriculum vitae sirve para recoger la información personal, educativa, formativa y laboral que una persona ha adquirido a lo largo de su
-                vida. Su objetivo es el de servir como apoyo y representación ante la postulación para un puesto de trabajo.</p><br>
-                <p><b>Por ello es indispensable contar con un curriculum completo que permita su lectura fácil, con secciones bien diferenciadas para que los
-                reclutadores puedan encontrar la información rápidamente.</b></p><br>
-                <p>Si deseas que tu currículum cause impacto en quién esté a cargo de su análisis, te aconsejamos incorporar las siguientes estrategias:</p><br>
-                </div>
-                <p><b>Resumen:</b> La descripción personal en el currículum vitae currículum se trata de la parte más personal del documento, en la que nos
-                describimos y desvelamos cuáles son nuestras expectativas. Por ello debes describir con seguridad entre 50 y 200 palabras en tres o cuatro
-                frases, tu experiencia, objetivos y competencias. Piensa en el extracto de tu currículum como un "eslogan" extendido sobre tu trayectoria
-                profesional. </p><br>
-                <p><b>Experiencia laboral:</b> Te aconsejamos armar el orden cronológico inverso, es decir, iniciar con el último empleo. Si el profesional cuenta con
-                más de 10 años de experiencia y varios trabajos, deberá omitir los más antiguos. Si por el contrario, es muy joven, es válido poner las prácticas
-                profesionales, trabajos temporales y servicio social. Sumará mucho a tu hoja de vida que puedas incorporar verbos de acción para describir las
-                funciones de los cargos realizados. Palabras tales como: gestionar, controlar, alcanzar, desarrollar, fortalecer, administrar, negociar, editar,
-                comprar, lograr, dirigir, ejecutar, planificar, fusionar, procesar, generar, etc.</p><br>
-                <p><b>Formación académica:</b> En este apartado deberás especificar los estudios que has realizado, indicando las fechas, el centro, y el lugar en el que
-                los has realizado. Lo más frecuente es colocar los diferentes estudios en orden cronológico inverso, comenzando por los más recientes, los que
-                más interesan a la empresa, y acabando por los más lejanos. No obstante, también puedes invertir el orden si crees que así el currículum se
-                adecua más a tus propósitos.</p><br>
-                <p><b>Aptitud:</b> Las habilidades blandas o soft skills están relacionadas con la personalidad y el carácter del candidato. El 90% de las malas decisiones
-                de contratación, se deben a la falta de soft skills del candidato. Es genial que sepas todos los secretos para escribir HTML, pero si eres incapaz
-                de trabajar en armonía con tus otros compañeros o de terminar los proyectos a tiempo, hay pocas probabilidades de que la empresa quiera
-                contratarte. Se recomienda leer cuidadosamente la descripción de la vacante e identificar todas aquellas habilidades que la empresa solicita.
-                Después, selecciona aquellas que coincidan con tu perfil y con tu experiencia y agregalas a tu CV. La clave está en la personalización. Cada
-                currículum debe de adaptarse al puesto solicitado.</p><br>
-                <p><b>Conocimientos:</b> Los datos de interés adicionales pueden darle ese factor extra a tu CV que te ayudará a destacar entre la competencia. Hay
-                muchas opciones entre las que puedes elegir. Por ejemplo: Cursos y certificaciones, Diplomaturas, Voluntariado, etc. Trata de incluir solo
-                aquellos datos de interés que vayan de acuerdo a lo que la empresa pide. Por ejemplo, si el puesto requiere a alguien bilingüe, entonces añade
-                una sección de idiomas. El punto de aprender qué poner en tu CV es agregar valor</p><br>
-                <p><b>Idioma:</b> Los idiomas son una de las habilidades para currículum más valoradas actualmente. Si cuentas con certificaciones, es mucho más
-                sencillo indicar tu nivel en 3 niveles que responden a una división más clásica de nivel básico, intermedio y avanzado. Pon el idioma que
-                domines más, primero. Por ejemplo, “Inglés, Avanzado” , “Portugues Intermedio”.</p><br>
-            </div>
+        <mvc:resources mapping="/static/**" location="/static/" /> 
+</head>
+<body >
+    <div th:replace="/plantilla :: header">
+    </div>
+	<div id="homeHero">
+		<div class="contenedor">
+			<div class="texto-centro">
+				<h2>¿Para qué sirve el curriculum vitae?</h2><br>
+                                <p>El curriculum vitae sirve para recoger la información personal, educativa, formativa y laboral que una persona ha adquirido a lo largo de su
+                                vida. Su objetivo es el de servir como apoyo y representación ante la postulación para un puesto de trabajo.</p><br>
+                                <p><b>Por ello es indispensable contar con un curriculum completo que permita su lectura fácil, con secciones bien diferenciadas para que los
+                                reclutadores puedan encontrar la información rápidamente.</b></p><br>
+                                <p>Si deseas que tu currículum cause impacto en quién esté a cargo de su análisis, te aconsejamos incorporar las siguientes estrategias:</p><br>
+			</div>
+			<div>
+				<p><b>Resumen:</b> La descripción personal en el currículum vitae currículum se trata de la parte más personal del documento, en la que nos
+                                describimos y desvelamos cuáles son nuestras expectativas. Por ello debes describir con seguridad entre 50 y 200 palabras en tres o cuatro
+                                frases, tu experiencia, objetivos y competencias. Piensa en el extracto de tu currículum como un "eslogan" extendido sobre tu trayectoria
+                                profesional. </p><br>
+                                <p><b>Experiencia laboral:</b> Te aconsejamos armar el orden cronológico inverso, es decir, iniciar con el último empleo. Si el profesional cuenta con
+                                más de 10 años de experiencia y varios trabajos, deberá omitir los más antiguos. Si por el contrario, es muy joven, es válido poner las prácticas
+                                profesionales, trabajos temporales y servicio social. Sumará mucho a tu hoja de vida que puedas incorporar verbos de acción para describir las
+                                funciones de los cargos realizados. Palabras tales como: gestionar, controlar, alcanzar, desarrollar, fortalecer, administrar, negociar, editar,
+                                comprar, lograr, dirigir, ejecutar, planificar, fusionar, procesar, generar, etc.</p><br>
+                                <p><b>Formación académica:</b> En este apartado deberás especificar los estudios que has realizado, indicando las fechas, el centro, y el lugar en el que
+                                los has realizado. Lo más frecuente es colocar los diferentes estudios en orden cronológico inverso, comenzando por los más recientes, los que
+                                más interesan a la empresa, y acabando por los más lejanos. No obstante, también puedes invertir el orden si crees que así el currículum se
+                                adecua más a tus propósitos.</p><br>
+                                <p><b>Aptitud:</b> Las habilidades blandas o soft skills están relacionadas con la personalidad y el carácter del candidato. El 90% de las malas decisiones
+                                de contratación, se deben a la falta de soft skills del candidato. Es genial que sepas todos los secretos para escribir HTML, pero si eres incapaz
+                                de trabajar en armonía con tus otros compañeros o de terminar los proyectos a tiempo, hay pocas probabilidades de que la empresa quiera
+                                contratarte. Se recomienda leer cuidadosamente la descripción de la vacante e identificar todas aquellas habilidades que la empresa solicita.
+                                Después, selecciona aquellas que coincidan con tu perfil y con tu experiencia y agregalas a tu CV. La clave está en la personalización. Cada
+                                currículum debe de adaptarse al puesto solicitado.</p><br>
+                                <p><b>Conocimientos:</b> Los datos de interés adicionales pueden darle ese factor extra a tu CV que te ayudará a destacar entre la competencia. Hay
+                                muchas opciones entre las que puedes elegir. Por ejemplo: Cursos y certificaciones, Diplomaturas, Voluntariado, etc. Trata de incluir solo
+                                aquellos datos de interés que vayan de acuerdo a lo que la empresa pide. Por ejemplo, si el puesto requiere a alguien bilingüe, entonces añade
+                                una sección de idiomas. El punto de aprender qué poner en tu CV es agregar valor</p><br>
+                                <p><b>Idioma:</b> Los idiomas son una de las habilidades para currículum más valoradas actualmente. Si cuentas con certificaciones, es mucho más
+                                sencillo indicar tu nivel en 3 niveles que responden a una división más clásica de nivel básico, intermedio y avanzado. Pon el idioma que
+                                domines más, primero. Por ejemplo, “Inglés, Avanzado” , “Portugues Intermedio”.</p><br>
+			</div>
+		</div>
+	</div>
+	<div class="contenedor" id="mainWrap">
+		<main>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit amet aliquid minima soluta, molestiae deleniti nemo blanditiis qui magnam tempore optio animi vero aut? Adipisci libero laborum maxime quis labore.</p>
+		</main>
+	</div>
+    <footer th:replace="/plantilla :: footer" id="pie"></footer>
+</body>
+    <script>
+
+        //Javascript del fondo de pantalla -> el tag section
         
-            
-    </body>
-    
+         const colors = ['#06f5bdb3',
+         '#f8d951'];
+         
+         
+         function createSquare() {
+         const section = document.querySelector('section#cuadrados');
+         const square = document.createElement('span');
+         
+         var size = Math.random() * 50;
+         
+         square.style.width = 20 + size + 'px';
+         square.style.height = 20 + size + 'px';
+         
+         square.style.top = Math.random() * innerHeight + 'px';
+         square.style.left = Math.random() * innerWidth + 'px';
+         
+         const bg = colors[Math.floor(Math.random() * colors.length)];
+         square.style.background = bg;
+         
+         section.appendChild(square);
+         
+         setTimeout(() => {
+         square.remove();
+         }, 5000);
+         }
+         
+         setInterval(createSquare, 150);
+    </script>
 </html>
