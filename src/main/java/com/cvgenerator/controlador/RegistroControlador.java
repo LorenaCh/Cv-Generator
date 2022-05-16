@@ -49,7 +49,7 @@ public class RegistroControlador {
         
         @GetMapping("/consejos")
         public String consejo(){
-            return "consejo";
+            return "consejos";
         }
 
 }
