@@ -258,7 +258,6 @@ body{
 }
 
 .item-form{
-    position: relative;
     height: 90%;
     width: 90%;
     z-index: 1;
@@ -266,10 +265,9 @@ body{
 }
 
 .form .item-form .form-contenedor{
-    height: 90%;
+    position: relative;
+    margin: 1rem auto 0;
     width: 90%;
-    display: flex;
-    flex-direction: column;
     color:#fff;
 }
 
@@ -292,13 +290,12 @@ body{
     flex-direction: row;
 }
 
-.form .item-form .row input:not([type = 'checkbox']){
+.form .item-form .row :is(input:not([type = 'checkbox']), select){
     width: 100%;
-    height: 30px;
-    padding: 10px 15px;
+    height: 2em;
+    padding: 5px 15px;
     border-radius: 20px;
     background: rgba(255,255,255,0.3);
-    border: none;
     outline: none;
     border: 1px solid rgba(255,255,255,0.5);
     border-right: 1px solid rgba(255,255,255,0.2);
@@ -307,16 +304,18 @@ body{
     letter-spacing: 1px;
     color: #fff;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+}
+
+
+.form .item-form .row select option {
+    color: initial;
 }
 
 .form .item-form .row input:not([type = 'checkbox'])::placeholder{
     color: #fff;
 }
 
-.form .item-form .row input[type='checkbox'] ~ .inputBox{
-    display: flex;
-    
-}
 
 .form .item-form .row{
     position: relative;
@@ -330,6 +329,15 @@ body{
 .form .item-form .row .col .inputBox{
     display:flex;
     flex-direction: column;
+}
+
+.form .item-form .row .col .inputCheckBox{
+    display: flex;
+    flex-direction: row;
+}
+
+.form .item-form .row .col .inputCheckBox .checkbox-contenedor{
+    margin-right: 20px;
 }
 
 .form .item-form .row .col .inputBox .text{
@@ -370,24 +378,25 @@ body{
     grid-template-columns: auto 60%;
 }
 
-.form .item-form .form-contenedor form .continuar{
-    margin: 20px 10px;
+.form .item-form .form-contenedor .continuar{
     height: 30px;
-    width: 100px;
     position:relative;
-    float: right;
     color: #666;
     background: #fff;
     border:none;
     border-radius: 20px;
     font-weight: 600;
+    padding: 0 10px;
     cursor: pointer;
+}
+.form .item-form .form-contenedor form .continuar{
+    margin: 20px 10px;
+    width: 100px;
+    float: right;
 }
 
 .activo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     background: rgba(255,255,255,0.05);
     z-index: 2;
     border-radius: 10px;
@@ -447,48 +456,6 @@ body{
 .form .item-form .checkbox-contenedor .checkbox:checked ~ .span{
     background: rgb(247, 221, 108); 
 }
-/*
-.form .item-form form .checkbox-contenedor .label-checkbox{
-    position: relative;
-    display: block;
-    cursor: pointer;
-    width: 40px;
-    height: 20px;
-    background: rgba(255,255,255,0.4);
-    border: 1px solid rgba(255,255,255,0.4);
-    border-right: 1px solid rgba(255,255,255,0.1);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
-    backdrop-filter:blur(3px);
-    border-radius: 25px;
-    transition: background-color 0.4s;
-}
-
-.form .item-form form .checkbox-contenedor .checkbox:checked + .label-checkbox{
-    background: rgb(247, 221, 108);
-    border-color: transparent;
-}
-
-.form .item-form form .checkbox-contenedor .label-checkbox::before{
-    content: '';
-    position: absolute;
-    display: block;
-    width: 20px;
-    height: 20px;
-    top: 50%;
-    transform: translate(-10px,-50%);
-    background: rgba(255,255,255,0.4);
-    border: 1px solid rgba(255,255,255,0.4); 
-    border-right: 1px solid rgba(255,255,255,0.1);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    border-radius: 50%;
-    transition: transform 0.4s;
-    backdrop-filter:blur(7px);
-}
-
-.form .item-form form .checkbox-contenedor .checkbox:checked + .label-checkbox::before{
-    transform: translate(20px,-50%);
-}*/
 
 .vista-previa{
     position: relative;
@@ -503,45 +470,13 @@ body{
     flex-grow: 1;
 }
 
+#form-laboral{
+    display:none;
+}
+
 .vista-previa > .plantilla{
     width: 105mm;
     height: 148.5mm;
     background: #dff1ff;
     z-index: 3;
 }
-/*
-#camposPerfil, #parteLaboral, #parteAcademico {
-    margin-bottom: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: .5rem;
-}
-#camposPerfil > .form-grupo {
-    flex: 0 0 48%;
-    margin: 0;
-}
-
-#parteLaboral > .form-grupo, #parteAcademico > .form-grupo {
-    flex: 0 0 100%;
-    margin: 0;
-}
-#parteLaboral > .form-grupo:is(:nth-child(3), :nth-child(4)), #parteAcademico > .form-grupo:is(:nth-child(5), :nth-child(6)) {
-    flex: 0 0 48%;
-}
-
-.card-trabajo, .card-academico, .card-conocimiento, .card-aptitud, .card-idioma {
-    margin: 1rem 0;
-    display: flex;
-    gap: .5rem;
-    border: 1px solid;
-    padding: 1rem;
-}
-.card-trabajo-contenido, .card-conocimiento-contenido, .card-academico-contenido, .card-aptitud-contenido, .card-idioma-contenido {
-    flex: 1;
-}
-.card-trabajo-opciones, .card-conocimiento-opciones, .card-academico-opciones, .card-aptitud-opciones, .card-idioma-opciones {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-}*/

@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    overflow: auto;
+}
+
+body{
+    width: 100%;
+    height:100vh;
+    display: block !important;
+}
+.cabecera{
+    background: -prefix-linear-gradient(top, white, #3EBF8E);
+}
+.contenedor{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
