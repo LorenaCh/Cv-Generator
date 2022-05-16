@@ -185,7 +185,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            <div class="lista-trabajos" >
+                            <div class="lista-trabajos" id="i-lista-trabajos">
                                 <ul id="lista-trabajos"></ul>
                             </div>
                             <form id="form-laboral">
@@ -569,15 +569,30 @@
             puesto_fin.value = "";
             puesto_activo.checked = false;
         };
-        
+
         var formLaboral = document.getElementById("i-laboral-activo");
-        
-        formLaboral.onclick = function(){
-            if(this.checked)
+
+        formLaboral.onclick = function () {
+            if (this.checked){
                 document.getElementById("form-laboral").style.display = "block";
-                else
-                    document.getElementById("form-laboral").style.display = "none";
+                
+                document.getElementById("p-laboral").style.display="block";
+            }
+            else {
+                document.getElementById("form-laboral").style.display = "none";
+
+                puesto.value = "";
+                puesto_lugar.value = "";
+                puesto_inicio.value = "";
+                puesto_fin.value = "";
+                puesto_activo.checked = false;
+                
+                document.getElementById("i-lista-trabajos").innerHTML = "";
+                cantTrabajos = 0;
+                
+                document.getElementById("p-laboral").style.display="none";
+            }
         }
-        
+
     </script>
 </html>
