@@ -521,7 +521,12 @@
             }
         };
         descripcion.oninput = function () {
-            document.getElementById("p-resumen").innerHTML = this.value;
+            if(this.value.length > 200){
+                descripcion.style.color = "red";
+            } else {
+                descripcion.style.color = "white";
+                document.getElementById("p-resumen").innerHTML = this.value;
+            }
         };
 //        puesto.oninput = function () {
 //            var lista = document.getElementById("p-trabajos");
@@ -533,6 +538,7 @@
 //            lista.appendChild(li);
 //        };
 
+       
         var agregarTrabajo = document.getElementById("i-agregar-trabajo");
         agregarTrabajo.onclick = function () {
             cantTrabajos++;
