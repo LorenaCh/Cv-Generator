@@ -20,35 +20,31 @@ import javax.persistence.ManyToOne;
  * @author barby
  */
 @Entity
-public class Idioma implements Serializable {
-    
+public class Aptitud implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_idioma")
-    private Integer idIdioma;
+    private Integer id;
     private String nombre;
-    private Integer nivel;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_persona")
     private Persona persona;
 
-    public Idioma() {
+    public Aptitud() {
     }
 
-    public Idioma(Integer idIdioma, String nombre, Integer nivel) {
-        this.idIdioma = idIdioma;
+    public Aptitud(Integer id, String nombre) {
+        this.id = id;
         this.nombre = nombre;
-        this.nivel = nivel;
     }
 
-    public Integer getIdIdioma() {
-        return idIdioma;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdIdioma(Integer idIdioma) {
-        this.idIdioma = idIdioma;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -59,17 +55,10 @@ public class Idioma implements Serializable {
         this.nombre = nombre;
     }
 
-    public Integer getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(Integer nivel) {
-        this.nivel = nivel;
-    }
-
     @Override
     public String toString() {
-        return "Idioma{" + "idIdioma=" + idIdioma + ", nombre=" + nombre + ", nivel=" + nivel + '}';
+        return "Aptitud{" + "id=" + id + ", nombre=" + nombre + '}';
     }
+    
     
 }

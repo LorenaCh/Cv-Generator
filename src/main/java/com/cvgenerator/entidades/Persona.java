@@ -3,13 +3,17 @@ package com.cvgenerator.entidades;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import org.springframework.lang.Nullable;
 
 @Entity
 @Table(name = "persona")
@@ -23,24 +27,31 @@ public class Persona implements Serializable {
     private String apellido;
     private String profesion;
     private Integer telefono;
-    private String foto;
     private String correo;
     private Integer edad;
     private String nacionalidad;
     private String direccion;
     private String descripcion;
-    private ArrayList habilidades;
 
     @OneToOne(mappedBy = "persona")
     private Usuario usuario;
-
-    /*
-    @OneToMany
+    
+    @Nullable
+    @OneToMany(mappedBy = "persona")
     private List <Trabajo> trabajos;
-    @OneToMany
+    
+    @Nullable
+    @OneToMany(fetch=FetchType.LAZY,mappedBy = "persona")
     private List <FormAcad> formaciones;
-    @OneToMany
-    private List <Aptitudes> aptitud;*/
+    @Nullable
+    @OneToMany(fetch=FetchType.LAZY,mappedBy = "persona")
+    private List <Aptitud> aptitud;
+    @Nullable
+    @OneToMany(fetch=FetchType.LAZY,mappedBy = "persona")
+    private List<Conocimiento> conocimientos;
+    @Nullable
+    @OneToMany(fetch=FetchType.LAZY,mappedBy = "persona")
+    private List<Idioma> idiomas;
 
     
     public Persona() {
@@ -76,14 +87,6 @@ public class Persona implements Serializable {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
-    }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
     }
 
     public Integer getEdad() {
@@ -141,18 +144,50 @@ public class Persona implements Serializable {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-    
-    public ArrayList getHabilidades() {
-        return habilidades;
-    }
-    
 
-    public void setHabilidades(ArrayList habilidades) {
-        this.habilidades = habilidades;
+    public List<Conocimiento> getConocimientos() {
+        return conocimientos;
+    }
+
+    public void setConocimientos(List<Conocimiento> conocimientos) {
+        this.conocimientos = conocimientos;
+    }
+
+    public List<Trabajo> getTrabajos() {
+        return trabajos;
+    }
+
+    public void setTrabajos(List<Trabajo> trabajos) {
+        this.trabajos = trabajos;
+    }
+
+    public List<FormAcad> getFormaciones() {
+        return formaciones;
+    }
+
+    public void setFormaciones(List<FormAcad> formaciones) {
+        this.formaciones = formaciones;
+    }
+
+    public List<Aptitud> getAptitud() {
+        return aptitud;
+    }
+
+    public void setAptitud(List<Aptitud> aptitud) {
+        this.aptitud = aptitud;
+    }
+
+    public List<Idioma> getIdiomas() {
+        return idiomas;
+    }
+
+    public void setIdiomas(List<Idioma> idiomas) {
+        this.idiomas = idiomas;
     }
 
     @Override
     public String toString() {
-        return "Persona{" + "idPersona=" + idPersona + ", nombre=" + nombre + ", apellido=" + apellido + ", foto=" + foto + ", edad=" + edad + ", nacionalidad=" + nacionalidad + ", direccion=" + direccion + ", descripcion=" + descripcion + ", habilidades=" + habilidades + ", usuario=" + usuario + '}';
+        return "Persona{" + "idPersona=" + idPersona + ", nombre=" + nombre + ", apellido=" + apellido + ", profesion=" + profesion + ", telefono=" + telefono + ", correo=" + correo + ", edad=" + edad + ", nacionalidad=" + nacionalidad + ", direccion=" + direccion + ", descripcion=" + descripcion + ", usuario=" + usuario + ", trabajos=" + trabajos + ", formaciones=" + formaciones + ", aptitud=" + aptitud + ", conocimientos=" + conocimientos + ", idiomas=" + idiomas + '}';
     }
+
 }

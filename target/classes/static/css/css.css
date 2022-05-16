@@ -39,6 +39,11 @@
 *, *::before, *::after {
 	box-sizing: border-box;
 }
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
 html {
 	font-size: var(--tamanio-fuente-base);
 	-webkit-text-size-adjust: 100%;
@@ -65,6 +70,7 @@ body {
 	margin: 0;
 	min-height: 100vh;
 	overflow-x: hidden;
+        padding: 0px;
 }
 h1, h2, h3, h4, h5, h6 {
 	line-height: var(--interlineado-alt);
@@ -82,6 +88,9 @@ p, ul, ol, dl, legend, hr, figure {
 }
 input, select, textarea, button {
 	font: inherit;
+}
+[role="list"] {
+    list-style: none;
 }
 @media (prefers-color-scheme: dark) {
 	body {
@@ -118,6 +127,10 @@ input, select, textarea, button {
 	-webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
 	clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
 	white-space: nowrap;
+}
+
+.form-grupo {
+    margin-bottom: var(--espaciado);
 }
 
 .controlForm {
@@ -160,9 +173,7 @@ input, select, textarea, button {
 }
 
 /*layout*/
-body {
-    padding-top: 105px;
-}
+
 body.pagFormCrearCV {
     padding-top: 0;
 }
@@ -188,7 +199,7 @@ html.pagHome [aria-label="Cabecera principal"] {
 	line-height: 1rem;
 	padding: calc(var(--espaciado) / 2) 0;
 }
-.nav ul,ol{
+.nav ul,.nav ol{
     margin:auto;
     list-style: none;
 }
