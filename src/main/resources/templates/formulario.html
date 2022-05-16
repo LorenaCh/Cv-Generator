@@ -316,53 +316,62 @@
                         </div>
                     </div>
                     <div id="conocimiento" class="item-form">
+                        <div class="form-contenedor">
+                            
                         <h2>Conocimiento</h2>
-                        <div class="form-grupo">
+                            <div class="linea"></div>
+                        <div class="row row100">
+                            <div class="inputBox">
                             <label for="FormCrearCVCampoConocimiento">Conocimiento</label>
                             <input type="text" name="conocimiento" class="controlForm" id="FormCrearCVCampoConocimiento">
-                        </div>
-                        <button type="submit" class="boton boton-primario" name="agregarOtroConocimiento" value="true">Agregar otro conocimiento</button>
-                        <div class="card-conocimiento">
-                            <div class="card-conocimiento-contenido">Un conocimiento</div>
-                            <div class="card-conocimiento-opciones">
-                                <button type="submit" class="boton">Modificar</button>
-                                <button type="submit" class="boton">Eliminar</button>
+                                
                             </div>
+                        </div>
+                        <button type="submit" class="continuar" name="agregarOtroConocimiento" value="true">Agregar otro conocimiento</button>
+                        <div class="card card-insertados">
+                            <div class="card-insertados-contenido">Un conocimiento</div>
+                            <div class="card-insertados-opciones">
+                                <button type="submit" class="continuar">Modificar</button>
+                                <button type="submit" class="continuar">Eliminar</button>
+                            </div>
+                        </div>
                         </div>
                     </div>
                     <div id="idioma" class="item-form">
+                        <div class="form-contenedor">
                         <h2>Idioma</h2>
-                        <div id="parteIdiomas">
-                            <div class="form-grupo">
+                            <div class="linea"></div>
+                            <div class="row row100">
                                 <label for="FormCrearCVCampoIdioma">Idioma</label>
-                                <input type="text" name="idioma" class="controlForm" id="FormCrearCVCampoIdioma">
+                                <input type="text" name="idioma" id="FormCrearCVCampoIdioma">
                             </div>
-                            <div class="form-grupo">
+                            <div class="row row100">
                                 <label for="FormCrearCVCampoNivelIdioma">Nivel</label>
-                                <select name="nivelIdioma" class="controlForm" id="FormCrearCVCampoNivelIdioma">
+                                <select name="nivelIdioma" id="FormCrearCVCampoNivelIdioma">
                                     <option disabled>(seleccione)</option>
                                     <option value="basico">básico</option>
                                     <option value="intermedio">intermedio</option>
                                     <option value="avanzado">avanzado</option>
                                 </select>
                             </div>
-                        </div>
-                        <button type="submit" class="boton boton-primario" name="agregarOtroIdioma" value="true">Agregar otro idioma</button>
-                        <div class="card-idioma">
-                            <div class="card-idioma-contenido">
+                        <div class="card card-insertados">
+                            <div class="card-insertados-contenido">
                                 <ul role="list">
                                     <li>Inglés</li>
                                     <li>Intermedio</li>
                                 </ul>
                             </div>
-                            <div class="card-idioma-opciones">
-                                <button type="submit" class="boton">Modificar</button>
-                                <button type="submit" class="boton">Eliminar</button>
+                            <div class="card-insertados-opciones">
+                                <button type="submit" class="continuar">Modificar</button>
+                                <button type="submit" class="continuar">Eliminar</button>
                             </div>
+                        </div>
+                        <button type="submit" class="continuar" name="agregarOtroIdioma" value="true">Agregar otro idioma</button>
                         </div>
                     </div>
                     <div id="plantilla" class="item-form">
                         <h2>Plantilla</h2>
+                            <div class="linea"></div>
                         plantilla
                     </div>
                 </div>
@@ -392,7 +401,7 @@
 
             var activo = document.getElementById(this.classList[1]);
             activo.classList.add('activo');
-            activo.style.display = "flex";
+            activo.style.display = "block";
         }
         list.forEach((item) => item.addEventListener('click', activeLink));
         var nombre = document.getElementById("i-nombre");
