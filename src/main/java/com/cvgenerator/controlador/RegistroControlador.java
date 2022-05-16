@@ -47,4 +47,9 @@ public class RegistroControlador {
             return "formulario";
         }
         
+        @GetMapping("/consejos")
+        public String consejo(){
+            return "consejo";
+        }
+
 }
