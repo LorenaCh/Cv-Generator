@@ -593,6 +593,13 @@
                 document.getElementById("p-laboral").style.display="none";
             }
         }
+        
+        document.getElementById("i-puesto-activo").onclick = function(){
+            if(this.checked)
+                document.getElementById("i-puesto-fin").disabled = true;
+            else
+                document.getElementById("i-puesto-fin").disabled = false;
+        }
 
     </script>
 </html>
