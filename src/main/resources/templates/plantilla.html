@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Eggenerator</title>
     <link rel="stylesheet" href="css/plantilla.css" />
     
   </head>
@@ -40,7 +40,7 @@
           
           <ul>
             <li><a th:href="@{/home}">Inicio</a></li>
-            <li><a href="#">Consejos</a></li>
+            <li><a th:href="@{/consejos}">Consejos</a></li>
             <li sec:authorize="isAuthenticated() == false"><a th:href="@{/login}">Iniciar sesion</a></li>
             <li sec:authorize="isAuthenticated()"><a th:href="@{/formulario}" sec:authentication="name">Iniciar sesion</a></li>
             <li sec:authorize="isAuthenticated() == false"><a th:href="@{/registro}">Registrate</a></li>
