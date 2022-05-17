@@ -45,7 +45,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 				"/registro**",
 				"/js/**",
 				"/css/**",
-				"/img/**").permitAll()
+            			"/img/**").permitAll()
                         .antMatchers("/").permitAll()
                         .antMatchers("/home").permitAll()
                         .antMatchers("/registro").permitAll()
