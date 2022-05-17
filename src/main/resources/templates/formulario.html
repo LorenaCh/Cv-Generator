@@ -94,13 +94,13 @@
                                     <div class="col">
                                         <div class="inputBox">
                                             <span class="text">Nombre</span>
-                                            <input type="text" name="nombre" id="i-nombre"/>
+                                            <input type="text" name="nombre" id="i-nombre" th:value="${persona?.nombre}"/>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="inputBox">
                                             <span class="text">Apellido</span>
-                                            <input type="text" name="nombre" id="i-apellido"/>
+                                            <input type="text" name="apellido" id="i-apellido" th:value="${persona?.apellido}"/>
                                         </div>
                                     </div>
                                 </div>
@@ -108,13 +108,13 @@
                                     <div class="col">
                                         <div class="inputBox">
                                             <span class="text">Profesion</span>
-                                            <input type="text" name="nombre" id="i-profesion"/>
+                                            <input type="text" name="profesion" id="i-profesion" th:value="${persona?.profesion}"/>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="inputBox">
                                             <span class="text">Edad</span>
-                                            <input type="number" name="nombre" id="i-edad"/>
+                                            <input type="number" name="edad" id="i-edad" th:value="${persona?.edad}"/>
                                         </div>
                                     </div>
                                 </div>
@@ -122,13 +122,13 @@
                                     <div class="col">
                                         <div class="inputBox">
                                             <span class="text">Telefono</span>
-                                            <input type="number" name="nombre" id="i-telefono"/>
+                                            <input type="number" name="telefono" id="i-telefono" th:value="${persona?.telefono}"/>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="inputBox">
                                             <span class="text">Correo</span>
-                                            <input type="email" name="nombre" id="i-correo"/>
+                                            <input type="email" name="correo" id="i-correo" th:value="${persona?.correo}"/>
                                         </div>
                                     </div>
                                 </div>
@@ -136,13 +136,13 @@
                                     <div class="col">
                                         <div class="inputBox">
                                             <span class="text">Pais</span>
-                                            <input type="text" name="nombre" id="i-nacionalidad"/>
+                                            <input type="text" name="nacionalidad" id="i-nacionalidad" th:value="${persona?.nacionalidad}"/>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="inputBox">
                                             <span class="text">Ciudad</span>
-                                            <input type="text" name="nombre" id="i-ciudad"/>
+                                            <input type="text" name="ciudad" id="i-ciudad" th:value="${persona?.ciudad}"/>
                                         </div>
                                     </div>
                                 </div>
@@ -150,7 +150,7 @@
                                     <div class="col">
                                         <div class="inputBox">
                                             <span class="text">Direccion</span>
-                                            <input type="text" name="nombre" id="i-direccion"/>
+                                            <input type="text" name="direccion" id="i-direccion" th:value="${persona?.direccion}"/>
                                         </div>
                                     </div>
                                 </div>
@@ -162,12 +162,13 @@
                         <div class="form-contenedor">
                             <h2>Resumen</h2>
                             <div class="linea"></div>
-                            <form>
+                            <form  method="post" th:action="@{/guardarResumen}">
+                            <input type="hidden" name="mailUsuario" th:value="${#authentication.getPrincipal().getUsername()}">
                                 <div class="row row100">
                                     <span class="text">Ingrese resumen de hasta 200 caracteres:</span>
-                                    <textArea name="i-resumen" id="i-resumen"></textArea>
+                                    <textArea name="descripcion" id="i-resumen"></textArea>
                                 </div>
-                                <button type="submit" class="continuar">Continuar</button>
+                                <button type="submit" class="continuar">Guardar</button>
                             </form>
                         </div>
                     </div>
@@ -420,7 +421,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="vista-previa">
+                <div class="vista-previa" onload="cargarCv()">
                     <div th:replace="/cvs/plantilla_1 :: plantilla_0" class="plantilla">
 
                     </div>
@@ -429,6 +430,20 @@
         </div>
     </body>
     <script>
+
+    function cargarCv(){
+        inputNombre();
+        inputApellido();
+        inputCiudad();
+        inputCorreo();
+        inputDescripcion();
+        inputDireccion();
+        inputEdad();
+        inputNacionalidad();
+        inputTelefono();
+        inputProfesion();
+    }
+
 
         const list = document.querySelectorAll('.list');
         const forms = document.querySelectorAll('.item-form');
@@ -484,92 +499,108 @@
         var idioma =  document.getElementById("i-idioma");
         var idioma_nivel = document.getElementById("i-idioma-nivel");
 
-        puesto_activo.oninput = function () {
-            console.log(this.checked === true ? "activo" : "no activo");
+        nombre.oninput = inputNombre;
+                
+       function inputNombre() {
+            document.getElementById("p-nombre").innerHTML = nombre.value + " " + apellido.value;
         };
-
-        nombre.oninput = function () {
-            document.getElementById("p-nombre").innerHTML = this.value + " " + apellido.value;
-
+        apellido.oninput = inputApellido;
+                
+       function inputApellido() {
+            document.getElementById("p-nombre").innerHTML = nombre.value + " " + apellido.value;
         };
-        apellido.oninput = function () {
-            document.getElementById("p-nombre").innerHTML = nombre.value + " " + this.value;
+        profesion.oninput = inputProfesion; 
+        
+        function inputProfesion() {
+            document.getElementById("p-profesion").innerHTML = profesion.value;
         };
-        profesion.oninput = function () {
-            document.getElementById("p-profesion").innerHTML = this.value;
-        };
-        direccion.oninput = function () {
-            if (this.value.trim() == "" && nacionalidad.value.trim() == "" && ciudad.value.trim() == "" && edad.value.trim() == "") {
+        
+        direccion.oninput = inputDireccion;
+                
+        function inputDireccion() {
+            if (direccion.value.trim() == "" && nacionalidad.value.trim() == "" && ciudad.value.trim() == "" && edad.value.trim() == "") {
                 document.getElementById("p-aboutMe").style.display = "none";
             } else {
-                if (this.value.trim() == "")
+                if (direccion.value.trim() == "")
                     document.getElementById("p-direccion").innerHTML = "";
                 else
-                    document.getElementById("p-direccion").innerHTML = this.value;
+                    document.getElementById("p-direccion").innerHTML = direccion.value;
                 document.getElementById("p-aboutMe").style.display = "block";
             }
         };
-        ciudad.oninput = function () {
-            if (this.value.trim() == "" && nacionalidad.value.trim() == "" && direccion.value.trim() == "" && edad.value.trim() == "") {
+        ciudad.oninput = inputCiudad;
+                
+            function inputCiudad() {
+            if (ciudad.value.trim() == "" && nacionalidad.value.trim() == "" && direccion.value.trim() == "" && edad.value.trim() == "") {
                 document.getElementById("p-aboutMe").style.display = "none";
             } else {
-                if (this.value.trim() == "")
-                    document.getElementById("p-ciudad").innerHTML = "CIUDAD: " + this.value;
+                if (ciudad.value.trim() == "")
+                    document.getElementById("p-ciudad").innerHTML = "CIUDAD: " + ciudad.value;
                 else
-                    document.getElementById("p-ciudad").innerHTML = "CIUDAD: " + this.value;
+                    document.getElementById("p-ciudad").innerHTML = "CIUDAD: " + ciudad.value;
                 document.getElementById("p-aboutMe").style.display = "block";
             }
         };
-        nacionalidad.oninput = function () {
-            if (this.value.trim() == "" && ciudad.value.trim() == "" && direccion.value.trim() == "" && edad.value.trim() == "") {
+        nacionalidad.oninput = inputNacionalidad;
+                
+            function inputNacionalidad() {
+            if (nacionalidad.value.trim() == "" && ciudad.value.trim() == "" && direccion.value.trim() == "" && edad.value.trim() == "") {
                 document.getElementById("p-aboutMe").style.display = "none";
             } else {
-                if (this.value.trim() == "")
+                if (nacionalidad.value.trim() == "")
                     document.getElementById("p-pais").innerHTML = "";
                 else
-                    document.getElementById("p-pais").innerHTML = "PAIS: " + this.value;
+                    document.getElementById("p-pais").innerHTML = "PAIS: " + nacionalidad.value;
                 document.getElementById("p-aboutMe").style.display = "block";
             }
         };
-        edad.oninput = function () {
-            if (this.value.trim() == "" && ciudad.value.trim() == "" && direccion.value.trim() == "" && nacionalidad.value.trim() == "") {
+        edad.oninput = inputEdad;
+                
+            function inputEdad() {
+            if (edad.value.trim() == "" && ciudad.value.trim() == "" && direccion.value.trim() == "" && nacionalidad.value.trim() == "") {
                 document.getElementById("p-aboutMe").style.display = "none";
             } else {
-                if (this.value.trim() == "")
+                if (edad.value.trim() == "")
                     document.getElementById("p-edad").innerHTML = "";
                 else
-                    document.getElementById("p-edad").innerHTML = "EDAD: " + this.value;
+                    document.getElementById("p-edad").innerHTML = "EDAD: " + edad.value;
                 document.getElementById("p-aboutMe").style.display = "block";
             }
         };
-        telefono.oninput = function () {
-            if (this.value.trim() == "" && correo.value.trim() == "") {
+        telefono.oninput = inputTelefono;
+                
+            function inputTelefono() {
+            if (telefono.value.trim() == "" && correo.value.trim() == "") {
                 document.getElementById("p-contacto").style.display = "none";
             } else {
-                if (this.value.trim() == "")
+                if (telefono.value.trim() == "")
                     document.getElementById("p-telefono").innerHTML = "";
                 else
-                    document.getElementById("p-telefono").innerHTML = this.value;
+                    document.getElementById("p-telefono").innerHTML = telefono.value;
                 document.getElementById("p-contacto").style.display = "block";
             }
         };
-        correo.oninput = function () {
-            if (this.value.trim() == "" && telefono.value.trim() == "") {
+        correo.oninput = inputCorreo;
+                
+            function inputCorreo() {
+            if (correo.value.trim() == "" && telefono.value.trim() == "") {
                 document.getElementById("p-contacto").style.display = "none";
             } else {
-                if (this.value.trim() == "")
+                if (correo.value.trim() == "")
                     document.getElementById("p-correo").innerHTML = "";
                 else
-                    document.getElementById("p-correo").innerHTML = this.value;
+                    document.getElementById("p-correo").innerHTML = correo.value;
                 document.getElementById("p-contacto").style.display = "block";
             }
         };
-        descripcion.oninput = function () {
-            if (this.value.length > 200) {
+        descripcion.oninput = inputDescripcion;
+                
+            function inputDescripcion() {
+            if (descripcion.value.length > 200) {
                 descripcion.style.color = "red";
             } else {
                 descripcion.style.color = "white";
-                document.getElementById("p-resumen").innerHTML = this.value;
+                document.getElementById("p-resumen").innerHTML = descripcion.value;
             }
         };
        

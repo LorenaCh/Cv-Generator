@@ -1,6 +1,8 @@
 package com.cvgenerator.controlador;
 
 import com.cvgenerator.entidades.Persona;
+import com.cvgenerator.entidades.Usuario;
+import com.cvgenerator.servicio.PersonaServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +18,9 @@ public class RegistroControlador {
 
 	@Autowired
 	private UsuarioServicio servicio;
+        
+        @Autowired
+        private PersonaServicio personaServicio;
 	
 	@GetMapping("/login")
 	public String iniciarSesion() {
@@ -55,9 +60,21 @@ public class RegistroControlador {
         }
         
         @PostMapping("/guardarPerfil")
-        public String guardarPerfil(@RequestParam String mailUsuario,Persona persona){ 
-            System.out.println("******"+persona);
+        public String guardarPerfil(@RequestParam String mailUsuario,Persona persona,Model model){ 
+            Usuario usuario = servicio.findByEmail(mailUsuario);
+            persona.setIdPersona(usuario.getPersona().getIdPersona());
+            personaServicio.guardar(persona);
+            model.addAttribute("persona",persona);
             return "formulario";
         }
-
+        
+        @PostMapping("/guardarResumen")
+        public String guardarResumen(@RequestParam String mailUsuario,Persona persona,Model model){ 
+            Usuario usuario = servicio.findByEmail(mailUsuario);
+            Persona personaActual = personaServicio.findById(usuario.getPersona().getIdPersona());
+            personaActual.setDescripcion(persona.getDescripcion());
+            personaServicio.guardar(personaActual);
+            model.addAttribute("persona",personaActual);
+            return "formulario";
+        }
 }

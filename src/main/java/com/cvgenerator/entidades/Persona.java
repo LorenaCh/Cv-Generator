@@ -28,6 +28,7 @@ public class Persona implements Serializable {
     private String profesion;
     private Integer telefono;
     private String correo;
+    private String ciudad;
     private Integer edad;
     private String nacionalidad;
     private String direccion;
@@ -185,9 +186,18 @@ public class Persona implements Serializable {
         this.idiomas = idiomas;
     }
 
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
     @Override
     public String toString() {
-        return "Persona{" + "idPersona=" + idPersona + ", nombre=" + nombre + ", apellido=" + apellido + ", profesion=" + profesion + ", telefono=" + telefono + ", correo=" + correo + ", edad=" + edad + ", nacionalidad=" + nacionalidad + ", direccion=" + direccion + ", descripcion=" + descripcion + ", usuario=" + usuario + ", trabajos=" + trabajos + ", formaciones=" + formaciones + ", aptitud=" + aptitud + ", conocimientos=" + conocimientos + ", idiomas=" + idiomas + '}';
+        return "Persona{" + "idPersona=" + idPersona + ", nombre=" + nombre + ", apellido=" + apellido + ", profesion=" + profesion + ", telefono=" + telefono + ", correo=" + correo + ", ciudad=" + ciudad + ", edad=" + edad + ", nacionalidad=" + nacionalidad + ", direccion=" + direccion + ", descripcion=" + descripcion + ", usuario=" + usuario + ", trabajos=" + trabajos + ", formaciones=" + formaciones + ", aptitud=" + aptitud + ", conocimientos=" + conocimientos + ", idiomas=" + idiomas + '}';
     }
+
 
 }
