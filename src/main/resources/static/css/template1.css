@@ -23,6 +23,8 @@ html:focus-within {
 body {
 	font: 1rem/var(--interlineado) var(--fuente);
 	text-rendering: optimizeSpeed;
+        width: 105mm;
+        height: 148.5mm;
 }
 @media screen {
 	body {
