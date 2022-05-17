@@ -6,7 +6,7 @@ body{
     ;
     
     }
-#contenedor{
+.plantilla3 #contenedor{
     width: 105mm;
     height: 148.5mm;
     margin: 0 auto;
@@ -14,93 +14,93 @@ body{
     flex-direction: column;
     background-color: #fcfdf6;
 }   
-header h1{
+.plantilla3 header h1{
     text-align: center;
     margin: 0;
     padding: 0.4em;
 }
 
-.detalles {
+.plantilla3 .detalles {
     margin-top: 1em;
     text-align: center;
     padding: 5px;
 }
-.lisma,.lisma2{
+.plantilla3 .lisma,.lisma2{
     margin-bottom: 0.5em;
 }
-.lisma+p,.lisma2+p{
+.plantilla3 .lisma+p,.lisma2+p{
     margin-top: 0;
 }
 
-#contenedor footer{
+.plantilla3 #contenedor footer{
     margin-top: auto;
 }
-.listadehabilidades{
+.plantilla3 .listadehabilidades{
     padding: 0;
     list-style: none;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
-.listadehabilidades li{
+.plantilla3 .listadehabilidades li{
     display: flex;
     flex-wrap: wrap;
 }
-.listadehabilidades li progress{
+.plantilla3 .listadehabilidades li progress{
     -webkit-appearance: none;
     appearance: none;
     background-color: #b8baba;
     margin-left: auto;
 }
-.listadehabilidades li progress::-webkit-progress-bar{
+.plantilla3 .listadehabilidades li progress::-webkit-progress-bar{
     background-color: #b8baba;
 
 }
-.listadehabilidades li progress::-webkit-progress-value{
+.plantilla3 .listadehabilidades li progress::-webkit-progress-value{
     background-color: #5b504c;
 
 }
-.listadehabilidades li progress::-moz-progress-bar{
+.plantilla3 .listadehabilidades li progress::-moz-progress-bar{
     background-color: #5b504c;
 
 }
-.info{
+.plantilla3 .info{
     text-align: right;
     margin: 0em;
 }
-h4{
+.plantilla3 h4{
     margin-top: 0em;
     margin-bottom: 0em;
 }
-.formacion{
+.plantilla3 .formacion{
     margin-top: 0em;
 }
-.habilidades{
+.plantilla3 .habilidades{
     display: flex;
     justify-content: space-around;
     text-align: center;
 }
-.head{
+.plantilla3 .head{
     display: flex;
     justify-content: space-between;
     padding: 5px ;
     background-color: #3f5e78;
     color: #f0d2cb;
 }
-h2{
+.plantilla3 h2{
     background-color: #f0d2cb;
     padding: 5px;
 }
-.obj{
+.plantilla3 .obj{
     text-align: center;
 }
-li{
+.plantilla3 li{
     text-align: center;
 }
-.habb{
+.plantilla3 .habb{
     width: 45%;
 }
-.listadehabilidades2{
+.plantilla3 .listadehabilidades2{
     padding: 0;
     list-style: none;
     width: 80%;
