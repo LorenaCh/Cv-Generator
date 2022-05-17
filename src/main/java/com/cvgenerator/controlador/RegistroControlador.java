@@ -1,5 +1,6 @@
 package com.cvgenerator.controlador;
 
+import com.cvgenerator.entidades.Persona;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.cvgenerator.servicio.UsuarioServicio;
 import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -50,6 +52,12 @@ public class RegistroControlador {
         @GetMapping("/consejos")
         public String consejo(){
             return "consejos";
+        }
+        
+        @PostMapping("/guardarPerfil")
+        public String guardarPerfil(@RequestParam String mailUsuario,Persona persona){ 
+            System.out.println("******"+persona);
+            return "formulario";
         }
 
 }
