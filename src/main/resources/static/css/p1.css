@@ -6,9 +6,15 @@ body{
     ;
     
     }
+<<<<<<< HEAD
 .plantilla1 #contenedor{
     width: 190mm;
     min-height: 277mm;
+=======
+#contenedor{
+    width: 105mm;
+    height: 148.5mm;
+>>>>>>> bc53f99f2d4e265d9da2e6430b56f4c2d94f041a
     margin: 0 auto;
     display: flex;
     flex-direction: column;

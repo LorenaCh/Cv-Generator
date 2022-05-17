@@ -31,6 +31,10 @@ body {
 		min-height: 100vh;
 	}
 }
+.dimension{
+    width: 105mm;
+    height: 148.5mm;
+}
 h1, h2, h3, h4 {
 	line-height: var(--interlineado-alt);
 	margin: 0 0 calc(var(--espacio) / 2);

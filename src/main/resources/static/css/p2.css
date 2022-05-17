@@ -7,8 +7,8 @@ body{
     
     }
 #contenedor{
-    width: 190mm;
-    min-height: 277mm;
+    width: 105mm;
+    height: 148.5mm;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
