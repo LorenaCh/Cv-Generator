@@ -15,6 +15,7 @@ body{
 }
 .cabecera{
     background: -prefix-linear-gradient(top, white, #3EBF8E);
+    
 }
 .contenedor{
     width: 80%;

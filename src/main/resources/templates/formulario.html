@@ -136,14 +136,14 @@
                                 <div class="row row5050">
                                     <div class="col">
                                         <div class="inputBox">
-                                            <span class="text">Pais</span>
-                                            <input type="text" name="nacionalidad" id="i-nacionalidad" th:value="${persona?.nacionalidad}"/>
+<!--                                            <span class="text">Pais</span>-->
+                                                <div type="text" name="nacionalidad" id="i-nacionalidad" th:value="${persona?.nacionalidad}"/></div>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="inputBox">
-                                            <span class="text">Ciudad</span>
-                                            <input type="text" name="ciudad" id="i-ciudad" th:value="${persona?.ciudad}"/>
+<!--                                            <span class="text">Ciudad</span>-->
+                                                <div type="text" name="ciudad" id="i-ciudad" th:value="${persona?.ciudad}"/></div>
                                         </div>
                                     </div>
                                 </div>
@@ -569,7 +569,7 @@
                 if (edad.value.trim() == "")
                     document.getElementById("p-edad").innerHTML = "";
                 else
-                    document.getElementById("p-edad").innerHTML = "EDAD: " + edad.value;
+                    document.getElementById("p-edad").innerHTML = "Edad: " + edad.value;
                 document.getElementById("p-aboutMe").style.display = "block";
             }
         };

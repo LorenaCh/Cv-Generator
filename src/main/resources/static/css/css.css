@@ -366,4 +366,8 @@ html:is(.pagFormLogin, .pagFormRegistro, .pagFormCambiarContrasenia) #mainWrap m
 }
 .textocon{
     padding: 25px;
+    text-align: justify;
+}
+.titulocon{
+    text-align: center;
 }
