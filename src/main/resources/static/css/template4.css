@@ -24,8 +24,10 @@ html:focus-within {
 body {
 	font: 1rem/var(--interlineado) var(--fuente);
 	text-rendering: optimizeSpeed;
-        width: 105mm;
-        height: 148.5mm;
+}
+.dimension{
+    width: 105mm;
+    height: 148.5mm;
 }
 h1, :is(article, aside, nav, section) h1 {
 	font-size: var(--tamanio-fuente-xx-grande);
