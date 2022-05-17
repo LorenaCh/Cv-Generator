@@ -6,7 +6,7 @@ body{
     ;
     
     }
-#contenedor{
+.plantilla2 #contenedor{
     width: 105mm;
     height: 148.5mm;
     margin: 0 auto;
@@ -16,7 +16,7 @@ body{
     background-color:  #f4f8fb;
 }   
 
-.izquierda {
+.plantilla2 .izquierda {
     box-sizing: border-box;
     padding: 10px;
     color: #fff;
@@ -27,68 +27,68 @@ body{
    background-color: #243750;
 }
 
-main {
+.plantilla2 main {
     width:68%;
     text-align: left;
 }
 
-.detalles{
+.plantilla2 .detalles{
     margin-top: 4em;
     display: flex;
     flex-direction: column;
     align-content: space-between;
     }
 
-    h1,h2{
+   .plantilla2 h1,h2{
         font-weight: 500;
     
     }
-    h4,b{
+    .plantilla2 h4,b{
         font-weight: 700;
     }
 
-    header h1{
+    .plantilla2 header h1{
         text-align: left;
         margin: 0;
         padding: 1em 0;
     }
-    .lisma,.lisma2{
+    .plantilla2 .lisma,.lisma2{
         margin-bottom: 0.5em;
     }
-    .lisma+p,.lisma2+p{
+    .plantilla2 .lisma+p,.lisma2+p{
         margin-top: 0;
     }
-    .listadehabilidades{
+   .plantilla2 .listadehabilidades{
         padding: 0;
         list-style: none;
         width: 50%;
         margin-left: auto;
         margin-right: auto;
     }
-    .listadehabilidades li{
+    .plantilla2 .listadehabilidades li{
         display: flex;
         flex-wrap: wrap;
     }
-    .listadehabilidades li progress{
+   .plantilla2 .listadehabilidades li progress{
         -webkit-appearance: none;
         appearance: none;
         background-color: white;
         margin-left: auto;
     }
-    .listadehabilidades li progress::-webkit-progress-bar{
+    .plantilla2 .listadehabilidades li progress::-webkit-progress-bar{
         background-color: white;
     
     }
-    .listadehabilidades li progress::-webkit-progress-value{
+    .plantilla2 .listadehabilidades li progress::-webkit-progress-value{
         background-color: #dd8772;
     
     }
-    .listadehabilidades li progress::-moz-progress-bar{
+    .plantilla2 .listadehabilidades li progress::-moz-progress-bar{
         background-color: #dd8772;
     
     }
 
-    .obj{
+   .plantilla2 .obj{
         font-weight: 700;
         
     }

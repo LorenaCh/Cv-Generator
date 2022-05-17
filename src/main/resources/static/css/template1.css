@@ -35,21 +35,21 @@ body {
     width: 105mm;
     height: 148.5mm;
 }
-h1, h2, h3, h4 {
+.plantilla4 h1, h2, h3, h4 {
 	line-height: var(--interlineado-alt);
 	margin: 0 0 calc(var(--espacio) / 2);
 }
-p, figure, blockquote, ul, ol, dl {
+.plantilla4 p, figure, blockquote, ul, ol, dl {
 	margin: 0 0 var(--espacio);
 	padding: 0;
 }
-a:not([class]) {
+.plantilla4 a:not([class]) {
 	text-decoration-skip-ink: auto;
 }
-input, button, textarea, select {
+.plantilla4 input, button, textarea, select {
 	font: inherit;
 }
-ul[role='list'], ol[role='list'] {
+.plantilla4 ul[role='list'], ol[role='list'] {
 	list-style: none;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -64,25 +64,25 @@ ul[role='list'], ol[role='list'] {
 	}
 }
 
-.contenedor {
+.plantilla4 .contenedor {
 	margin-left: auto;
 	margin-right: auto;
 	width: 90%;
 	max-width: var(--ancho-contenedor);
 }
 
-#masthead {
+.plantilla4 #masthead {
 	background-color: gold;
 	margin-bottom: var(--espacio);
 	padding: calc(var(--espacio) / 1.5) 0;
 }
-#masthead h1 {
+.plantilla4 #masthead h1 {
 	margin-bottom: 0;
 }
-.detalle {
+.plantilla4 .detalle {
 	margin-bottom: var(--espacio);
 }
-.detalle header h2 {
+.plantilla4 .detalle header h2 {
 	font-size: var(--tamanio-fuente-pequenio);
 	font-weight: 900;
 	line-height: 1;
@@ -94,27 +94,27 @@ ul[role='list'], ol[role='list'] {
 	padding: calc(var(--espacio) / 2);
 	display: inline-block;
 }
-.detalle.detalleExperiencia {
+.plantilla4 .detalle.detalleExperiencia {
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--espacio);
 }
-.detalle.detalleExperiencia header {
+.plantilla4 .detalle.detalleExperiencia header {
 	flex: 1 0 100%;
 }
-.detalle.detalleExperiencia header h2 {
+.plantilla4 .detalle.detalleExperiencia header h2 {
 	margin-bottom: 0;
 }
-.detalle.detalleExperiencia section {
+.plantilla4 .detalle.detalleExperiencia section {
 	flex: 1 0;
 }
-.personal {
+.plantilla4 .personal {
 	display: flex;
 	gap: var(--espacio);
 }
-.detalle.perfil, .detalle.datos {
+.plantilla4 .detalle.perfil, .detalle.datos {
 	flex: 1 0 50%;
 }
-.detalle.perfil p {
+.plantilla4 .detalle.perfil p {
 	text-align: justify;
 }

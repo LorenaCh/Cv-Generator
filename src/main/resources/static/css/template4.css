@@ -15,10 +15,10 @@
 	--ancho-contenedor: calc(var(--ancho-main) * 1);
 }
 
-*, *::before, *::after {
+.plantilla7 *, *::before, *::after {
 	box-sizing: border-box;
 }
-html:focus-within {
+.plantilla7 html:focus-within {
 	scroll-behavior: smooth;
 }
 body {
@@ -29,16 +29,16 @@ body {
     width: 105mm;
     height: 148.5mm;
 }
-h1, :is(article, aside, nav, section) h1 {
+.plantilla7 h1, :is(article, aside, nav, section) h1 {
 	font-size: var(--tamanio-fuente-xx-grande);
 }
-h2, :is(article, aside, nav, section) :is(article, aside, nav, section) h1 {
+.plantilla7 h2, :is(article, aside, nav, section) :is(article, aside, nav, section) h1 {
 	font-size: var(--tamanio-fuente-x-grande);
 }
-h3, :is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) h1 {
+.plantilla7 h3, :is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) h1 {
 	font-size: var(--tamanio-fuente-grande);
 }
-h4, :is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) h1 {
+.plantilla7 h4, :is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) h1 {
 	font-size: var(--tamanio-fuente);
 }
 @media screen {
@@ -47,21 +47,21 @@ h4, :is(article, aside, nav, section) :is(article, aside, nav, section) :is(arti
 		min-height: 100vh;
 	}
 }
-h1, h2, h3, h4 {
+.plantilla7 h1, h2, h3, h4 {
 	line-height: var(--interlineado-alt);
 	margin: 0 0 calc(var(--espacio) / 2);
 }
-p, figure, blockquote, ul, ol, dl {
+.plantilla7 p, figure, blockquote, ul, ol, dl {
 	margin: 0 0 var(--espacio);
 	padding: 0;
 }
-a:not([class]) {
+.plantilla7 a:not([class]) {
 	text-decoration-skip-ink: auto;
 }
-input, button, textarea, select {
+.plantilla7 input, button, textarea, select {
 	font: inherit;
 }
-ul[role='list'], ol[role='list'] {
+.plantilla7 ul[role='list'], ol[role='list'] {
 	list-style: none;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -76,25 +76,25 @@ ul[role='list'], ol[role='list'] {
 	}
 }
 
-.contenedor {
+.plantilla7 .contenedor {
 	margin-left: auto;
 	margin-right: auto;
 	width: 90%;
 	max-width: var(--ancho-contenedor);
 }
 
-#personales, .detalleExperiencia {
+.plantilla7 #personales, .detalleExperiencia {
 	display: flex;
 	justify-content: space-between;
 	gap: var(--espacio);
 }
-#personales > * {
+.plantilla7 #personales > * {
 	flex: 0 1 50%;
 }
-.detalleExperiencia > section {
+.plantilla7 .detalleExperiencia > section {
 	flex: 1 0;
 }
-.detalleExperiencia {
+.plantilla7 .detalleExperiencia {
 	flex-wrap: wrap;
 }
 .detalleExperiencia > header {
