@@ -474,12 +474,19 @@ body{
     display:none;
 }
 
-.vista-previa > .plantilla{
+.vista-previa > .plantilla-contenedor{
     width: 105mm;
     height: 148.5mm;
     background: #dff1ff;
     z-index: 3;
+    position:relative;
 }
+.vista-previa .plantilla-contenedor > div{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 
 .form .item-form .form-contenedor .form-plantilla img{
     width: 100px;
