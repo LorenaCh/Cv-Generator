@@ -2,13 +2,18 @@
  /* * {outline: 1px solid red;}*/
 body{
     font-family: "dm sans";
-    margin: 0;
-    ;
-    
+    min-height: 100vh;
+    background: #161616;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     }
-.plantilla2 #contenedor{
+.plantilla2{
     width: 105mm;
     height: 148.5mm;
+    position: relative;    
+    }
+.plantilla2 #contenedor{
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -47,10 +52,10 @@ body{
         font-weight: 700;
     }
 
-    .plantilla2 header h1{
+    .plantilla2 header h1,.profesion{
         text-align: left;
         margin: 0;
-        padding: 1em 0;
+        padding: 0.2em 0;
     }
     .plantilla2 .lisma,.lisma2{
         margin-bottom: 0.5em;
@@ -64,31 +69,26 @@ body{
         width: 50%;
         margin-left: auto;
         margin-right: auto;
+        text-align: center;
     }
     .plantilla2 .listadehabilidades li{
         display: flex;
         flex-wrap: wrap;
     }
-   .plantilla2 .listadehabilidades li progress{
-        -webkit-appearance: none;
-        appearance: none;
-        background-color: white;
-        margin-left: auto;
-    }
-    .plantilla2 .listadehabilidades li progress::-webkit-progress-bar{
-        background-color: white;
-    
-    }
-    .plantilla2 .listadehabilidades li progress::-webkit-progress-value{
-        background-color: #dd8772;
-    
-    }
-    .plantilla2 .listadehabilidades li progress::-moz-progress-bar{
-        background-color: #dd8772;
-    
-    }
+   
 
    .plantilla2 .obj{
         font-weight: 700;
-        
+    }
+    ul{
+    list-style: none;
+    }
+    .profesion{
+    
+    font-size: 9.8pt;
+    
+}
+p{
+        word-wrap: break-word;
+        padding: 5px;
     }

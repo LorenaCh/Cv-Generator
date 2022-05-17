@@ -24,16 +24,22 @@
 body {
 	font: 1rem/var(--interlineado) var(--fuente);
 	text-rendering: optimizeSpeed;
+        min-height: 100vh;
+        background: #161616;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 }
 @media screen {
 	body {
 		margin: 0;
-		min-height: 100vh;
+		
 	}
 }
-.dimension{
+.dimension_plantilla6{
     width: 105mm;
     height: 148.5mm;
+    position: relative;
 }
 .plantilla6 h1, h2, h3, h4 {
 	line-height: var(--interlineado-alt);
