@@ -441,15 +441,7 @@
         var puesto_inicio = document.getElementById("i-puesto-inicio");
         var puesto_fin = document.getElementById("i-puesto-fin");
         var puesto_activo = document.getElementById("i-puesto-activo");
-<<<<<<< HEAD
         
-        var agregarTrabajo = document.getElementById("i-agregar-trabajo");
-        
-        
-=======
-
-
->>>>>>> 312bfad6343e4e877b03d91c39d184b59cb55070
         var titulo = document.getElementById("i-titulo");
         var titulo_lugar = document.getElementById("i-titulo-lugar");
         var titulo_tipo = document.getElementById("i-titulo-tipo");
@@ -457,11 +449,9 @@
         var titulo_fin = document.getElementById("i-titulo-fin");
         var titulo_activo = document.getElementById("i-titulo-activo");
 
-<<<<<<< HEAD
+
         var formLaboral = document.getElementById("i-laboral-activo");
         
-        
-=======
         var aptitud = document.getElementById("i-aptitud");
 
         var conocimiento = document.getElementById("i-conocimiento");
@@ -469,7 +459,6 @@
         var idioma =  document.getElementById("i-idioma");
         var idioma_nivel = document.getElementById("i-idioma-nivel");
 
->>>>>>> 312bfad6343e4e877b03d91c39d184b59cb55070
         puesto_activo.oninput = function () {
             console.log(this.checked === true ? "activo" : "no activo");
         };
@@ -558,17 +547,6 @@
                 document.getElementById("p-resumen").innerHTML = this.value;
             }
         };
-<<<<<<< HEAD
-//        puesto.oninput = function () {
-//            var lista = document.getElementById("p-trabajos");
-//            var li = document.createElement("li");
-//            var subtitulo = document.createElement("div");
-//            subtitulo.setAttribute("class","subtitle");
-//            subtitulo.appendChild(document.createTextNode(i-puesto));
-//            li.appendChild(subtitulo);
-//            lista.appendChild(li);
-//        };
-
        
         function validaFormulario(){
             if(puesto.value == ""){
@@ -589,10 +567,8 @@
                 return false;
             }
         }
-        
-=======
+
         var agregarTrabajo = document.getElementById("i-agregar-trabajo");
->>>>>>> 312bfad6343e4e877b03d91c39d184b59cb55070
         agregarTrabajo.onclick = function () {
             if(validaFormulario()== false){
                 return;
