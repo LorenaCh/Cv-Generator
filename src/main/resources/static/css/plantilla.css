@@ -396,6 +396,18 @@ body{
     animation: fondo 5s linear infinite;
     z-index: -1;
 }
+.form-plantilla {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: .5rem;
+}
+.form-plantilla > a {
+    flex: 1 0 30%;
+}
+.form-plantilla > a img {
+    max-width: 100%;
+}
 
 @keyframes fondo {
     0%{
