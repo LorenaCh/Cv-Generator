@@ -155,7 +155,40 @@
                                             </div>
                                         </div>
                                     </div>
+<<<<<<< HEAD
                                     <button type="submit" class="continuar">Guardar</button>
+=======
+                                    <div class="col">
+                                        <div class="inputBox">
+                                            <span class="text">Correo</span>
+                                            <input type="email" name="correo" id="i-correo" th:value="${persona?.correo}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row5050">
+                                    <div class="col">
+                                        <div class="inputBox">
+<!--                                            <span class="text">Pais</span>-->
+                                                <div type="text" name="nacionalidad" id="i-nacionalidad" th:value="${persona?.nacionalidad}"/></div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="inputBox">
+<!--                                            <span class="text">Ciudad</span>-->
+                                                <div type="text" name="ciudad" id="i-ciudad" th:value="${persona?.ciudad}"/></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row100">
+                                    <div class="col">
+                                        <div class="inputBox">
+                                            <span class="text">Direccion</span>
+                                            <input type="text" name="direccion" id="i-direccion" th:value="${persona?.direccion}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="continuar">Guardar</button>
+>>>>>>> 81ad037e098f9d32b0e284aa3fb30fad2945eff1
                             </form>
                         </div>
                     </div>
@@ -653,7 +686,7 @@
                 if (edad.value.trim() == "")
                     document.getElementById("p-edad").innerHTML = "";
                 else
-                    document.getElementById("p-edad").innerHTML = "EDAD: " + edad.value;
+                    document.getElementById("p-edad").innerHTML = "Edad: " + edad.value;
                 document.getElementById("p-aboutMe").style.display = "block";
             }
         }

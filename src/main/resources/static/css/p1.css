@@ -2,14 +2,21 @@
 /*  * {outline: 1px solid red;}*/
 body{
     font-family: "dm sans";
-    margin: 0;
-    ;
+    min-height: 100vh;
+    background: #161616;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     }
+.plantilla1{
+    width: 105mm;
+    height: 148.5mm;
+    position: relative;
+}
 
 .plantilla1 #contenedor{
     font-family: "dm sans";
-    width: 190mm;
-    min-height: 277mm;
+    
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -18,20 +25,20 @@ body{
 }   
 .plantilla1 h1,h2{
     font-weight: 500;
-
+    text-align: center;
 }
 .plantilla1 h4,b{
-    font-weight: 700;
+    font-weight: 500;
 }
 .plantilla1 header, section {
-    width: 190mm;
+    width: 100%;
     
 }
 
-.plantilla1 header h1{
+.plantilla1 header h1,.profesion{
     text-align: center;
     margin: 0;
-    padding: 1em;
+    padding: 0.2em;
     background-color: #6e5958;
     color: #fff;
 }
@@ -64,9 +71,12 @@ body{
     list-style: none;
 }
 .plantilla1.obj{
-    font-weight: 700;
+    width: 100%;
+    font-weight: 500;
     display: flex;
     justify-content: center;
+    text-align: center;
+    
 }
 
 .plantilla1.lisma,.lisma2{
@@ -85,30 +95,15 @@ body{
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
    
 }
 .plantilla1.listadehabilidades li{
     display: flex;
     flex-wrap: wrap;
 }
-.plantilla1 .listadehabilidades li progress{
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: silver;
-    margin-left: auto;
-}
-.plantilla1 .listadehabilidades li progress::-webkit-progress-bar{
-    background-color: silver;
 
-}
-.plantilla1 .listadehabilidades li progress::-webkit-progress-value{
-    background-color: #dd8772;
 
-}
-.plantilla1 .listadehabilidades li progress::-moz-progress-bar{
-    background-color: #dd8772;
-
-}
 .plantilla1 h2{
     background-color: #ddb1b0;
     padding: 5px;
@@ -125,7 +120,15 @@ body{
     width: 50%;
     margin-left: auto;
     margin-right: auto;  
-}
-.plantilla1 .obj{
     text-align: center;
 }
+ul{
+    list-style: none;   
+}
+.profesion{
+    font-size: 9.8pt;        
+    }
+p{
+        word-wrap: break-word;
+        padding: 5px;
+    }

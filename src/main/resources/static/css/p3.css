@@ -2,22 +2,27 @@
 /* * {outline: 1px solid red;}*/
 body{
     font-family: "dm sans";
-    margin: 0;
-    ;
-    
+    min-height: 100vh;
+    background: #161616;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     }
-.plantilla3 #contenedor{
+.plantilla3{
     width: 105mm;
     height: 148.5mm;
+    position: relative;
+}
+.plantilla3 #contenedor{
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     background-color: #fcfdf6;
 }   
-.plantilla3 header h1{
+.plantilla3 header h1,.profesion{
     text-align: center;
     margin: 0;
-    padding: 0.4em;
+    padding: 0.2em;
 }
 
 .plantilla3 .detalles {
@@ -46,24 +51,7 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
-.plantilla3 .listadehabilidades li progress{
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: #b8baba;
-    margin-left: auto;
-}
-.plantilla3 .listadehabilidades li progress::-webkit-progress-bar{
-    background-color: #b8baba;
 
-}
-.plantilla3 .listadehabilidades li progress::-webkit-progress-value{
-    background-color: #5b504c;
-
-}
-.plantilla3 .listadehabilidades li progress::-moz-progress-bar{
-    background-color: #5b504c;
-
-}
 .plantilla3 .info{
     text-align: right;
     margin: 0em;
@@ -106,4 +94,15 @@ body{
     width: 80%;
     margin-left: auto;
     margin-right: auto;  
+    text-align: center;
 }
+ul{
+    list-style: none;
+}
+.profesion{
+    font-size: 9.8pt;
+}
+p{
+        word-wrap: break-word;
+        padding: 5px;
+    }
