@@ -240,6 +240,9 @@
                         <div class="form-contenedor">
                             <h2>Formacion Academica</h2>
                             <div class="linea"></div>
+                            <div class="lista-academico" id="i-lista-academicos">
+                                <ul id="lista-academicos"></ul>
+                            </div>
                             <form>
                                 <div class="row row100">
                                     <div class="col">
@@ -253,13 +256,13 @@
                                     <div class="col">
                                         <div class="inputBox">
                                             <span class="text">Establecimiento</span>
-                                            <input type="text" name="establecimiento" id="i-titulo-establecimiento"/>
+                                            <input type="text" name="establecimiento" id="i-titulo-lugar"/>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="inputBox">
                                             <span class="text">Tipo</span>
-                                            <select>
+                                            <select id="i-titulo-tipo">
                                                 <option>Universitario</option>
                                                 <option>Terciario</option>
                                                 <option>Secundario</option>
@@ -296,6 +299,8 @@
                                         </div>
                                     </div>
                                 </div>
+                                <button type="button" id="i-agregar-titulo" class="continuar">Agregar</button>
+                                <button type="submit" class="continuar">Guardar</button>
                             </form>
                         </div>
                     </div>
@@ -303,15 +308,20 @@
                         <div class="form-contenedor">
                             <h2>Aptitud</h2>
                             <div class="linea"></div>
+                            <div class="lista-aptitud" id="i-lista-aptitudes">
+                                <ul id="lista-aptitudes"></ul>
+                            </div>
                             <form>
                                 <div class="row row100">
                                     <div class="col">
                                         <div class="inputBox">
                                             <span class="text">Nombre</span>
-                                            <input type="text">
+                                            <input type="text" id="i-aptitud-nombre">
                                         </div> 
                                     </div>
                                 </div>
+                                <button type="button" id="i-agregar-aptitud" class="continuar">Agregar</button>
+                                <button type="submit" class="continuar">Guardar</button>
                             </form>
                         </div>
                     </div>
@@ -421,7 +431,20 @@
         var puesto_inicio = document.getElementById("i-puesto-inicio");
         var puesto_fin = document.getElementById("i-puesto-fin");
         var puesto_activo = document.getElementById("i-puesto-activo");
+        
+        var agregarTrabajo = document.getElementById("i-agregar-trabajo");
+        
+        
+        var titulo = document.getElementById("i-titulo");
+        var titulo_lugar = document.getElementById("i-titulo-lugar");
+        var titulo_tipo = document.getElementById("i-titulo-tipo");
+        var titulo_inicio = document.getElementById("i-titulo-inicio");
+        var titulo_fin = document.getElementById("i-titulo-fin");
+        var titulo_activo = document.getElementById("i-titulo-activo");
 
+        var formLaboral = document.getElementById("i-laboral-activo");
+        
+        
         puesto_activo.oninput = function () {
             console.log(this.checked === true ? "activo" : "no activo");
         };
@@ -521,8 +544,30 @@
 //        };
 
        
-        var agregarTrabajo = document.getElementById("i-agregar-trabajo");
+        function validaFormulario(){
+            if(puesto.value == ""){
+                alert("El puesto no puede quedar vacío");
+                return false;
+            }
+            if(puesto_lugar.value == ""){
+                alert("El lugar no puede quedar vacío");
+                return false;
+            }
+            if(puesto_inicio.value == ""){
+                alert("La fecha de inicio no puede quedar vacía");
+                return false;
+            }
+          
+            if(!puesto_activo.checked && puesto_fin.value == ""){
+                alert("La fecha de fin no puede quedar vacía");
+                return false;
+            }
+        }
+        
         agregarTrabajo.onclick = function () {
+            if(validaFormulario()== false){
+                return;
+            }
             cantTrabajos++;
             /****FORM****/
             var lista_trabajos = document.getElementById("lista-trabajos");
@@ -576,7 +621,7 @@
             puesto_activo.checked = false;
         };
 
-        var formLaboral = document.getElementById("i-laboral-activo");
+        
 
         formLaboral.onclick = function () {
             if (this.checked){
@@ -603,9 +648,73 @@
         document.getElementById("i-puesto-activo").onclick = function(){
             if(this.checked)
                 document.getElementById("i-puesto-fin").disabled = true;
+                
             else
                 document.getElementById("i-puesto-fin").disabled = false;
         }
+        var cantAcademicos = 0;
+        var agregarAcademico = document.getElementById("i-agregar-titulo");
+        agregarAcademico.onclick = function() {
+            cantAcademicos++;
+            console.log(cantAcademicos);
+            /****FORM****/
+            var lista_academicos = document.getElementById("lista-academicos");
+            var info = document.createElement("li");
+            info.setAttribute("id", "titulo" + cantAcademicos);
+            var texto = titulo.value + " - "+ titulo_tipo.value+ " - " + titulo_lugar.value + " - " + titulo_inicio.value + " - ";
+            if (titulo_activo.checked) {
+                texto += "actualidad";
+            } else {
+                texto += titulo_fin.value;
+            }
+            info.appendChild(document.createTextNode(texto));
+            var eliminar = document.createElement("button");
+            eliminar.setAttribute("id", "eliminar_titulo" + cantAcademicos);
 
+            eliminar.onclick = function () {
+                document.getElementById("titulo" + this.id.substring(15)).remove();
+                document.getElementById("p-titulo-" + this.id.substring(15)).remove();
+            };
+
+            eliminar.appendChild(document.createTextNode("X"));
+
+            info.appendChild(eliminar);
+            lista_academicos.appendChild(info);
+
+            /****CV****/
+            var p_academicos = document.getElementById("p-academicos");
+            var p_li = document.createElement("li");
+            p_li.setAttribute("id", "p-titulo-" + cantAcademicos);
+            var subtitle = document.createElement("div");
+            subtitle.setAttribute("class", "subtitle");
+            subtitle.innerHTML = titulo.value;
+            var tiempo = document.createElement("div");
+            tiempo.setAttribute("class", "tiempo");
+            var p_texto = titulo_lugar.value +", "+titulo_tipo.value+ " " + titulo_inicio.value + " - ";
+            if (titulo_activo.checked)
+                p_texto += "actualidad";
+            else
+                p_texto += titulo_fin.value;
+            tiempo.appendChild(document.createTextNode(p_texto));
+
+            p_li.appendChild(subtitle);
+            p_li.appendChild(tiempo);
+            p_academicos.appendChild(p_li);
+
+            /*vaciar form*/
+            titulo.value = "";
+            titulo_lugar.value = "";
+            titulo_inicio.value = "";
+            titulo_fin.value = "";
+            titulo_activo.checked = false;
+        };
+        document.getElementById("i-titulo-activo").onclick = function(){
+            if(this.checked)
+                document.getElementById("i-titulo-fin").disabled = true;
+                
+            else
+                document.getElementById("i-titulo-fin").disabled = false;
+        };
+        
     </script>
 </html>
