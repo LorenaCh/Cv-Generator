@@ -349,14 +349,20 @@ html:is(.pagFormLogin, .pagFormRegistro, .pagFormCambiarContrasenia) #mainWrap m
 .texto-centrocon {
 	text-align: center;
         background: linear-gradient(to bottom, white, #419F63);
+        text-shadow: .1em .1em .1em black, -.1em .1em .1em black, -.1em -.1em .1em black, .1em -.1em .1em black;
         
         
 }
-#homeHero2{
-    text-shadow: .1em .1em .1em black, -.1em .1em .1em black, -.1em -.1em .1em black, .1em -.1em .1em black;
-}
+
 .consejos{
     background: #fff;
+    color: black;
+    background-image: url(/img/miniaturas/flecha.png);
+    background-size: cover;
+    background-size: 25rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /*background-attachment: fixed;*/
 }
 .textocon{
     padding: 25px;
