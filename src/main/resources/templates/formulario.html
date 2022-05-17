@@ -316,7 +316,7 @@
                                     <div class="col">
                                         <div class="inputBox">
                                             <span class="text">Nombre</span>
-                                            <input type="text" id="i-aptitud-nombre">
+                                            <input type="text" id="i-aptitud">
                                         </div> 
                                     </div>
                                 </div>
@@ -387,7 +387,6 @@
                 </div>
                 <div class="vista-previa">
                     <div th:replace="/cvs/plantilla_1 :: plantilla_1" class="plantilla">
-                        >>>>>>> e2541d50a63a5017f484c873cce084d4c50a38cc
 
                     </div>
                 </div>
@@ -439,6 +438,8 @@
         var titulo_inicio = document.getElementById("i-titulo-inicio");
         var titulo_fin = document.getElementById("i-titulo-fin");
         var titulo_activo = document.getElementById("i-titulo-activo");
+        
+        var aptitud = document.getElementById("i-aptitud");
 
         puesto_activo.oninput = function () {
             console.log(this.checked === true ? "activo" : "no activo");
@@ -527,18 +528,7 @@
                 descripcion.style.color = "white";
                 document.getElementById("p-resumen").innerHTML = this.value;
             }
-        };
-//        puesto.oninput = function () {
-//            var lista = document.getElementById("p-trabajos");
-//            var li = document.createElement("li");
-//            var subtitulo = document.createElement("div");
-//            subtitulo.setAttribute("class","subtitle");
-//            subtitulo.appendChild(document.createTextNode(i-puesto));
-//            li.appendChild(subtitulo);
-//            lista.appendChild(li);
-//        };
-
-       
+        };       
         var agregarTrabajo = document.getElementById("i-agregar-trabajo");
         agregarTrabajo.onclick = function () {
             cantTrabajos++;
@@ -629,7 +619,6 @@
         var agregarAcademico = document.getElementById("i-agregar-titulo");
         agregarAcademico.onclick = function() {
             cantAcademicos++;
-            console.log(cantAcademicos);
             /****FORM****/
             var lista_academicos = document.getElementById("lista-academicos");
             var info = document.createElement("li");
@@ -688,6 +677,45 @@
             else
                 document.getElementById("i-titulo-fin").disabled = false;
         };
+        
+        var cantAptitudes = 0;
+        document.getElementById("i-agregar-aptitud").onclick = function (){
+            cantAptitudes++;
+            
+            /*FORM*/
+            var lista_aptitudes = document.getElementById("lista-aptitudes");
+            var info = document.createElement("li");
+            info.setAttribute("id","aptitud"+cantAptitudes);
+            info.appendChild(document.createTextNode(aptitud.value));
+            
+            var eliminar = document.createElement("button");
+            eliminar.setAttribute("id","eliminar_aptitud"+cantAptitudes);
+            
+            eliminar.onclick = function() {
+                document.getElementById("aptitud"+this.id.substring(16)).remove();
+                document.getElementById("p-aptitud-"+this.id.substring(16)).remove();
+                if(document.getElementById("p-aptitud")){
+                    document.getElementById("p-aptitud").style.display="none";
+                }
+            }
+            
+            eliminar.appendChild(document.createTextNode("X"));
+            
+            info.appendChild(eliminar);
+            lista_aptitudes.appendChild(info);
+            
+            /*CV*/
+            var p_aptitudes = document.getElementById("p-aptitudes");
+            var p_li = document.createElement("li");
+            p_li.setAttribute("id","p-aptitud-"+cantAptitudes);
+            p_li.appendChild(document.createTextNode(aptitud.value));
+            p_aptitudes.appendChild(p_li);
+            
+            /*vaciar form*/
+            aptitud.value = "";
+            
+            document.getElementById("p-aptitud").style.display="block";
+        }
         
     </script>
 </html>
