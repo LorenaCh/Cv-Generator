@@ -90,72 +90,72 @@
                             <h2>Perfil</h2>
                             <div class="linea"></div>
                             <form method="post" th:action="@{/guardarPerfil}">
-                            <input type="hidden" name="mailUsuario" th:value="${#authentication.getPrincipal().getUsername()}">
-                                <div class="row row5050">
-                                    <div class="col">
-                                        <div class="inputBox">
-                                            <span class="text">Nombre</span>
-                                            <input type="text" name="nombre" id="i-nombre" th:value="${persona?.nombre}"/>
+                                <input type="hidden" name="mailUsuario" th:value="${#authentication.getPrincipal().getUsername()}">
+                                    <div class="row row5050">
+                                        <div class="col">
+                                            <div class="inputBox">
+                                                <span class="text">Nombre</span>
+                                                <input type="text" name="nombre" id="i-nombre" th:value="${persona?.nombre}"/>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="inputBox">
+                                                <span class="text">Apellido</span>
+                                                <input type="text" name="apellido" id="i-apellido" th:value="${persona?.apellido}"/>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <div class="inputBox">
-                                            <span class="text">Apellido</span>
-                                            <input type="text" name="apellido" id="i-apellido" th:value="${persona?.apellido}"/>
+                                    <div class="row row7030">
+                                        <div class="col">
+                                            <div class="inputBox">
+                                                <span class="text">Profesion</span>
+                                                <input type="text" name="profesion" id="i-profesion" th:value="${persona?.profesion}"/>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="inputBox">
+                                                <span class="text">Edad</span>
+                                                <input type="number" name="edad" id="i-edad" th:value="${persona?.edad}"/>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row row7030">
-                                    <div class="col">
-                                        <div class="inputBox">
-                                            <span class="text">Profesion</span>
-                                            <input type="text" name="profesion" id="i-profesion" th:value="${persona?.profesion}"/>
+                                    <div class="row row4060">
+                                        <div class="col">
+                                            <div class="inputBox">
+                                                <span class="text">Telefono</span>
+                                                <input type="number" name="telefono" id="i-telefono" th:value="${persona?.telefono}"/>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="inputBox">
+                                                <span class="text">Correo</span>
+                                                <input type="email" name="correo" id="i-correo" th:value="${persona?.correo}"/>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <div class="inputBox">
-                                            <span class="text">Edad</span>
-                                            <input type="number" name="edad" id="i-edad" th:value="${persona?.edad}"/>
+                                    <div class="row row5050">
+                                        <div class="col">
+                                            <div class="inputBox">
+                                                <span class="text">Pais</span>
+                                                <input type="text" name="nacionalidad" id="i-nacionalidad" th:value="${persona?.nacionalidad}"/>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="inputBox">
+                                                <span class="text">Ciudad</span>
+                                                <input type="text" name="ciudad" id="i-ciudad" th:value="${persona?.ciudad}"/>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row row4060">
-                                    <div class="col">
-                                        <div class="inputBox">
-                                            <span class="text">Telefono</span>
-                                            <input type="number" name="telefono" id="i-telefono" th:value="${persona?.telefono}"/>
+                                    <div class="row row100">
+                                        <div class="col">
+                                            <div class="inputBox">
+                                                <span class="text">Direccion</span>
+                                                <input type="text" name="direccion" id="i-direccion" th:value="${persona?.direccion}"/>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <div class="inputBox">
-                                            <span class="text">Correo</span>
-                                            <input type="email" name="correo" id="i-correo" th:value="${persona?.correo}"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row row5050">
-                                    <div class="col">
-                                        <div class="inputBox">
-                                            <span class="text">Pais</span>
-                                            <input type="text" name="nacionalidad" id="i-nacionalidad" th:value="${persona?.nacionalidad}"/>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="inputBox">
-                                            <span class="text">Ciudad</span>
-                                            <input type="text" name="ciudad" id="i-ciudad" th:value="${persona?.ciudad}"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row row100">
-                                    <div class="col">
-                                        <div class="inputBox">
-                                            <span class="text">Direccion</span>
-                                            <input type="text" name="direccion" id="i-direccion" th:value="${persona?.direccion}"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button type="submit" class="continuar">Guardar</button>
+                                    <button type="submit" class="continuar">Guardar</button>
                             </form>
                         </div>
                     </div>
@@ -164,10 +164,10 @@
                             <h2>Resumen</h2>
                             <div class="linea"></div>
                             <form  method="post" th:action="@{/guardarResumen}">
-                            <input type="hidden" name="mailUsuario" th:value="${#authentication.getPrincipal().getUsername()}">
-                                <div class="row row100">
-                                    <span class="text">Ingrese resumen de hasta 200 caracteres:</span>
-                                    <textArea name="descripcion" id="i-resumen"></textArea>
+                                <input type="hidden" name="mailUsuario" th:value="${#authentication.getPrincipal().getUsername()}">
+                                    <div class="row row100">
+                                        <span class="text">Ingrese resumen de hasta 200 caracteres:</span>
+                                        <textArea name="descripcion" id="i-resumen"></textArea>
                                 </div>
                                 <button type="submit" class="continuar">Guardar</button>
                             </form>
@@ -177,27 +177,25 @@
                         <div class="form-contenedor">
                             <h2>Experiencia laboral</h2>
                             <div class="linea"></div>
-                                <div class="row row5050">
-                                    <div class="col">
-                                        <div class="inputCheckBox">
-                                            <div class="checkbox-contenedor">
-                                                <input type="checkbox" id="i-laboral-activo" class="checkbox" value=""/>
-                                                <span class="span"></span>
-                                                <i class="indicator"></i>
-                                            </div>
-                                            <span class="text">Tiene experiencia laboral</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            <div class="lista-trabajos" id="i-lista-trabajos">
-                                <ul id="lista-trabajos"></ul>
+                            <div>
+                                <table id="t-trabajos">
+                                    <tr class="conteiner-table__rows" th:each="trabajo : ${trabajos}">
+                                        <td th:text="${trabajo.puesto}">Mostrar puesto</td>
+                                        <td th:text="${trabajo.lugar}">Mostrar lugar</td>
+                                        <td th:text="${trabajo.desde}">Mostrar lugar</td>
+                                        <td th:text="${trabajo.hasta}">Mostrar lugar</td>
+                                        <td th:text="${trabajo.activo}">Mostrar lugar</td>
+                                        <td><a class="conteiner-table__rows-eliminar" th:href="@{/trabajo/eliminar(id=${trabajo.id})}"/>X</td>
+                                    </tr>
+                                </table>
                             </div>
-                            <form id="form-laboral">
+                            <form id="form-laboral" th:action="@{/guardarLaboral}" method="post" >
+                                <input type="hidden" name="username" th:value="${#authentication.getPrincipal().getUsername()}" />
                                 <div class="row row100">
                                     <div class="col">
                                         <div class="inputBox">
                                             <span class="text">Puesto</span>
-                                            <input type="text" name="nombre" id="i-puesto"/>
+                                            <input type="text" name="puesto" id="i-puesto"/>
                                         </div>
                                     </div>
                                 </div>
@@ -205,7 +203,7 @@
                                     <div class="col">
                                         <div class="inputBox">
                                             <span class="text">Lugar</span>
-                                            <input type="text" name="nombre" id="i-puesto-lugar"/>
+                                            <input type="text" name="lugar" id="i-puesto-lugar"/>
                                         </div>
                                     </div>
                                 </div>
@@ -213,13 +211,13 @@
                                     <div class="col">
                                         <div class="inputBox">
                                             <span class="text">Desde</span>
-                                            <input type="text" name="nombre" id="i-puesto-inicio"/>
+                                            <input type="number" name="desde" id="i-puesto-inicio"/>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="inputBox">
                                             <span class="text">Hasta</span>
-                                            <input type="text" name="nombre" id="i-puesto-fin"/>
+                                            <input type="number" name="hasta" id="i-puesto-fin"/>
                                         </div>
                                     </div>
                                 </div>
@@ -227,7 +225,7 @@
                                     <div class="col">
                                         <div class="inputCheckBox">
                                             <div class="checkbox-contenedor">
-                                                <input type="checkbox" name="activo" id="i-puesto-activo" class="checkbox" value=""/>
+                                                <input type="checkbox" name="activo" id="i-puesto-activo" class="checkbox" />
                                                 <span class="span"></span>
                                                 <i class="indicator"></i>
                                             </div>
@@ -235,8 +233,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" id="i-agregar-trabajo" class="continuar">Agregar</button>
-                                <button type="submit" class="continuar">Guardar</button>
+                                <button type="submit" id="i-agregar-trabajo" class="continuar">Agregar</button>
+                                <!--<button type="submit" class="continuar">Guardar</button>-->
                             </form>
                         </div>
                     </div>
@@ -389,8 +387,8 @@
                                 <button type="submit" class="continuar">Eliminar</button>
                             </div>
                         </div>-->
-                        <button type="button" class="continuar" name="agregarOtroIdioma" value="true" id="i-agregar-idioma">Agregar otro idioma</button>
-                        <button type="submit" class="continuar">Guardar</button>
+                        <button type="submit" class="continuar" name="agregarOtroIdioma" value="true" id="i-agregar-idioma">Agregar otro idioma</button>
+                        <!--<button type="submit" class="continuar">Guardar</button>-->
                             </form>
                         </div>
                     </div>
@@ -424,12 +422,12 @@
                 </div>
                 <div class="vista-previa" onload="cargarCv()">
                     <div class="plantilla-contenedor">
-<!--                    <div th:replace="/cvs/plantilla_1 :: plantilla_0" >
-
-                   </div>-->
-<div th:replace="/plantillascv/plantilla_1 :: .plantilla1" >
+                    <div th:replace="/cvs/plantilla_1 :: plantilla_0" >
 
                    </div>
+                   <!--<div th:replace="/plantillascv/plantilla_1 :: .plantilla1" >
+
+                   </div>-->
                     </div>
                 </div>
             </section>
@@ -437,19 +435,99 @@
     </body>
     <script>
 
-    function cargarCv(){
-        inputNombre();
-        inputApellido();
-        inputCiudad();
-        inputCorreo();
-        inputDescripcion();
-        inputDireccion();
-        inputEdad();
-        inputNacionalidad();
-        inputTelefono();
-        inputProfesion();
-    }
+        window.addEventListener('load', cargarCv);
 
+        function cargarCv() {
+            console.log(window.location.pathname);
+            var form = window.location.pathname;
+            var obj;
+            switch (form) {
+                case "/formulario":
+                    obj = list[0];
+                    break;
+                case "/guardarPerfil":
+                    obj = list[0];
+                    break;
+                case "/guardarResumen":
+                    obj = list[1];
+                    break;
+                case "/guardarLaboral":
+                    obj = list[2];
+                    break;
+                case "/guardarTitulo":
+                    obj = list[3];
+                    break;
+            }
+
+            activarForm(obj);
+
+            inputNombre();
+            inputApellido();
+            inputCiudad();
+            inputCorreo();
+            inputDescripcion();
+            inputDireccion();
+            inputEdad();
+            inputNacionalidad();
+            inputTelefono();
+            inputProfesion();
+
+            cargarTrabajos();
+        }
+        ;
+
+        cargarTrabajos = function () {
+            var tabla_trabajos = document.getElementById("t-trabajos");
+            if(tabla_trabajos.innerHTML.trim()==""){
+                document.getElementById("p-laboral").style.display="none";
+                return;
+            }else{
+                document.getElementById("p-laboral").style.display="block";
+            }
+                
+            var t_body_trabajo = tabla_trabajos.getElementsByTagName("tbody")[0];
+            for (var fila = 0; fila < t_body_trabajo.childElementCount; fila++) {
+                var tr = t_body_trabajo.getElementsByTagName("tr")[fila];
+                var linea=tr.getElementsByTagName("td")[0].innerHTML + " " + tr.getElementsByTagName("td")[1].innerHTML;
+
+                /****CV****/
+                var p_trabajos = document.getElementById("p-trabajos");
+                var p_li = document.createElement("li");
+                p_li.setAttribute("id", "p-trabajo-" + fila);
+                var subtitle = document.createElement("div");
+                subtitle.setAttribute("class", "subtitle");
+                subtitle.innerHTML = tr.getElementsByTagName("td")[0].innerHTML;
+                var tiempo = document.createElement("div");
+                tiempo.setAttribute("class", "tiempo");
+                var p_texto = tr.getElementsByTagName("td")[1].innerHTML+" "+tr.getElementsByTagName("td")[2].innerHTML+" - ";
+                if(tr.getElementsByTagName("td")[4].innerHTML == "true"){
+                    p_texto +="actualidad";
+                }else{
+                    p_texto +=tr.getElementsByTagName("td")[3].innerHTML;
+                }
+                tiempo.appendChild(document.createTextNode(p_texto));
+
+                p_li.appendChild(subtitle);
+                p_li.appendChild(tiempo);
+                p_trabajos.appendChild(p_li);
+            }
+        };
+
+        function activarForm(obj) {
+            list.forEach((item) => {
+                item.classList.remove('active');
+                ;
+            });
+            forms.forEach((form) => {
+                form.classList.remove('activo');
+                form.style.display = "none";
+            });
+            obj.classList.add('active');
+
+            var activo = document.getElementById(obj.classList[1]);
+            activo.classList.add('activo');
+            activo.style.display = "block";
+        }
 
         const list = document.querySelectorAll('.list');
         const forms = document.querySelectorAll('.item-form');
@@ -478,7 +556,7 @@
         var nacionalidad = document.getElementById("i-nacionalidad");
         var edad = document.getElementById("i-edad");
         var correo = document.getElementById("i-correo");
-        
+
         var descripcion = document.getElementById("i-resumen");
 
         var cantTrabajos = 0;
@@ -487,7 +565,7 @@
         var puesto_inicio = document.getElementById("i-puesto-inicio");
         var puesto_fin = document.getElementById("i-puesto-fin");
         var puesto_activo = document.getElementById("i-puesto-activo");
-        
+
         var titulo = document.getElementById("i-titulo");
         var titulo_lugar = document.getElementById("i-titulo-lugar");
         var titulo_tipo = document.getElementById("i-titulo-tipo");
@@ -497,32 +575,35 @@
 
 
         var formLaboral = document.getElementById("i-laboral-activo");
-        
+
         var aptitud = document.getElementById("i-aptitud");
 
         var conocimiento = document.getElementById("i-conocimiento");
-        
-        var idioma =  document.getElementById("i-idioma");
+
+        var idioma = document.getElementById("i-idioma");
         var idioma_nivel = document.getElementById("i-idioma-nivel");
 
         nombre.oninput = inputNombre;
-                
-       function inputNombre() {
+
+        function inputNombre() {
             document.getElementById("p-nombre").innerHTML = nombre.value + " " + apellido.value;
-        };
+        }
+        ;
         apellido.oninput = inputApellido;
-                
-       function inputApellido() {
+
+        function inputApellido() {
             document.getElementById("p-nombre").innerHTML = nombre.value + " " + apellido.value;
-        };
-        profesion.oninput = inputProfesion; 
-        
+        }
+        ;
+        profesion.oninput = inputProfesion;
+
         function inputProfesion() {
             document.getElementById("p-profesion").innerHTML = profesion.value;
-        };
-        
+        }
+        ;
+
         direccion.oninput = inputDireccion;
-                
+
         function inputDireccion() {
             if (direccion.value.trim() == "" && nacionalidad.value.trim() == "" && ciudad.value.trim() == "" && edad.value.trim() == "") {
                 document.getElementById("p-aboutMe").style.display = "none";
@@ -533,10 +614,11 @@
                     document.getElementById("p-direccion").innerHTML = direccion.value;
                 document.getElementById("p-aboutMe").style.display = "block";
             }
-        };
+        }
+        ;
         ciudad.oninput = inputCiudad;
-                
-            function inputCiudad() {
+
+        function inputCiudad() {
             if (ciudad.value.trim() == "" && nacionalidad.value.trim() == "" && direccion.value.trim() == "" && edad.value.trim() == "") {
                 document.getElementById("p-aboutMe").style.display = "none";
             } else {
@@ -546,10 +628,11 @@
                     document.getElementById("p-ciudad").innerHTML = "CIUDAD: " + ciudad.value;
                 document.getElementById("p-aboutMe").style.display = "block";
             }
-        };
+        }
+        ;
         nacionalidad.oninput = inputNacionalidad;
-                
-            function inputNacionalidad() {
+
+        function inputNacionalidad() {
             if (nacionalidad.value.trim() == "" && ciudad.value.trim() == "" && direccion.value.trim() == "" && edad.value.trim() == "") {
                 document.getElementById("p-aboutMe").style.display = "none";
             } else {
@@ -559,10 +642,11 @@
                     document.getElementById("p-pais").innerHTML = "PAIS: " + nacionalidad.value;
                 document.getElementById("p-aboutMe").style.display = "block";
             }
-        };
+        }
+        ;
         edad.oninput = inputEdad;
-                
-            function inputEdad() {
+
+        function inputEdad() {
             if (edad.value.trim() == "" && ciudad.value.trim() == "" && direccion.value.trim() == "" && nacionalidad.value.trim() == "") {
                 document.getElementById("p-aboutMe").style.display = "none";
             } else {
@@ -572,10 +656,11 @@
                     document.getElementById("p-edad").innerHTML = "EDAD: " + edad.value;
                 document.getElementById("p-aboutMe").style.display = "block";
             }
-        };
+        }
+        ;
         telefono.oninput = inputTelefono;
-                
-            function inputTelefono() {
+
+        function inputTelefono() {
             if (telefono.value.trim() == "" && correo.value.trim() == "") {
                 document.getElementById("p-contacto").style.display = "none";
             } else {
@@ -585,10 +670,11 @@
                     document.getElementById("p-telefono").innerHTML = telefono.value;
                 document.getElementById("p-contacto").style.display = "block";
             }
-        };
+        }
+        ;
         correo.oninput = inputCorreo;
-                
-            function inputCorreo() {
+
+        function inputCorreo() {
             if (correo.value.trim() == "" && telefono.value.trim() == "") {
                 document.getElementById("p-contacto").style.display = "none";
             } else {
@@ -598,127 +684,129 @@
                     document.getElementById("p-correo").innerHTML = correo.value;
                 document.getElementById("p-contacto").style.display = "block";
             }
-        };
+        }
+        ;
         descripcion.oninput = inputDescripcion;
-                
-            function inputDescripcion() {
+
+        function inputDescripcion() {
             if (descripcion.value.length > 200) {
                 descripcion.style.color = "red";
             } else {
                 descripcion.style.color = "white";
                 document.getElementById("p-resumen").innerHTML = descripcion.value;
             }
-        };
-       
-        function validaFormulario(){
-            if(puesto.value == ""){
+        }
+        ;
+
+        function validaFormulario() {
+            if (puesto.value == "") {
                 alert("El puesto no puede quedar vacío");
                 return false;
             }
-            if(puesto_lugar.value == ""){
+            if (puesto_lugar.value == "") {
                 alert("El lugar no puede quedar vacío");
                 return false;
             }
-            if(puesto_inicio.value == ""){
+            if (puesto_inicio.value == "") {
                 alert("La fecha de inicio no puede quedar vacía");
                 return false;
             }
-          
-            if(!puesto_activo.checked && puesto_fin.value == ""){
+
+            if (!puesto_activo.checked && puesto_fin.value == "") {
                 alert("La fecha de fin no puede quedar vacía");
                 return false;
             }
         }
 
         var agregarTrabajo = document.getElementById("i-agregar-trabajo");
-        agregarTrabajo.onclick = function () {
-            if(validaFormulario()== false){
-                return;
-            }
-            cantTrabajos++;
-            /****FORM****/
-            var lista_trabajos = document.getElementById("lista-trabajos");
-            var info = document.createElement("li");
-            info.setAttribute("id", "trabajo" + cantTrabajos);
-            var texto = puesto.value + " - " + puesto_lugar.value + " - " + puesto_inicio.value + " - ";
-            if (puesto_activo.checked) {
-                texto += "actualidad";
-            } else {
-                texto += puesto_fin.value;
-            }
-            info.appendChild(document.createTextNode(texto));
-            var eliminar = document.createElement("button");
-            eliminar.setAttribute("id", "eliminar_trabajo" + cantTrabajos);
+//        agregarTrabajo.onclick = function () {
+//            if (validaFormulario() == false) {
+//                return;
+//            }
+//            cantTrabajos++;
+//            /****FORM****/
+//            var lista_trabajos = document.getElementById("lista-trabajos");
+//            var info = document.createElement("li");
+//            info.setAttribute("id", "trabajo" + cantTrabajos);
+//            var texto = puesto.value + " - " + puesto_lugar.value + " - " + puesto_inicio.value + " - ";
+//            if (puesto_activo.checked) {
+//                texto += "actualidad";
+//            } else {
+//                texto += puesto_fin.value;
+//            }
+//            info.appendChild(document.createTextNode(texto));
+//            var eliminar = document.createElement("button");
+//            eliminar.setAttribute("id", "eliminar_trabajo" + cantTrabajos);
+//
+//            eliminar.onclick = function () {
+//                document.getElementById("trabajo" + this.id.substring(16)).remove();
+//                document.getElementById("p-trabajo-" + this.id.substring(16)).remove();
+//            };
+//
+//            eliminar.appendChild(document.createTextNode("X"));
+//
+//            info.appendChild(eliminar);
+//            lista_trabajos.appendChild(info);
+//
+//            /****CV****/
+//            var p_trabajos = document.getElementById("p-trabajos");
+//            var p_li = document.createElement("li");
+//            p_li.setAttribute("id", "p-trabajo-" + cantTrabajos);
+//            var subtitle = document.createElement("div");
+//            subtitle.setAttribute("class", "subtitle");
+//            subtitle.innerHTML = puesto.value;
+//            var tiempo = document.createElement("div");
+//            tiempo.setAttribute("class", "tiempo");
+//            var p_texto = puesto_lugar.value + " " + puesto_inicio.value + " - ";
+//            if (puesto_activo.checked)
+//                p_texto += "actualidad";
+//            else
+//                p_texto += puesto_fin.value;
+//            tiempo.appendChild(document.createTextNode(p_texto));
+//
+//            p_li.appendChild(subtitle);
+//            p_li.appendChild(tiempo);
+//            p_trabajos.appendChild(p_li);
+////
+////            /*vaciar form*/
+////            puesto.value = "";
+////            puesto_lugar.value = "";
+////            puesto_inicio.value = "";
+////            puesto_fin.value = "";
+////            puesto_activo.checked = false;
+////            puesto_fin.disabled = false;
+//        };
 
-            eliminar.onclick = function () {
-                document.getElementById("trabajo" + this.id.substring(16)).remove();
-                document.getElementById("p-trabajo-" + this.id.substring(16)).remove();
-            };
 
-            eliminar.appendChild(document.createTextNode("X"));
+//
+//        formLaboral.onclick = function () {
+//            if (this.checked) {
+//                document.getElementById("form-laboral").style.display = "block";
+//
+//                document.getElementById("p-laboral").style.display = "block";
+//            } else {
+//                document.getElementById("form-laboral").style.display = "none";
+//
+//                puesto.value = "";
+//                puesto_lugar.value = "";
+//                puesto_inicio.value = "";
+//                puesto_fin.value = "";
+//                puesto_activo.checked = false;
+//
+//                document.getElementById("i-lista-trabajos").innerHTML = "";
+//                cantTrabajos = 0;
+//
+//                document.getElementById("p-laboral").style.display = "none";
+//            }
+//        }
 
-            info.appendChild(eliminar);
-            lista_trabajos.appendChild(info);
-
-            /****CV****/
-            var p_trabajos = document.getElementById("p-trabajos");
-            var p_li = document.createElement("li");
-            p_li.setAttribute("id", "p-trabajo-" + cantTrabajos);
-            var subtitle = document.createElement("div");
-            subtitle.setAttribute("class", "subtitle");
-            subtitle.innerHTML = puesto.value;
-            var tiempo = document.createElement("div");
-            tiempo.setAttribute("class", "tiempo");
-            var p_texto = puesto_lugar.value + " " + puesto_inicio.value + " - ";
-            if (puesto_activo.checked)
-                p_texto += "actualidad";
-            else
-                p_texto += puesto_fin.value;
-            tiempo.appendChild(document.createTextNode(p_texto));
-
-            p_li.appendChild(subtitle);
-            p_li.appendChild(tiempo);
-            p_trabajos.appendChild(p_li);
-
-            /*vaciar form*/
-            puesto.value = "";
-            puesto_lugar.value = "";
-            puesto_inicio.value = "";
-            puesto_fin.value = "";
-            puesto_activo.checked = false;
-            puesto_fin.disabled = false;
-        };
-
-        
-
-        formLaboral.onclick = function () {
-            if (this.checked) {
-                document.getElementById("form-laboral").style.display = "block";
-
-                document.getElementById("p-laboral").style.display = "block";
-            } else {
-                document.getElementById("form-laboral").style.display = "none";
-
-                puesto.value = "";
-                puesto_lugar.value = "";
-                puesto_inicio.value = "";
-                puesto_fin.value = "";
-                puesto_activo.checked = false;
-
-                document.getElementById("i-lista-trabajos").innerHTML = "";
-                cantTrabajos = 0;
-
-                document.getElementById("p-laboral").style.display = "none";
-            }
-        }
-
-        document.getElementById("i-puesto-activo").onclick = function () {
-            if (this.checked)
-                document.getElementById("i-puesto-fin").disabled = true;
-
-            else
-                document.getElementById("i-puesto-fin").disabled = false;
-        }
+//        document.getElementById("i-puesto-activo").onclick = function () {
+//            if (this.checked)
+//                document.getElementById("i-puesto-fin").disabled = true;
+//
+//            else
+//                document.getElementById("i-puesto-fin").disabled = false;
+//        }
         var cantAcademicos = 0;
         var agregarAcademico = document.getElementById("i-agregar-titulo");
         agregarAcademico.onclick = function () {
@@ -821,15 +909,15 @@
         };
 
         var cantConocimientos = 0;
-        document.getElementById("i-agregar-conocimiento").onclick = function(){
+        document.getElementById("i-agregar-conocimiento").onclick = function () {
             cantConocimientos++;
             console.log(cantConocimientos);
             /*FORM*/
             var lista_conocimientos = document.getElementById("lista-conocimientos");
             var info = document.createElement("li");
-            info.setAttribute("id","conocimiento"+cantConocimientos);
+            info.setAttribute("id", "conocimiento" + cantConocimientos);
             info.appendChild(document.createTextNode(conocimiento.value));
-            
+
             var eliminar = document.createElement("button");
             eliminar.setAttribute("id", "eliminar_conocimiento" + cantConocimientos);
 
@@ -844,7 +932,7 @@
 
             info.appendChild(eliminar);
             lista_conocimientos.appendChild(info);
-            
+
             /*CV*/
             var p_conocimientos = document.getElementById("p-conocimientos");
             var p_li = document.createElement("li");
@@ -856,17 +944,17 @@
             conocimiento.value = "";
             document.getElementById("p-conocimiento").style.display = "block";
         };
-        
+
         var cantIdiomas = 0;
-        document.getElementById("i-agregar-idioma").onclick = function(){
+        document.getElementById("i-agregar-idioma").onclick = function () {
             cantIdiomas++;
-            
+
             /*FORM*/
             var lista_idiomas = document.getElementById("lista-idiomas");
             var info = document.createElement("li");
-            info.setAttribute("id","idioma"+cantIdiomas);
-            info.appendChild(document.createTextNode(idioma.value+" - "+idioma_nivel.value));
-            
+            info.setAttribute("id", "idioma" + cantIdiomas);
+            info.appendChild(document.createTextNode(idioma.value + " - " + idioma_nivel.value));
+
             var eliminar = document.createElement("button");
             eliminar.setAttribute("id", "eliminar_idioma" + cantIdiomas);
 
@@ -881,20 +969,19 @@
 
             info.appendChild(eliminar);
             lista_idiomas.appendChild(info);
-            
+
             /*CV*/
             var p_idiomas = document.getElementById("p-idiomas");
             var p_li = document.createElement("li");
             p_li.setAttribute("id", "p-idioma-" + cantIdiomas);
-            p_li.appendChild(document.createTextNode(idioma.value + " - "+idioma_nivel.value));
+            p_li.appendChild(document.createTextNode(idioma.value + " - " + idioma_nivel.value));
             p_idiomas.appendChild(p_li);
 
             /*vaciar form*/
             idioma.value = "";
             document.getElementById("p-idioma").style.display = "block";
-        }
-        
-        const listCvs = document.querySelectorAll('.img');
-        
+        };
+
+
     </script>
 </html>

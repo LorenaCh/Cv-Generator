@@ -4,8 +4,8 @@
  */
 package com.cvgenerator.repositorio;
 
+import com.cvgenerator.entidades.FormAcad;
 import com.cvgenerator.entidades.Persona;
-import com.cvgenerator.entidades.Trabajo;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
  * @author Rocio
  */
 @Repository
-public interface TrabajoRepositorio extends JpaRepository<Trabajo, Integer>{
-    public List<Trabajo> findTrabajosByPersona(Persona persona);
+public interface AcademicoRepositorio extends JpaRepository<FormAcad, Integer>{
+    
+    public List<FormAcad> findTitulosByPersona(Persona persona);
 }

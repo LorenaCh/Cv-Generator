@@ -32,10 +32,8 @@ public class Trabajo implements Serializable{
     private Integer id;
     private String lugar;
     private String puesto;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date desde;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date hasta;
+    private Integer desde;
+    private Integer hasta;
     private Boolean activo;
     
     @ManyToOne(fetch = FetchType.LAZY)
@@ -45,7 +43,7 @@ public class Trabajo implements Serializable{
     public Trabajo() {
     }
 
-    public Trabajo(Integer id, String lugar, String puesto, Date desde, Date hasta, Boolean activo) {
+    public Trabajo(Integer id, String lugar, String puesto, Integer desde, Integer hasta, Boolean activo) {
         this.id = id;
         this.lugar = lugar;
         this.puesto = puesto;
@@ -78,21 +76,30 @@ public class Trabajo implements Serializable{
         this.puesto = puesto;
     }
 
-    public Date getDesde() {
+    public Integer getDesde() {
         return desde;
     }
 
-    public void setDesde(Date desde) {
+    public void setDesde(Integer desde) {
         this.desde = desde;
     }
 
-    public Date getHasta() {
+    public Integer getHasta() {
         return hasta;
     }
 
-    public void setHasta(Date hasta) {
+    public void setHasta(Integer hasta) {
         this.hasta = hasta;
     }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+
 
     public Boolean getActivo() {
         return activo;
@@ -106,6 +113,7 @@ public class Trabajo implements Serializable{
     public String toString() {
         return "Trabajo{" + "id=" + id + ", lugar=" + lugar + ", puesto=" + puesto + ", desde=" + desde + ", hasta=" + hasta + ", activo=" + activo + '}';
     }
+
     
     
 }

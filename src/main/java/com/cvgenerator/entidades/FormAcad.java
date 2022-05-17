@@ -31,8 +31,8 @@ public class FormAcad implements Serializable {
     private String titulo;
     private String establecimiento;
     private String tipo;
-    private Date f_inicio;
-    private Date f_fin ;
+    private Integer f_inicio;
+    private Integer f_fin ;
     private Boolean enProgreso;
     private String lugar;
     
@@ -44,7 +44,7 @@ public class FormAcad implements Serializable {
     public FormAcad() {
     }
 
-    public FormAcad(Integer idFormAcad, String titulo, String establecimiento, String tipo, Date f_inicio, Date f_fin, Boolean enProgreso, String lugar) {
+    public FormAcad(Integer idFormAcad, String titulo, String establecimiento, String tipo, Integer f_inicio, Integer f_fin, Boolean enProgreso, String lugar) {
         this.idFormAcad = idFormAcad;
         this.titulo = titulo;
         this.establecimiento = establecimiento;
@@ -87,20 +87,28 @@ public class FormAcad implements Serializable {
         this.tipo = tipo;
     }
 
-    public Date getF_inicio() {
+    public Integer getF_inicio() {
         return f_inicio;
     }
 
-    public void setF_inicio(Date f_inicio) {
+    public void setF_inicio(Integer f_inicio) {
         this.f_inicio = f_inicio;
     }
 
-    public Date getF_fin() {
+    public Integer getF_fin() {
         return f_fin;
     }
 
-    public void setF_fin(Date f_fin) {
+    public void setF_fin(Integer f_fin) {
         this.f_fin = f_fin;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
     public Boolean getEnProgreso() {

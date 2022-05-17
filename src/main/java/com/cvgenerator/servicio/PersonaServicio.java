@@ -25,6 +25,7 @@ public class PersonaServicio {
       @Autowired
     private PersonaReposotorio repPersona;
     
+@Transactional
     public Persona guardar(Usuario usuario){
         Persona persona = new Persona();
         persona.setUsuario(usuario);
@@ -40,7 +41,7 @@ public class PersonaServicio {
     }
     
     @Transactional(readOnly=true)
-    public Persona findById(Integer id){
+    public Persona findById(Long id){
         return repPersona.findById(id).orElse(null);
     }
     
@@ -54,5 +55,6 @@ public class PersonaServicio {
     public Persona guardar(Persona persona){
         return repPersona.save(persona);
     }
+    
     
 }

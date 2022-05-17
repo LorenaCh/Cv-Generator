@@ -22,7 +22,7 @@ public class Persona implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_persona")
-    private Integer idPersona;
+    private Long idPersona;
     private String nombre;
     private String apellido;
     private String profesion;
@@ -38,7 +38,7 @@ public class Persona implements Serializable {
     private Usuario usuario;
     
     @Nullable
-    @OneToMany(mappedBy = "persona")
+    @OneToMany(fetch=FetchType.LAZY,mappedBy = "persona")
     private List <Trabajo> trabajos;
     
     @Nullable
@@ -58,11 +58,11 @@ public class Persona implements Serializable {
     public Persona() {
     }
 
-    public Integer getIdPersona() {
+    public Long getIdPersona() {
         return idPersona;
     }
 
-    public void setIdPersona(Integer idPersona) {
+    public void setIdPersona(Long idPersona) {
         this.idPersona = idPersona;
     }
 
@@ -193,11 +193,15 @@ public class Persona implements Serializable {
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
+    
+    public void agregarTrabajo(Trabajo trabajo){
+        this.trabajos.add(trabajo);
+    }
 
     @Override
     public String toString() {
         return "Persona{" + "idPersona=" + idPersona + ", nombre=" + nombre + ", apellido=" + apellido + ", profesion=" + profesion + ", telefono=" + telefono + ", correo=" + correo + ", ciudad=" + ciudad + ", edad=" + edad + ", nacionalidad=" + nacionalidad + ", direccion=" + direccion + ", descripcion=" + descripcion + ", usuario=" + usuario + ", trabajos=" + trabajos + ", formaciones=" + formaciones + ", aptitud=" + aptitud + ", conocimientos=" + conocimientos + ", idiomas=" + idiomas + '}';
     }
 
-
+    
 }
