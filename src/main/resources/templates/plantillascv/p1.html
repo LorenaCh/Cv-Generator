@@ -13,13 +13,13 @@
     <div th:fragment="p1" id="contenedor">
         
         <header>
-            <h1>Nombre Completo</h1>
+            <h1 id="p-nombre"></h1>
         </header>
         <header class="info">
             <ul>
-                <li>Direccion</li>
-                <li>Telefono</li>
-                <li>Mail</li>
+                <li id="p-direccion"></li>
+                <li id="p-telefono"></li>
+                <li id="p-correo"></li>
             </ul>
             
         </header>
@@ -31,8 +31,8 @@
             <article class="formacion">
                 <h2>Formacion</h2>
                 
-                <h4 class="lisma"><b>Inicio - fin</b></h4>
-                    <p class="der">Titulacion</p>
+                <ul class="lisma" id="p-academicos"></ul>
+<!--                    <p class="der">Titulacion</p>
                     <p class="der">Escuela</p>   
                 
                     <h4 class="lisma"><b>Inicio - fin</b></h4>
@@ -41,13 +41,13 @@
     
                 <h4 class="lisma"><b>Inicio - fin</b></h4>
                     <p class="der">Titulacion</p>
-                    <p class="der">Escuela</p>
+                    <p class="der">Escuela</p>-->
     
             </article>
             <article>
                 <h2>Experiencia</h2>
-                <h4 class="lisma2">Año</h4>
-                            <p class="iz">Puesto de trabajo</p>
+                <ul class="lisma2" id="p-trabajos"></ul>
+<!--                            <p class="iz">Puesto de trabajo</p>
                             <p class="iz">Empresa</p>
                 
                 <h4 class="lisma2">Año</h4>
@@ -56,7 +56,7 @@
     
                 <h4 class="lisma2">Año</h4>
                             <p class="iz">Puesto de trabajo</p>
-                            <p class="iz">Empresa</p>
+                            <p class="iz">Empresa</p>-->
                 
             </article>
         </div>
