@@ -327,44 +327,53 @@
                     </div>
                     <div id="conocimiento" class="item-form">
                         <div class="form-contenedor">
-                            
                         <h2>Conocimiento</h2>
                             <div class="linea"></div>
+                            <div class="lista-conocimiento" id="i-lista-conocimientos">
+                                <ul id="lista-conocimientos"></ul>
+                            </div>
+                            <form>
                         <div class="row row100">
                             <div class="inputBox">
-                            <label for="FormCrearCVCampoConocimiento">Conocimiento</label>
-                            <input type="text" name="conocimiento" class="controlForm" id="FormCrearCVCampoConocimiento">
-                                
+                            <label for="i-conocimiento">Conocimiento</label>
+                            <input type="text" name="conocimiento" class="controlForm" id="i-conocimiento">
                             </div>
                         </div>
-                        <button type="submit" class="continuar" name="agregarOtroConocimiento" value="true">Agregar otro conocimiento</button>
-                        <div class="card card-insertados">
+                                
+                                <button type="button" id="i-agregar-conocimiento" class="continuar">Agregar</button>
+                                <button type="submit" class="continuar">Guardar</button>
+                                </form>
+<!--                        <div class="card card-insertados">
                             <div class="card-insertados-contenido">Un conocimiento</div>
                             <div class="card-insertados-opciones">
                                 <button type="submit" class="continuar">Modificar</button>
                                 <button type="submit" class="continuar">Eliminar</button>
                             </div>
-                        </div>
+                        </div>-->
                         </div>
                     </div>
                     <div id="idioma" class="item-form">
                         <div class="form-contenedor">
                         <h2>Idioma</h2>
                             <div class="linea"></div>
+                            <div class="lista-idioma" id="i-lista-idiomas">
+                                <ul id="lista-idiomas"></ul>
+                            </div>
+                            <form>
                             <div class="row row100">
-                                <label for="FormCrearCVCampoIdioma">Idioma</label>
-                                <input type="text" name="idioma" id="FormCrearCVCampoIdioma">
+                                <label for="i-idioma">Idioma</label>
+                                <input type="text" name="idioma" id="i-idioma">
                             </div>
                             <div class="row row100">
-                                <label for="FormCrearCVCampoNivelIdioma">Nivel</label>
-                                <select name="nivelIdioma" id="FormCrearCVCampoNivelIdioma">
+                                <label for="i-idioma-nivel">Nivel</label>
+                                <select name="nivelIdioma" id="i-idioma-nivel">
                                     <option disabled>(seleccione)</option>
                                     <option value="basico">básico</option>
                                     <option value="intermedio">intermedio</option>
                                     <option value="avanzado">avanzado</option>
                                 </select>
                             </div>
-                        <div class="card card-insertados">
+<!--                        <div class="card card-insertados">
                             <div class="card-insertados-contenido">
                                 <ul role="list">
                                     <li>Inglés</li>
@@ -375,8 +384,10 @@
                                 <button type="submit" class="continuar">Modificar</button>
                                 <button type="submit" class="continuar">Eliminar</button>
                             </div>
-                        </div>
-                        <button type="submit" class="continuar" name="agregarOtroIdioma" value="true">Agregar otro idioma</button>
+                        </div>-->
+                        <button type="button" class="continuar" name="agregarOtroIdioma" value="true" id="i-agregar-idioma">Agregar otro idioma</button>
+                        <button type="submit" class="continuar">Guardar</button>
+                            </form>
                         </div>
                     </div>
                     <div id="plantilla" class="item-form">
@@ -430,16 +441,21 @@
         var puesto_inicio = document.getElementById("i-puesto-inicio");
         var puesto_fin = document.getElementById("i-puesto-fin");
         var puesto_activo = document.getElementById("i-puesto-activo");
-        
-        
+
+
         var titulo = document.getElementById("i-titulo");
         var titulo_lugar = document.getElementById("i-titulo-lugar");
         var titulo_tipo = document.getElementById("i-titulo-tipo");
         var titulo_inicio = document.getElementById("i-titulo-inicio");
         var titulo_fin = document.getElementById("i-titulo-fin");
         var titulo_activo = document.getElementById("i-titulo-activo");
-        
+
         var aptitud = document.getElementById("i-aptitud");
+
+        var conocimiento = document.getElementById("i-conocimiento");
+        
+        var idioma =  document.getElementById("i-idioma");
+        var idioma_nivel = document.getElementById("i-idioma-nivel");
 
         puesto_activo.oninput = function () {
             console.log(this.checked === true ? "activo" : "no activo");
@@ -522,13 +538,13 @@
             }
         };
         descripcion.oninput = function () {
-            if(this.value.length > 200){
+            if (this.value.length > 200) {
                 descripcion.style.color = "red";
             } else {
                 descripcion.style.color = "white";
                 document.getElementById("p-resumen").innerHTML = this.value;
             }
-        };       
+        };
         var agregarTrabajo = document.getElementById("i-agregar-trabajo");
         agregarTrabajo.onclick = function () {
             cantTrabajos++;
@@ -587,12 +603,11 @@
         var formLaboral = document.getElementById("i-laboral-activo");
 
         formLaboral.onclick = function () {
-            if (this.checked){
+            if (this.checked) {
                 document.getElementById("form-laboral").style.display = "block";
-                
-                document.getElementById("p-laboral").style.display="block";
-            }
-            else {
+
+                document.getElementById("p-laboral").style.display = "block";
+            } else {
                 document.getElementById("form-laboral").style.display = "none";
 
                 puesto.value = "";
@@ -600,30 +615,30 @@
                 puesto_inicio.value = "";
                 puesto_fin.value = "";
                 puesto_activo.checked = false;
-                
+
                 document.getElementById("i-lista-trabajos").innerHTML = "";
                 cantTrabajos = 0;
-                
-                document.getElementById("p-laboral").style.display="none";
+
+                document.getElementById("p-laboral").style.display = "none";
             }
         }
-        
-        document.getElementById("i-puesto-activo").onclick = function(){
-            if(this.checked)
+
+        document.getElementById("i-puesto-activo").onclick = function () {
+            if (this.checked)
                 document.getElementById("i-puesto-fin").disabled = true;
-                
+
             else
                 document.getElementById("i-puesto-fin").disabled = false;
         }
         var cantAcademicos = 0;
         var agregarAcademico = document.getElementById("i-agregar-titulo");
-        agregarAcademico.onclick = function() {
+        agregarAcademico.onclick = function () {
             cantAcademicos++;
             /****FORM****/
             var lista_academicos = document.getElementById("lista-academicos");
             var info = document.createElement("li");
             info.setAttribute("id", "titulo" + cantAcademicos);
-            var texto = titulo.value + " - "+ titulo_tipo.value+ " - " + titulo_lugar.value + " - " + titulo_inicio.value + " - ";
+            var texto = titulo.value + " - " + titulo_tipo.value + " - " + titulo_lugar.value + " - " + titulo_inicio.value + " - ";
             if (titulo_activo.checked) {
                 texto += "actualidad";
             } else {
@@ -652,7 +667,7 @@
             subtitle.innerHTML = titulo.value;
             var tiempo = document.createElement("div");
             tiempo.setAttribute("class", "tiempo");
-            var p_texto = titulo_lugar.value +", "+titulo_tipo.value+ " " + titulo_inicio.value + " - ";
+            var p_texto = titulo_lugar.value + ", " + titulo_tipo.value + " " + titulo_inicio.value + " - ";
             if (titulo_activo.checked)
                 p_texto += "actualidad";
             else
@@ -670,52 +685,123 @@
             titulo_fin.value = "";
             titulo_activo.checked = false;
         };
-        document.getElementById("i-titulo-activo").onclick = function(){
-            if(this.checked)
+        document.getElementById("i-titulo-activo").onclick = function () {
+            if (this.checked)
                 document.getElementById("i-titulo-fin").disabled = true;
-                
+
             else
                 document.getElementById("i-titulo-fin").disabled = false;
         };
-        
+
         var cantAptitudes = 0;
-        document.getElementById("i-agregar-aptitud").onclick = function (){
+        document.getElementById("i-agregar-aptitud").onclick = function () {
             cantAptitudes++;
-            
+
             /*FORM*/
             var lista_aptitudes = document.getElementById("lista-aptitudes");
             var info = document.createElement("li");
-            info.setAttribute("id","aptitud"+cantAptitudes);
+            info.setAttribute("id", "aptitud" + cantAptitudes);
             info.appendChild(document.createTextNode(aptitud.value));
-            
+
             var eliminar = document.createElement("button");
-            eliminar.setAttribute("id","eliminar_aptitud"+cantAptitudes);
-            
-            eliminar.onclick = function() {
-                document.getElementById("aptitud"+this.id.substring(16)).remove();
-                document.getElementById("p-aptitud-"+this.id.substring(16)).remove();
-                if(document.getElementById("p-aptitud")){
-                    document.getElementById("p-aptitud").style.display="none";
-                }
+            eliminar.setAttribute("id", "eliminar_aptitud" + cantAptitudes);
+
+            eliminar.onclick = function () {
+                document.getElementById("aptitud" + this.id.substring(16)).remove();
+                document.getElementById("p-aptitud-" + this.id.substring(16)).remove();
+                if (document.getElementById("p-aptitudes").innerHTML.trim() == "")
+                    document.getElementById("p-aptitud").style.display = "none";
             }
-            
+
             eliminar.appendChild(document.createTextNode("X"));
-            
+
             info.appendChild(eliminar);
             lista_aptitudes.appendChild(info);
-            
+
             /*CV*/
             var p_aptitudes = document.getElementById("p-aptitudes");
             var p_li = document.createElement("li");
-            p_li.setAttribute("id","p-aptitud-"+cantAptitudes);
+            p_li.setAttribute("id", "p-aptitud-" + cantAptitudes);
             p_li.appendChild(document.createTextNode(aptitud.value));
             p_aptitudes.appendChild(p_li);
-            
+
             /*vaciar form*/
             aptitud.value = "";
+            document.getElementById("p-aptitud").style.display = "block";
+        };
+
+        var cantConocimientos = 0;
+        document.getElementById("i-agregar-conocimiento").onclick = function(){
+            cantConocimientos++;
+            console.log(cantConocimientos);
+            /*FORM*/
+            var lista_conocimientos = document.getElementById("lista-conocimientos");
+            var info = document.createElement("li");
+            info.setAttribute("id","conocimiento"+cantConocimientos);
+            info.appendChild(document.createTextNode(conocimiento.value));
             
-            document.getElementById("p-aptitud").style.display="block";
-        }
+            var eliminar = document.createElement("button");
+            eliminar.setAttribute("id", "eliminar_conocimiento" + cantConocimientos);
+
+            eliminar.onclick = function () {
+                document.getElementById("conocimiento" + this.id.substring(21)).remove();
+                document.getElementById("p-conocimiento-" + this.id.substring(21)).remove();
+                if (document.getElementById("p-conocimientos").innerHTML.trim() == "")
+                    document.getElementById("p-conocimiento").style.display = "none";
+            };
+
+            eliminar.appendChild(document.createTextNode("X"));
+
+            info.appendChild(eliminar);
+            lista_conocimientos.appendChild(info);
+            
+            /*CV*/
+            var p_conocimientos = document.getElementById("p-conocimientos");
+            var p_li = document.createElement("li");
+            p_li.setAttribute("id", "p-conocimiento-" + cantConocimientos);
+            p_li.appendChild(document.createTextNode(conocimiento.value));
+            p_conocimientos.appendChild(p_li);
+
+            /*vaciar form*/
+            conocimiento.value = "";
+            document.getElementById("p-conocimiento").style.display = "block";
+        };
         
+        var cantIdiomas = 0;
+        document.getElementById("i-agregar-idioma").onclick = function(){
+            cantIdiomas++;
+            
+            /*FORM*/
+            var lista_idiomas = document.getElementById("lista-idiomas");
+            var info = document.createElement("li");
+            info.setAttribute("id","idioma"+cantIdiomas);
+            info.appendChild(document.createTextNode(idioma.value+" - "+idioma_nivel.value));
+            
+            var eliminar = document.createElement("button");
+            eliminar.setAttribute("id", "eliminar_idioma" + cantIdiomas);
+
+            eliminar.onclick = function () {
+                document.getElementById("idioma" + this.id.substring(15)).remove();
+                document.getElementById("p-idioma-" + this.id.substring(15)).remove();
+                if (document.getElementById("p-idiomas").innerHTML.trim() == "")
+                    document.getElementById("p-idioma").style.display = "none";
+            };
+
+            eliminar.appendChild(document.createTextNode("X"));
+
+            info.appendChild(eliminar);
+            lista_idiomas.appendChild(info);
+            
+            /*CV*/
+            var p_idiomas = document.getElementById("p-idiomas");
+            var p_li = document.createElement("li");
+            p_li.setAttribute("id", "p-idioma-" + cantIdiomas);
+            p_li.appendChild(document.createTextNode(idioma.value + " - "+idioma_nivel.value));
+            p_idiomas.appendChild(p_li);
+
+            /*vaciar form*/
+            idioma.value = "";
+            document.getElementById("p-idioma").style.display = "block";
+        }
     </script>
 </html>
