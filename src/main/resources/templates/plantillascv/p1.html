@@ -1,96 +1,82 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"  lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Plantilla 1</title>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Plantilla 1</title>
         <mvc:resources mapping="/static/**" location="/static/" />
-    <link rel="Stylesheet" href="/css/p1.css">
-</head>
-<body>
-    <div th:fragment="p1" id="contenedor">
-        
-        <header>
-            <h1 id="p-nombre"></h1>
-        </header>
-        <header class="info">
-            <ul>
-                <li id="p-direccion"></li>
-                <li id="p-telefono"></li>
-                <li id="p-correo"></li>
-            </ul>
-            
-        </header>
-        <header><h2 class="obj">Objetivo</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-        </header>
-    <main>
-        <div class="detalles">
-            <article class="formacion">
-                <h2>Formacion</h2>
-                
-                <ul class="lisma" id="p-academicos"></ul>
-<!--                    <p class="der">Titulacion</p>
-                    <p class="der">Escuela</p>   
-                
-                    <h4 class="lisma"><b>Inicio - fin</b></h4>
-                    <p class="der">Titulacion</p>
-                    <p class="der">Escuela</p>
-    
-                <h4 class="lisma"><b>Inicio - fin</b></h4>
-                    <p class="der">Titulacion</p>
-                    <p class="der">Escuela</p>-->
-    
-            </article>
-            <article>
-                <h2>Experiencia</h2>
-                <ul class="lisma2" id="p-trabajos"></ul>
-<!--                            <p class="iz">Puesto de trabajo</p>
-                            <p class="iz">Empresa</p>
-                
-                <h4 class="lisma2">Año</h4>
-                            <p class="iz">Puesto de trabajo</p>
-                            <p class="iz">Empresa</p>
-    
-                <h4 class="lisma2">Año</h4>
-                            <p class="iz">Puesto de trabajo</p>
-                            <p class="iz">Empresa</p>-->
-                
-            </article>
-        </div>
-        
-        <article>
-            <h2 class="textocentrado">Idiomas</h2>
-            <ul class="listadehabilidades">
-                <li>Idioma 1
-                    <progress value="1" max="3">50%</progress>
-                </li>
-                <li>Idioma 2
-                    <progress value="1" max="3"></progress>
-                </li>
-                <li>Idioma 3
-                    <progress value="1" max="3"></progress>
-                </li>
-            </ul>
-        </article>
-        <article>
-            <h2 class="textocentrado">Conocimientos</h2>
-            <ul class="listadehabilidades2">
-                <li class="habi">Conocimiento 1
-                </li>
-                <li class="habi">Conocimiento 2
-                </li>
-                <li class="habi">Conocimientos 3
-                </li>
-            </ul>
-        </article>
-    </main>  
-             
-    </div>
-    
-  
+        <link rel="Stylesheet" href="/css/p1.css">
+    </head>
+    <body>
+        <div th:fragment="p1" id="contenedor">
 
-</body>
+            <header>
+                <h1 id="p-nombre"></h1>
+            </header>
+            <header class="info">
+                <ul>
+                    <li id="p-edad"></li>
+                    <li id="p-direccion"></li>
+                    <li id="p-telefono"></li>
+                    <li id="p-correo"></li>
+                </ul>
+
+            </header>
+            <header><h2 class="obj">Objetivo</h2>
+                <p></p>
+            </header>
+            <main>
+                <div class="detalles">
+                    <article class="formacion">
+                        <h2>Formacion</h2>
+
+                        <ul class="lisma" id="p-academicos"></ul>
+                        <!--                    <p class="der">Titulacion</p>
+                                            <p class="der">Escuela</p>   
+                                        
+                                            <h4 class="lisma"><b>Inicio - fin</b></h4>
+                                            <p class="der">Titulacion</p>
+                                            <p class="der">Escuela</p>
+                            
+                                        <h4 class="lisma"><b>Inicio - fin</b></h4>
+                                            <p class="der">Titulacion</p>
+                                            <p class="der">Escuela</p>-->
+
+                    </article>
+                    <article>
+                        <h2>Experiencia</h2>
+                        <ul class="lisma2" id="p-trabajos"></ul>
+                        <!--                            <p class="iz">Puesto de trabajo</p>
+                                                    <p class="iz">Empresa</p>
+                                        
+                                        <h4 class="lisma2">Año</h4>
+                                                    <p class="iz">Puesto de trabajo</p>
+                                                    <p class="iz">Empresa</p>
+                            
+                                        <h4 class="lisma2">Año</h4>
+                                                    <p class="iz">Puesto de trabajo</p>
+                                                    <p class="iz">Empresa</p>-->
+
+                    </article>
+                </div>
+
+                <article>
+                    <h2 class="textocentrado">Idiomas</h2>
+                    <ul class="listadehabilidades" id="p-idiomas">            
+                    </ul>
+                </article>
+                <article>
+                    <h2 class="textocentrado">Conocimientos</h2>
+                    <ul class="listadehabilidades2" id="p-conocimientos">             
+                    </ul>
+                </article>
+            </main>  
+
+        </div>
+
+
+
+    </body>
 </html>
