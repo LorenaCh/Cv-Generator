@@ -28,16 +28,16 @@ public class RegistroControlador {
 
     private Usuario usuario;
 
-    @PostConstruct
-    public void init() {
-        Authentication auth = SecurityContextHolder
-                .getContext()
-                .getAuthentication();
-        UserDetails userDetail = (UserDetails) auth.getPrincipal();
-        usuario = this.servicio.findByEmail(userDetail.getUsername());
-        System.out.println(usuario);
-        System.out.println(usuario.getId());
-    }
+//    @PostConstruct
+//    public void init() {
+//        Authentication auth = SecurityContextHolder
+//                .getContext()
+//                .getAuthentication();
+//        UserDetails userDetail = (UserDetails) auth.getPrincipal();
+//        usuario = this.servicio.findByEmail(userDetail.getUsername());
+//        System.out.println(usuario);
+//        System.out.println(usuario.getId());
+//    }
 
     @GetMapping("/login")
     public String iniciarSesion() {
