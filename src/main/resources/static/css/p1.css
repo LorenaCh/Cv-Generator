@@ -6,28 +6,34 @@ body{
     ;
     
     }
-#contenedor{
+<<<<<<< HEAD
+.plantilla1 #contenedor{
     width: 190mm;
     min-height: 277mm;
+=======
+#contenedor{
+    width: 105mm;
+    height: 148.5mm;
+>>>>>>> bc53f99f2d4e265d9da2e6430b56f4c2d94f041a
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     background-color: #fdfcfc;
     
 }   
-h1,h2{
+.plantilla1 h1,h2{
     font-weight: 500;
 
 }
-h4,b{
+.plantilla1 h4,b{
     font-weight: 700;
 }
-header, section {
+.plantilla1 header, section {
     width: 190mm;
     
 }
 
-header h1{
+.plantilla1 header h1{
     text-align: center;
     margin: 0;
     padding: 1em;
@@ -35,50 +41,50 @@ header h1{
     color: #fff;
 }
 
-.detalles {
+.plantilla1 .detalles {
     margin-top: 0em;
     display: flex;
     justify-content: space-between;
 }
 
 
-.textocentrado{
+.plantilla1 .textocentrado{
     text-align: center;
 }
 
 
-.detalles article,.detalles aside{
+.plantilla1 .detalles article,.detalles aside{
     width: 48%;
 }
-.detalles article.formacion{
+.plantilla1.detalles article.formacion{
     text-align: right;
 }
 
-.info{
+.plantilla1.info{
     
     background-color: #fff;
 }
-.info ul{
+.plantilla1.info ul{
     font-weight: 500;
     list-style: none;
 }
-.obj{
+.plantilla1.obj{
     font-weight: 700;
     display: flex;
     justify-content: center;
 }
 
-.lisma,.lisma2{
+.plantilla1.lisma,.lisma2{
     margin-bottom: 0.5em;
 }
-.lisma+p,.lisma2+p{
+.plantilla1.lisma+p,.lisma2+p{
     margin-top: 0;
 }
 
-#contenedor footer{
+.plantilla1 #contenedor footer{
     margin-top: auto;
 }
-.listadehabilidades{
+.plantilla1 .listadehabilidades{
     padding: 0;
     list-style: none;
     width: 50%;
@@ -86,45 +92,45 @@ header h1{
     margin-right: auto;
    
 }
-.listadehabilidades li{
+.plantilla1.listadehabilidades li{
     display: flex;
     flex-wrap: wrap;
 }
-.listadehabilidades li progress{
+.plantilla1 .listadehabilidades li progress{
     -webkit-appearance: none;
     appearance: none;
     background-color: silver;
     margin-left: auto;
 }
-.listadehabilidades li progress::-webkit-progress-bar{
+.plantilla1 .listadehabilidades li progress::-webkit-progress-bar{
     background-color: silver;
 
 }
-.listadehabilidades li progress::-webkit-progress-value{
+.plantilla1 .listadehabilidades li progress::-webkit-progress-value{
     background-color: #dd8772;
 
 }
-.listadehabilidades li progress::-moz-progress-bar{
+.plantilla1 .listadehabilidades li progress::-moz-progress-bar{
     background-color: #dd8772;
 
 }
-h2{
+.plantilla1 h2{
     background-color: #ddb1b0;
     padding: 5px;
 }
-main{
+.plantilla1 main{
     padding: 5px;
 }
-.habi{
+.plantilla1 .habi{
     text-align: center;
 }
-.listadehabilidades2{
+.plantilla1.listadehabilidades2{
     padding: 0;
     list-style: none;
     width: 50%;
     margin-left: auto;
     margin-right: auto;  
 }
-.obj{
+.plantilla1 .obj{
     text-align: center;
 }

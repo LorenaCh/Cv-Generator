@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
       lang="es" class="pagFormCrearCV">
     <head>
         <title>Eggenerator</title>
@@ -87,7 +88,8 @@
                         <div class="form-contenedor">
                             <h2>Perfil</h2>
                             <div class="linea"></div>
-                            <form>
+                            <form method="post" th:action="@{/guardarPerfil}">
+                            <input type="hidden" name="mailUsuario" th:value="${#authentication.getPrincipal().getUsername()}">
                                 <div class="row row5050">
                                     <div class="col">
                                         <div class="inputBox">
@@ -152,7 +154,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="continuar">Continuar</button>
+                                <button type="submit" class="continuar">Guardar</button>
                             </form>
                         </div>
                     </div>
@@ -295,7 +297,7 @@
                                                 <span class="span"></span>
                                                 <i class="indicator"></i>
                                             </div>
-                                            <span class="text">Activo</span>
+                                            <span class="text">Cursando</span>
                                         </div>
                                     </div>
                                 </div>
@@ -396,22 +398,22 @@
                         <h2>Plantilla</h2>
                         <div class="linea"></div>
                         <form class="form-plantilla">
-                            <a href="#">
+                            <a href="#" class="img img1">
                             <img src="/img/miniaturas/plantilla1miniatura.png" />
                             </a>
-                            <a href="#">
+                            <a href="#" class="img img2">
                             <img src="/img/miniaturas/plantilla2miniatura.png" />
                             </a>
-                            <a href="#">
+                            <a href="#" class="img img3">
                             <img src="/img/miniaturas/plantilla3miniatura.png" />
                             </a>
-                            <a href="#">
+                            <a href="#" class="img img4">
                             <img src="/img/miniaturas/plantilla4miniatura.png" />
                             </a>
-                            <a href="#">
+                            <a href="#" class="img img5">
                             <img src="/img/miniaturas/plantilla5miniatura.png" />
                             </a>
-                            <a href="#">
+                            <a href="#" class="img img6">
                             <img src="/img/miniaturas/plantilla6miniatura.png" />
                             </a>
                         </form>
@@ -419,7 +421,7 @@
                     </div>
                 </div>
                 <div class="vista-previa">
-                    <div th:replace="/cvs/plantilla_1 :: plantilla_1" class="plantilla">
+                    <div th:replace="/cvs/plantilla_1 :: plantilla_0" class="plantilla">
 
                     </div>
                 </div>
@@ -455,6 +457,7 @@
         var nacionalidad = document.getElementById("i-nacionalidad");
         var edad = document.getElementById("i-edad");
         var correo = document.getElementById("i-correo");
+        
         var descripcion = document.getElementById("i-resumen");
 
         var cantTrabajos = 0;
@@ -853,5 +856,8 @@
             idioma.value = "";
             document.getElementById("p-idioma").style.display = "block";
         }
+        
+        const listCvs = document.querySelectorAll('.img');
+        
     </script>
 </html>

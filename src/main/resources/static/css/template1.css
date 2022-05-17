@@ -23,12 +23,17 @@ html:focus-within {
 body {
 	font: 1rem/var(--interlineado) var(--fuente);
 	text-rendering: optimizeSpeed;
+        
 }
 @media screen {
 	body {
 		margin: 0;
 		min-height: 100vh;
 	}
+}
+.dimension{
+    width: 105mm;
+    height: 148.5mm;
 }
 h1, h2, h3, h4 {
 	line-height: var(--interlineado-alt);
