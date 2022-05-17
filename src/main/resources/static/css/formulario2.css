@@ -480,3 +480,12 @@ body{
     background: #dff1ff;
     z-index: 3;
 }
+
+.form .item-form .form-contenedor .form-plantilla{
+    display:flex;
+}
+
+.form .item-form .form-contenedor .form-plantilla img{
+    width: 100px;
+    height: 150px;
+}

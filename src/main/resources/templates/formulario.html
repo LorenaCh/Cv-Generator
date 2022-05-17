@@ -391,9 +391,19 @@
                         </div>
                     </div>
                     <div id="plantilla" class="item-form">
+                        <div class="form-contenedor">
+                            
                         <h2>Plantilla</h2>
-                            <div class="linea"></div>
-                        plantilla
+                        <div class="linea"></div>
+                        <form class="form-plantilla">
+                            <img src="/img/miniaturas/plantilla1miniatura.png" />
+                            <img src="/img/miniaturas/plantilla2miniatura.png" />
+                            <img src="/img/miniaturas/plantilla3miniatura.png" />
+                            <img src="/img/miniaturas/plantilla4miniatura.png" />
+                            <img src="/img/miniaturas/plantilla5miniatura.png" />
+                            <img src="/img/miniaturas/plantilla6miniatura.png" />
+                        </form>
+                        </div>
                     </div>
                 </div>
                 <div class="vista-previa">
@@ -624,6 +634,7 @@
             puesto_inicio.value = "";
             puesto_fin.value = "";
             puesto_activo.checked = false;
+            puesto_fin.disabled = false;
         };
 
         
@@ -710,6 +721,7 @@
             titulo_inicio.value = "";
             titulo_fin.value = "";
             titulo_activo.checked = false;
+            titulo_fin.disabled = false;
         };
         document.getElementById("i-titulo-activo").onclick = function () {
             if (this.checked)
